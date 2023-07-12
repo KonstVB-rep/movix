@@ -1,4 +1,4 @@
-export type TypeUrl = {
+export type TypeUrlParams = {
   change_keys: string[];
   images: {
     backdrop_sizes: ["w300", "w780", "w1280", "original"];
@@ -9,4 +9,10 @@ export type TypeUrl = {
     secure_base_url: "https://image.tmdb.org/t/p/";
     still_sizes: ["w92", "w185", "w300", "original"];
   };
+};
+
+export type Url = {
+  backdrop: string;
+  poster: string;
+  profile: string;
 };

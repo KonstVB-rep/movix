@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+type Url = {
+  backdrop: string,
+  poster: string
+  profile: string
+}
+
 const initialState = {
   url: {},
   genres: {},

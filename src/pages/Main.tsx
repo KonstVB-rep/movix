@@ -1,7 +1,7 @@
 import React from "react";
 
-import { HeroBanner } from "../components/HeroBanner";
-import { PopularMovies } from "../components/PopularMovies";
+import { HeroBanner } from "../Articles/MainArticle/HeroBanner";
+import { PopularMovies } from "../Articles/MainArticle/PopularMovies";
 
 const Main = () => {
   return (

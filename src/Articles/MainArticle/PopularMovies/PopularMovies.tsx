@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { getData } from "../../../utils/api";
+import { getData } from "../../../../utils/api";
 import { useQuery } from "react-query";
-import { DataMovies, Movie } from "../../../types/movies";
+import { DataMovies, Movie } from "../../../../types/movies";
 
 const PopularMovies = () => {
   const [videos, setVideos] = useState<Movie[] | []>([]);

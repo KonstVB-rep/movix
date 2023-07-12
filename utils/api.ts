@@ -40,3 +40,14 @@ export const getData = async (url: string, params: {} = {}): Promise<any> => {
   const response = await axios.request(options);
   return response.data;
 };
+
+export const getParamsImages = async () => {
+  const data = await getData("/configuration");
+  if (data) {
+    return {
+      backdrop: data.images.secure_base_url + "original",
+      poster: data.images.secure_base_url + "original",
+      profile: data.images.secure_base_url + "original",
+    };
+  }
+};
