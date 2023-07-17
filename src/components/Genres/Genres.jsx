@@ -1,9 +1,8 @@
-import "./Genres.module.scss";
+import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {fetchDataFromApi, useGetData} from "../hooks/useGetData.js";
-import {getData} from "../../../utils/api.js";
-import {fetchAllGenres, fetchUrl, getGenres} from '../../../store/slices/mainSlice.js'
+
+import {fetchAllGenres} from '../../../store/slices/mainSlice.js'
 import cn from './Genres.module.scss'
 
 
