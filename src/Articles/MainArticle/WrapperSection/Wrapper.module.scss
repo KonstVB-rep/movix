@@ -1,0 +1,16 @@
+
+.carousel {
+  position: relative;
+  margin-bottom: 70px;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .carousel__title {
+    font-size: 24px;
+    color: white;
+    font-weight: normal;
+  }
+}

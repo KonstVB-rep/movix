@@ -1,0 +1,19 @@
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-bottom: 10px;
+  flex-grow: 1;
+  align-content: flex-start;
+}
+.genres .genre {
+  background-color: var(--pink);
+  padding: 3px 5px;
+  font-size: 12px;
+  height: 20px;
+  border-radius: 4px;
+  color: white;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=Genres.module.css.map */
