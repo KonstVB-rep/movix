@@ -2,12 +2,13 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 
-import {fetchAllGenres} from '../../../store/slices/mainSlice.js'
+
 import cn from './Genres.module.scss'
+import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
 
 
-const Genres = ({genresMovie}) => {
-  const { genres } = useSelector((state) => state.main);
+const Genres = ({genresMovie, classname}) => {
+  const { genres } = useSelector((state) => state.genres);
 
   const dispatch = useDispatch()
 
@@ -16,7 +17,7 @@ const Genres = ({genresMovie}) => {
   }, [])
 
   return (
-    <div className={cn.genres}>
+    <div className={`${cn.genres} ${cn[classname]}`}>
       {genresMovie?.map((id) =>
           <div key={id} className={cn.genre}>
             {genres[id]?.name}

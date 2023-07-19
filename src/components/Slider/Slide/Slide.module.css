@@ -8,7 +8,7 @@
   border-radius: 12px;
 }
 .poster :global span.lazy-load-image-background.blur::after {
-  content: "Loading...";
+  content: "";
   position: absolute;
   display: block;
   color: white;

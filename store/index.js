@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import mainSlice from "./slices/mainSlice";
+import urlReducer from "./slices/urlSlice";
+import genresReducer from "./slices/genresSlice";
 
 export const store = configureStore({
   reducer: {
-    main: mainSlice,
+    urlBaseForImages: urlReducer,
+    genres: genresReducer
   },
 });
 

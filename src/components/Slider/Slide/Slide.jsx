@@ -13,7 +13,7 @@ import Loader from "../../Loader/Loader.jsx";
 
 const Slide = ({ item, endpoint }) => {
   const navigate = useNavigate();
-  const url = useSelector((state) => state.main.url);
+  const url = useSelector((state) => state.urlBaseForImages.url);
 
   const [poster, setPoster] = useState(LoadingImg);
 
@@ -32,12 +32,11 @@ const Slide = ({ item, endpoint }) => {
     >
       <div className={cn.poster}>
         <Img src={poster} className={"poster_img"} />
-        {/*<img src = {poster} alt={'poster'} loading="lazy" onLoad={onLoadHandler} decoding="async" />*/}
-        <Rating rating={item.vote_average.toFixed(1)} />
+        <Rating rating={item.vote_average.toFixed(1)} classname='rating_slide'/>
       </div>
       <div className={cn.text}>
         <span className={cn.title}>{item.title || item.name}</span>
-        <Genres genresMovie={item.genre_ids.slice(0, 2)} />
+        <Genres genresMovie={item.genre_ids.slice(0, 2)} classname='genres_slide'/>
         <span className={cn.date}>
           {dayjs(item.release_date || item.first_air_date).format(
             "MMM D, YYYY"

@@ -10,7 +10,7 @@
     filter:blur(0);
     border-radius: 12px;
     &::after{
-      content: "Loading...";
+      content: "";
       position: absolute;
       display: block;
       color: white;

@@ -1,0 +1,20 @@
+@import "../../../../mixins.scss";
+
+.poster {
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 2/3;
+  max-width: 725px;
+  @include md{
+    max-width: 350px;
+    aspect-ratio:2/3;
+  }
+  .poster__img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    @include md {
+      max-width: 350px;
+    }
+  }
+}

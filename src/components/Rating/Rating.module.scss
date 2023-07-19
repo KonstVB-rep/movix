@@ -1,13 +1,17 @@
+@import '../../mixins.scss';
+
 .rating {
-  position: absolute;
   width: 50px;
   height: 50px;
-  bottom: -20px;
-  left: 20px;
   background-color: var(--black);
   border-radius: 50%;
+  overflow: hidden;
   padding: 2px;
-
+  &_slide{
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+  }
   .text {
     font-size: 34px;
     font-weight: 700;
@@ -16,5 +20,20 @@
 
   .text > .CircularProgressbar-trail {
     stroke: transparent;
+  }
+  &_single-movie{
+    position: static;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    background-color: var(--black2);
+    @include md {
+      max-width: 90px;
+      width: 77px;
+      height: 77px;
+    }
+    .CircularProgressbar-text {
+      fill: white;
+    }
   }
 }

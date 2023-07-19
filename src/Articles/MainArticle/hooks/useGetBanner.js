@@ -6,7 +6,7 @@ import {useSelector} from "react-redux";
 
 const useGetBanner = () => {
   const [banner, setBanner] = useState("");
-  const url = useSelector(state => state.main.url);
+  const url = useSelector(state => state.urlBaseForImages.url);
 
   const { data, isLoading, isError, error } = useGetData('movies_upcoming', "/movie/upcoming");
 

@@ -1,19 +1,29 @@
 .genres {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  padding-bottom: 10px;
   flex-grow: 1;
+  gap: 10px;
   align-content: flex-start;
 }
 .genres .genre {
   background-color: var(--pink);
-  padding: 3px 5px;
+  padding: 5px;
   font-size: 12px;
-  height: 20px;
+  height: auto;
   border-radius: 4px;
   color: white;
   white-space: nowrap;
+}
+.genres_slide {
+  gap: 5px;
+  padding-bottom: 10px;
+}
+.genres_single-movie {
+  margin-bottom: 25px;
+  flex-flow: row wrap;
+}
+.genres_single-movie .genre {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=Genres.module.css.map */

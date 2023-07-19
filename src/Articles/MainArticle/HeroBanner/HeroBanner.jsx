@@ -3,7 +3,7 @@ import React, {useEffect} from "react";
 import { Content } from "./Content";
 import { Banner } from "./Banner";
 import cn from './HeroBanner.module.scss'
-import {fetchUrl} from "../../../../store/slices/mainSlice.js";
+import {fetchUrl} from "../../../../store/slices/urlSlice.js";
 import {useDispatch} from "react-redux";
 
 const HeroBanner = () => {

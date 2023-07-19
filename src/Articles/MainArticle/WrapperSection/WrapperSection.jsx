@@ -3,8 +3,20 @@ import SwitchTabs from "../../../components/SwitcherTabsDate/SwitchTabs.jsx";
 import {Slider} from "../../../components/Slider/index.jsx";
 
 import cn from './Wrapper.module.scss'
+import {ErrorSection} from "../../../components/ErrorSection/index.jsx";
 
-const WrapperSection = ({data,endpointsList,title,loading,endpoint,onTabChange}) => {
+const WrapperSection = ({data,endpointsList,title,loading,endpoint,onTabChange,isError, error}) => {
+
+
+if(isError){
+  return (
+    <div className={cn.carousel}>
+      <div className={`${cn.wrapper} wrapper`}>
+        <ErrorSection classname={'error-slider'}>{error.message}</ErrorSection>
+      </div>
+    </div>
+  )
+}
   return (
     <div className={cn.carousel}>
       <div className={`${cn.wrapper} wrapper`}>

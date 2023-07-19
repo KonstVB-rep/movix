@@ -1,9 +1,13 @@
 import React from 'react';
+import {MovieDetails} from "../Articles/MoviePageArticle/MovieDetails";
+
+
 
 const MoviePage = () => {
+
   return (
     <div>
-      <h1>MoviePage</h1>
+      <MovieDetails/>
     </div>
   );
 };

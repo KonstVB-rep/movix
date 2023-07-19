@@ -10,16 +10,16 @@ const Slider = ({data, loading, endpoint, title = ''}) => {
   const sliderContainer = useRef(null);
 
   const [disabledArrow, setDisabledArrow] = useState('left')
-  const [scroll, setScroll] = useState(0)
 
   const navigation = (dir) => {
     const container = sliderContainer.current;
-
     if (container) {
+
       const scrollAmount =
         dir === "left"
           ? container.scrollLeft - (container.offsetWidth + 20)
           : container.scrollLeft + (container.offsetWidth + 20);
+
 
       if (scrollAmount >= container.scrollWidth) {
         setDisabledArrow('right')
@@ -27,7 +27,6 @@ const Slider = ({data, loading, endpoint, title = ''}) => {
       else if (scrollAmount <= 0) {
         setDisabledArrow('left')
       }else setDisabledArrow('')
-      setScroll(scrollAmount)
 
       container.scrollTo({
         left: scrollAmount,
@@ -35,6 +34,14 @@ const Slider = ({data, loading, endpoint, title = ''}) => {
       });
     }
   };
+
+  useEffect(() => {
+    if(sliderContainer.current){
+      sliderContainer.current.scrollLeft = 0
+    }
+    setDisabledArrow('left')
+  }, [endpoint])
+
 
   // const renderSlides = useMemo(
   //   () => (

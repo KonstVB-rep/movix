@@ -1,14 +1,9 @@
 import axios from "axios";
+import {BASE_URL, TOKEN} from "../constants/index.js";
 // import { DataMovies } from "../types/movies";
 // import { useQuery } from "react-query";
 // import { getApiConfiguration } from "../store/slices/mainSlice";
 
-
-
-
-const BASE_URL = "https://api.themoviedb.org/3";
-
-const TOKEN = import.meta.env.VITE_APP_TMDB_TOKEN;
 
 
 // const dispatch = useDispatch();
@@ -37,7 +32,7 @@ const TOKEN = import.meta.env.VITE_APP_TMDB_TOKEN;
 //   }
 // };
 
-export const getData = async (url, params={}) => {
+export const getData = async (url, params = {}) => {
   const options = {
     method: "GET",
     url: BASE_URL + url,
@@ -47,13 +42,9 @@ export const getData = async (url, params={}) => {
       Authorization: `Bearer ${TOKEN}`,
     },
   };
+  const response = await axios.request(options);
+  return response.data;
 
-  try {
-    const response = await axios.request(options);
-    return response.data;
-  } catch (error) {
-    return error;
-  }
 };
 
 // export const getParamsImages = async () => {
