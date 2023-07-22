@@ -11,23 +11,41 @@
       font-weight: normal;
     }
     .arrow {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      top: 35%;
+      display: none;
+      border-radius: 50%;
+      transform: translateY(-50%);
       font-size: 30px;
       color: white;
-      position: absolute;
-      top: 35%;
-      transform: translateY(-50%);
-      z-index: 1;
-      display: none;
-      transition: scale 0.2s ease-in-out;
+      z-index: 2;
+      transition: all 0.2s ease-in-out;
+      &::before{
+        content:'';
+        position: absolute;
+        border-radius: 50%;
+        margin: 5px;
+        inset:0;
+        z-index: -1;
+        background-image: var(--gradient);
+      }
+      & > svg {
+        height: 100%;
+        width: 100%;
+      }
       @include md {
         display: block;
       }
-      &:hover,
-      &:focus-visible{
-        scale: 1.2;
-      }
-      &:disabled{
+      &:disabled {
         opacity: 0.5;
+      }
+      &:hover,
+      &:focus-visible {
+        scale: 1.2;
+        opacity: 1;
       }
     }
     .arrow_left {
@@ -46,8 +64,7 @@
         overflow: hidden;
         margin: 0;
         padding: 0;
-        max-width: 100%;
-        width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
       }
     }
   }

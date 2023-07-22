@@ -11,7 +11,7 @@ export const fetchUrl = createAsyncThunk(
 
 const initialState = {
   url: null,
-  loading: '',
+  loading: 'loading',
   error: '',
 };
 

@@ -1,0 +1,36 @@
+.info {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-grow: 1;
+  &.error{
+    color: #ee5b5b;
+    font-size: 18px;
+    justify-content: center;
+  }
+  &.border-none{
+    border: none;
+    &:not(:last-child){
+      margin-right: 20px;
+    }
+  }
+
+  .text {
+    margin-right: 10px;
+    opacity: 0.5;
+    line-height: 24px;
+    text-transform: capitalize;
+
+    &.bold {
+      font-weight: 600;
+      opacity: 1;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

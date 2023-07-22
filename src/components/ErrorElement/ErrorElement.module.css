@@ -1,0 +1,26 @@
+.error-slider {
+  height: 300px;
+  max-height: 406px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: var(--bg-skeleton);
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  .error-slider {
+    height: 400px;
+  }
+}
+
+.error-trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=ErrorElement.module.css.map */

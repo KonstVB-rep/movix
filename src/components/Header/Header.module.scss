@@ -7,7 +7,7 @@
   align-items: center;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 2;
+  z-index: 20;
   &.top {
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(3.5px);
@@ -28,9 +28,37 @@
     align-items: center;
     justify-content: space-between;
     .logo {
+      position: relative;
       display: flex;
       height: 50px;
-      width: 160px;
+      align-items: center;
+      width: max-content;
+      font-size: 28px;
+      background-image: var(--gradient);
+      color: transparent;
+      -webkit-background-clip: text;
+      transition: all 1s ease-in-out;
+      &:hover,
+      &:focus-visible{
+        background-image: var(--gradient-reverse);
+      }
+      &:hover::before,
+      &:focus-visible::before{
+        background-image: var(--gradient-reverse);
+        width: 100%;
+        opacity: 1;
+      }
+      &:before{
+        content:'';
+        position: absolute;
+        width: 0;
+        height: 5px;
+        bottom:5%;
+        border-radius: 20px;
+        background-image: var(--gradient-reverse);
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
       img {
         height: 50px;
       }
@@ -49,8 +77,32 @@
         @include xs {
           display: block;
         }
-        .nav__link:hover {
-          color: var(--pink);
+        .nav__link{
+          padding: 10px 0;
+          display: block;
+          position: relative;
+          transition: all 0.2s ease-in-out;
+          &:hover,
+          &:focus-visible{
+            color:var(--pink);
+          }
+          &:hover::before,
+          &:focus-visible::before{
+            background-image: var(--gradient-reverse);
+            width: 100%;
+            opacity: 1;
+          }
+          &:before{
+            content:'';
+            position: absolute;
+            width: 0;
+            height: 5px;
+            bottom:0;
+            border-radius: 20px;
+            background-image: var(--gradient-reverse);
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+          }
         }
       }
       .nav__item-mobile{

@@ -1,8 +1,8 @@
 import React from "react";
 
-import { HeroBanner } from "../Articles/MainArticle/HeroBanner/index";
-import { PopularMovies } from "../Articles/MainArticle/PopularMovies/index";
-import TopRated from "../Articles/MainArticle/TopRated/TopRated.jsx";
+import { HeroBanner } from "../Articles/MainArticle/HeroBanner";
+import { Popular } from "../Articles/MainArticle/Popular";
+import {TopRated} from "../Articles/MainArticle/TopRated";
 import {Trending} from "../Articles/MainArticle/Trending";
 
 const Main = () => {
@@ -10,7 +10,7 @@ const Main = () => {
     <div className="main">
       <HeroBanner />
       <Trending />
-      <PopularMovies />
+      <Popular />
       <TopRated />
     </div>
   );

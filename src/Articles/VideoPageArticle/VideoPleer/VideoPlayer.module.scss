@@ -1,0 +1,83 @@
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  .opacity-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    opacity: 0;
+    transition: opacity 400ms;
+  }
+  .player {
+    position: relative;
+    width: 800px;
+    aspect-ratio: 16 / 9;
+    transform: scale(0.2);
+    transition: transform 250ms;
+    &::before{
+      content: 'Loading...';
+      position: absolute;
+      inset:0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      background-color: darkgrey;
+      color: black;
+      z-index: -1;
+    }
+    .close {
+      position: absolute;
+      top: -50px;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      right: 0;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover,
+      &:focus-visible{
+        scale: 1.3;
+        color: black;
+        svg{
+          stroke: white;
+          stroke-width: 5px;
+        }
+      }
+      &:active{
+        scale: 0.9;
+        color: white;
+      }
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    .opacity-layer {
+      opacity: 1;
+    }
+    .player {
+      transform: scale(1);
+    }
+  }
+}

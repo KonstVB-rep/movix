@@ -1,0 +1,129 @@
+@import "../../../mixins.scss";
+
+.videos {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  align-items: flex-start;
+  @include md {
+    margin: 0;
+    padding: 0;
+    gap:20px;
+  }
+  .video {
+    position: relative;
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 240px;
+    aspect-ratio: 16/9;
+    color: white;
+    flex-shrink: 0;
+    @include md {
+      width: 280px;
+    }
+    & > span{
+      width: 100%;
+      height: 100%;
+    }
+    .video__thumbnail {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-skeleton);
+      img {
+        width: 100%;
+        display: block;
+        transition: all 0.7s ease-in-out;
+      }
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+      }
+      .triangle {
+        stroke-dasharray: 240;
+        stroke-dashoffset: 480;
+        stroke: white;
+        transform: translateY(0);
+        transition: all 0.7s ease-in-out;
+      }
+      .circle {
+        stroke: white;
+        stroke-dasharray: 650;
+        stroke-dashoffset: 1300;
+        transition: all 0.5s ease-in-out;
+      }
+      &:hover {
+        img {
+          opacity: 0.5;
+        }
+        .triangle {
+          stroke-dashoffset: 0;
+          opacity: 1;
+          stroke: var(--pink);
+          animation: trailorPlay 0.7s ease-in-out;
+        }
+        .circle {
+          stroke-dashoffset: 0;
+          stroke: var(--pink);
+        }
+      }
+    }
+    .video__title {
+      color: white;
+      font-size: 14px;
+      line-height: 20px;
+      @include md {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+.skeletons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 0 20px;
+  @include md {
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  .skeleton-card {
+    display: grid;
+    grid-template-rows: 1fr 20px;
+    justify-items: center;
+    gap:15px;
+    width: 220px;
+    flex-shrink: 0;
+    @include md {
+      width: 280px;
+    }
+    .thumb {
+      height: 100%;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .row {
+      height: 20px;
+      width: 80%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+  }
+}

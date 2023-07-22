@@ -1,32 +1,32 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react';
-import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from "react-icons/bs";
+import React, {useEffect, useRef, useState} from "react";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
 
-import cn from './Slider.module.scss'
-import {Slide} from "./Slide";
-import {SliderSkeleton} from "./SliderSkeleton";
+import cn from "./Slider.module.scss";
+import {debounce} from "../../../utils/helpers.js";
 
 
-const Slider = ({data, loading, endpoint, title = ''}) => {
+const Slider = ({loading,endpoint = "" , children}) => {
   const sliderContainer = useRef(null);
-
-  const [disabledArrow, setDisabledArrow] = useState('left')
+  const sliderWrapper = useRef(null);
+  const [disabledArrow, setDisabledArrow] = useState("left");
+  const [visible, setVisible] = useState('false')
 
   const navigation = (dir) => {
     const container = sliderContainer.current;
     if (container) {
-
       const scrollAmount =
         dir === "left"
           ? container.scrollLeft - (container.offsetWidth + 20)
           : container.scrollLeft + (container.offsetWidth + 20);
 
-
       if (scrollAmount >= container.scrollWidth) {
-        setDisabledArrow('right')
-      }
-      else if (scrollAmount <= 0) {
-        setDisabledArrow('left')
-      }else setDisabledArrow('')
+        setDisabledArrow("right");
+      } else if (scrollAmount <= 0) {
+        setDisabledArrow("left");
+      } else setDisabledArrow("");
 
       container.scrollTo({
         left: scrollAmount,
@@ -35,45 +35,46 @@ const Slider = ({data, loading, endpoint, title = ''}) => {
     }
   };
 
+  const debounceResize = debounce(() => {
+      const {scrollWidth: sliderScrollWidth,offsetWidth: sliderOffsetWidth} =sliderContainer.current;
+      setVisible(sliderScrollWidth > sliderOffsetWidth)
+  }, 300)
+
   useEffect(() => {
-    if(sliderContainer.current){
-      sliderContainer.current.scrollLeft = 0
+    if (sliderContainer.current && !loading) {
+      sliderContainer.current.scrollLeft = 0;
+      debounceResize()
     }
-    setDisabledArrow('left')
-  }, [endpoint])
+    setDisabledArrow("left");
+    window.addEventListener('resize', debounceResize)
+    return () =>  window.removeEventListener('resize', debounceResize)
+  }, [endpoint,loading]);
 
-
-  // const renderSlides = useMemo(
-  //   () => (
-  //     <div className={cn.slides} ref={sliderContainer}>
-  //       {data?.map((item, index) => (
-  //         <Slide item={item} endpoint={endpoint} key={index} />
-  //       ))}
-  //     </div>
-  //   ),
-  //   []
-  // );
 
   return (
-    <div className = {cn.slider}>
-      <div className = {`${cn.wrapper} wrapper`}>
-        {title && <div className = {cn.slider__title}>{title}</div>}
-        <button onClick = {() => navigation("left")} className = {`${cn.arrow} ${cn.arrow_left}`} disabled={disabledArrow==='left'}>
-          <BsFillArrowLeftCircleFill
-          />
-        </button>
-        <button className = {`${cn.arrow} ${cn.arrow_right}`}
-                onClick = {() => navigation("right")}
-                disabled={disabledArrow==='right'}
-        >
-          <BsFillArrowRightCircleFill
-          />
-        </button>
-        {!loading ? (
-          <div className = {cn.slides} ref = {sliderContainer}>
-            {data?.map((item, index) => <Slide item = {item} endpoint = {endpoint} key = {index} />)}
-          </div>
-        ) : <SliderSkeleton />}
+    <div className={cn.slider}>
+      <div className={`${cn.wrapper} wrapper`} ref={sliderWrapper}>
+        {(visible && !loading) ? (
+          <>
+            <button
+              onClick={() => navigation("left")}
+              className={`${cn.arrow} ${cn.arrow_left}`}
+              disabled={disabledArrow === "left"}
+            >
+              <BsFillArrowLeftCircleFill />
+            </button>
+            <button
+              className={`${cn.arrow} ${cn.arrow_right}`}
+              onClick={() => navigation("right")}
+              disabled={disabledArrow === "right"}
+            >
+              <BsFillArrowRightCircleFill />
+            </button>
+          </>
+        ) : null}
+        <div className={cn.slides} ref={sliderContainer}>
+          {children}
+        </div>
       </div>
     </div>
   );

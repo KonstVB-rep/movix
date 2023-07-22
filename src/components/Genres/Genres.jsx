@@ -1,10 +1,11 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
+import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
 
 import cn from './Genres.module.scss'
-import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
+
 
 
 const Genres = ({genresMovie, classname}) => {

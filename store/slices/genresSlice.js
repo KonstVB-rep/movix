@@ -14,10 +14,12 @@ export const fetchAllGenres = createAsyncThunk(
       });
 
       const data = await Promise.all(promises);
+
       data.map(({ genres }) => {
         return genres.map((item) => (allGenres[item.id] = item));
       });
       return allGenres;
+
     } catch (e) {
       return e.response.data.status_message;
     }

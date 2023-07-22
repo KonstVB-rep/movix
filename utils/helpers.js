@@ -15,3 +15,14 @@ export const toHoursAndMinutes = (totalMinutes) => {
   const minutes = totalMinutes % 60;
   return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
 };
+
+
+export const debounce = (fn, delay) => {
+  let timer =  null;
+  return function() {
+    if(timer){
+      clearTimeout(timer)
+    }
+    timer = setTimeout(fn, delay)
+  }
+}

@@ -1,0 +1,23 @@
+.carousel {
+  position: relative;
+  margin-bottom: 70px;
+}
+.carousel .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.carousel .wrapper_error {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.carousel .carousel__title {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: white;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=WrapperSlider.module.css.map */

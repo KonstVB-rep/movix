@@ -1,13 +1,20 @@
 import React from 'react';
-import {MovieDetails} from "../Articles/MoviePageArticle/MovieDetails";
-
+import {VideoDetails} from "../Articles/VideoPageArticle/VideoDetails";
+import {Actors} from "../Articles/VideoPageArticle/Actors";
+import {TrailersVideo} from "../Articles/VideoPageArticle/TrailersVideo";
+import {SimilarVideos} from "../Articles/VideoPageArticle/SimilarVideos";
+import {RecommendedVideos} from "../Articles/VideoPageArticle/RecommendedVideos";
 
 
 const MoviePage = () => {
 
   return (
     <div>
-      <MovieDetails/>
+      <VideoDetails/>
+      <Actors/>
+      <TrailersVideo/>
+      <SimilarVideos/>
+      <RecommendedVideos/>
     </div>
   );
 };

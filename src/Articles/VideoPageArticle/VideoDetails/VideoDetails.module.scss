@@ -1,0 +1,188 @@
+@import "../../../mixins.scss";
+.details {
+  position: relative;
+  width: 100%;
+  background-color: var(--black);
+  padding-top: 100px;
+  padding-bottom: 50px;
+  @include sm {
+    margin-bottom: 0;
+    padding-top: 120px;
+    min-height: 700px;
+  }
+  .backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    overflow: hidden;
+    & > span {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .opacity-layer {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(
+      180deg,
+      rgba(4, 21, 45, 0) 0%,
+      var(--black) 79.17%
+    );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 25px;
+    @include md {
+      flex-direction: row;
+    }
+    .poster {
+      flex-shrink: 0;
+      .poster__img {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        @include sm {
+          max-width: 350px;
+        }
+      }
+    }
+    .describe {
+      color: white;
+      .title {
+        font-size: 28px;
+        line-height: 40px;
+        @include md {
+          font-size: 34px;
+          line-height: 44px;
+        }
+        .subtitle {
+          display: block;
+          font-size: 16px;
+          line-height: 24px;
+          margin-bottom: 15px;
+          font-style: italic;
+          opacity: 0.5;
+          @include sm {
+            font-size: 20px;
+            line-height: 28px;
+          }
+        }
+      }
+      .overview {
+        margin-bottom: 10px;
+        .heading {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .description {
+          line-height: 24px;
+          text-align: justify;
+        }
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .skeleton {
+    position: relative;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      @include md {
+        flex-direction: row;
+      }
+    }
+    .left {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/1.5;
+      border-radius: 12px;
+      @include md {
+        max-width: 465px;
+        max-height: 700px;
+      }
+    }
+    .right {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .row {
+        width: 100%;
+        height: 25px;
+        border-radius: 50px;
+        &.title {
+          width: 75%;
+          height: 60px;
+        }
+        &.genres {
+          width: 50%;
+        }
+        &.overview{
+          width: 30%;
+          height: 40px;
+        }
+        &.describe {
+          width: 100%;
+          height: 200px;
+        }
+        &.row_short:nth-child(odd){
+          width: 60%;
+          @include md {
+            width: 40%;
+          }
+        }
+        &.row_short:nth-child(even){
+          width: 70%;
+          @include md {
+            width: 60%;
+          }
+        }
+        &.row_short:last-child{
+          width: 90%;
+          height: 60px;
+          @include md {
+            width: 70%;
+          }
+        }
+      }
+
+      .group {
+        display: inline-flex;
+        flex-grow: 0;
+        align-items: center;
+        gap: 20px;
+        & > .circle {
+          border-radius: 50%;
+          height: 60px;
+          width: 60px;
+          @include md {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+  }
+}

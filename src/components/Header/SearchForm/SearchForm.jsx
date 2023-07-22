@@ -2,7 +2,7 @@ import React, { FormEvent, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineSearch } from "react-icons/hi";
 import { VscChromeClose } from "react-icons/vsc";
-import useClickOutside from "../../hooks/useClickOutside.js";
+import useClickOutside from "../../../Articles/hooks/useClickOutside.js";
 import cn from "../Header.module.scss";
 
 const SearchForm = ({ setShowSearch, showSearch }) => {

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import cn from "./Header.module.scss";
 
-import logo from "../../assets/movix-logo.svg";
 import { Nav } from "./Nav/index.jsx";
 import { SearchForm } from "./SearchForm/index.jsx";
 import { NavMobile } from "./NavMobile/index.jsx";
@@ -44,7 +43,7 @@ const Header = () => {
       <div className="wrapper">
         <nav className= {cn.nav}>
           <Link className={cn.logo} to="/">
-            <img src={logo} alt="" />
+            <span>Movies App</span>
           </Link>
           <Nav
             setShowSearch={setShowSearch}

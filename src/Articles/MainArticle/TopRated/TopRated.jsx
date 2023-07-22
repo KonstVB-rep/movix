@@ -1,15 +1,25 @@
-import React  from "react";
+import React from "react";
 
-import WrapperSection from "../WrapperSection/WrapperSection.jsx";
-import useGetMovies from "../hooks/useGetMovies.js";
-
+import { WrapperSlider } from "../../../components/WrapperSlider";
+import {SwitchTabs} from "../../../components/SwitchTabs";
+import useGetKeyData from "../../hooks/useGetKeyData.js";
+import {VideosList} from "../../../components/VideosList";
 
 const TopRated = () => {
-
-  const {data, endpoint, isLoading, onTabChange,isError, error} = useGetMovies("top_movies",['movie', 'tv'], '', '/top_rated')
+  const { data, endpoint, isLoading, onTabChange, isError, error } = useGetKeyData().topRated
 
   return (
-    <WrapperSection title={'TopRated'} endpointsList = {['Movies', 'TV Shows']} data={data?.results} loading={isLoading} error={error} isError={isError} endpoint={endpoint} onTabChange={onTabChange}/>
+    <WrapperSlider
+      title="TopRated"
+      error={error}
+      isError={isError}
+      loading={isLoading}
+      endpoint={endpoint}
+      data={data?.results}
+    >
+      <VideosList data={data?.results} loading={isLoading} endpoint={endpoint}/>
+      <SwitchTabs data={["Movies", "TV Shows"]} onTabChange={onTabChange} />
+    </WrapperSlider>
   );
 };
 

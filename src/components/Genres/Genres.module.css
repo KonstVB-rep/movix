@@ -19,7 +19,7 @@
   padding-bottom: 10px;
 }
 .genres_single-movie {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   flex-flow: row wrap;
 }
 .genres_single-movie .genre {

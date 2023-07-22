@@ -1,11 +1,10 @@
 import React from "react";
 import { Img } from "../../../../components/Img/index.jsx";
-import useGetBanner from "../../hooks/useGetBanner.js";
-
 import cn from '../HeroBanner.module.scss'
+import useGetKeyData from "../../../hooks/useGetKeyData.js";
 
 const Banner = () => {
-  const { data, isLoading, isError, error, banner } = useGetBanner();
+  const { isLoading, isError, banner } = useGetKeyData().banner;
 
   return (
     <>
