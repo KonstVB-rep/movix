@@ -3,11 +3,10 @@ import React from "react";
 import { WrapperSlider } from "../../../components/WrapperSlider";
 import { SwitchTabs } from "../../../components/SwitchTabs/index.jsx";
 import useGetKeyData from "../../hooks/useGetKeyData.js";
-import {VideosList} from "../../../components/VideosList";
+import {VideosCardList} from "../../../components/VideosCardList";
 
 const Trending = () => {
-  const { data, endpoint, isLoading, onTabChange, isError, error } =
-    useGetKeyData().trending;
+  const { data, endpoint, isLoading, onTabChange, isError, error,isFetching } = useGetKeyData().trending;
 
   return (
     <WrapperSlider
@@ -17,8 +16,9 @@ const Trending = () => {
       error={error}
       endpoint={endpoint}
       data={data?.results}
+      isFetching={isFetching}
     >
-      <VideosList data={data?.results} loading={isLoading} endpoint={endpoint}/>
+      <VideosCardList data={data?.results} loading={isLoading} endpoint={endpoint} isFetching={isFetching}/>
       <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} />
     </WrapperSlider>
   );

@@ -4,6 +4,7 @@ import { Header } from "../Header/index.jsx";
 import { Footer } from "../Footer/index.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUrl } from "../../../store/slices/urlSlice.js";
+import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const Layout = () => {
 
   useEffect(() => {
     dispatch(fetchUrl());
+    dispatch(fetchAllGenres())
   }, []);
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import useGetKeyData from "../../hooks/useGetKeyData.js";
 import {WrapperSlider} from "../../../components/WrapperSlider/index.jsx";
-import {VideosList} from "../../../components/VideosList/index.jsx";
+import {VideosCardList} from "../../../components/VideosCardList";
 
 const RecommendedVideos = () => {
   const {movieType, id} = useParams();
@@ -17,7 +17,7 @@ const RecommendedVideos = () => {
       endpoint={endpoint}
       data={data?.results}
     >
-      <VideosList data={data?.results} loading={isLoading} endpoint={endpoint}/>
+      <VideosCardList data={data?.results} loading={isLoading} endpoint={endpoint}/>
     </WrapperSlider>
   );
 };

@@ -2,21 +2,21 @@ import React from 'react';
 import {VideoCard} from "../VideoCard";
 import {SkeletonVideosList} from "../SkeletonVideosList";
 
-const VideosList = ({loading, data, endpoint}) => {
+const VideosCardList = ({loading, data,endpoint,isFetching}) => {
 
   return (
     <>
-      {!loading ? (
+      {loading || isFetching ? (
+          <SkeletonVideosList />
+      ) : (
         <>
           {data?.map((item, index) => (
             <VideoCard data={item} endpoint={endpoint} key={index} />
           ))}
         </>
-      ) : (
-        <SkeletonVideosList />
       )}
     </>
   );
 };
 
-export default VideosList;
+export default VideosCardList;

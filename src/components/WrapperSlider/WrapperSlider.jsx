@@ -13,12 +13,13 @@ const WrapperSlider = ({
   isError,
   error,
   children,
+  isFetching,
 }) => {
   if (isError) {
     return (
       <div className={cn.carousel}>
         <div className={`${cn.wrapper} wrapper ${cn.wrapper_error}`}>
-          <h3 className={cn.carousel__title}>{title}</h3>
+          <h3 className= {'title-article'}>{title}</h3>
           <ErrorElement classname={"error-slider"}>
             <span>{error?.message}</span>
           </ErrorElement>
@@ -32,10 +33,10 @@ const WrapperSlider = ({
       {data?.length ? (
         <div className={cn.carousel}>
           <div className={`${cn.wrapper} wrapper`}>
-            <h3 className={cn.carousel__title}>{title}</h3>
+            <h3 className= {'title-article'}>{title}</h3>
             {children[1]}
           </div>
-          <Slider endpoint={endpoint} loading={loading}>
+          <Slider endpoint={endpoint} loading={loading} isFetching={isFetching}>
             {children[0] || children}
           </Slider>
         </div>

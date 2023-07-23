@@ -114,27 +114,30 @@
     }
     .left {
       position: relative;
+      flex-shrink: 0;
       width: 100%;
       height: 100%;
       aspect-ratio: 1/1.5;
       border-radius: 12px;
-      @include md {
-        max-width: 465px;
+      overflow: hidden;
+      @include md{
+        width: 40%;
         max-height: 700px;
+        aspect-ratio: 1/1.5;
       }
     }
     .right {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
       .row {
         width: 100%;
         height: 25px;
         border-radius: 50px;
         &.title {
           width: 75%;
-          height: 60px;
+          height: 70px;
         }
         &.genres {
           width: 50%;

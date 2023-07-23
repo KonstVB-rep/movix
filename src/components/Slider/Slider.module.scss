@@ -1,7 +1,6 @@
 @import "../../mixins.scss";
 
 .slider {
-  margin-bottom: 50px;
   .wrapper {
     position: relative;
     .slider__title {
@@ -21,7 +20,7 @@
       transform: translateY(-50%);
       font-size: 30px;
       color: white;
-      z-index: 2;
+      z-index: 10;
       transition: all 0.2s ease-in-out;
       &::before{
         content:'';
@@ -55,16 +54,23 @@
       right: 30px;
     }
     .slides {
+      //display: grid;
+      //grid-auto-flow: column;
+      //grid-template-columns: repeat(auto-fit,minmax(216px,1fr));
+      //align-items: center;
+      //margin: 40px auto;
+      //gap: 20px;
       display: flex;
-      gap: 10px;
+      gap: 20px;
       overflow-y: hidden;
+      padding: 40px 0;
       width: calc(100vw - 40px);
-      @include md {
+      @include xl{
         gap: 20px;
         overflow: hidden;
         margin: 0;
         padding: 0;
-        max-width: calc(100vw - 40px);
+        width: 100%;
       }
     }
   }

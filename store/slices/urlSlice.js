@@ -18,13 +18,7 @@ const initialState = {
 const urlSlice = createSlice({
   name: "main",
   initialState,
-  reducers: {
-    getApiConfiguration(state, action) {
-      if (action.payload) {
-        state.url = action.payload;
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchUrl.pending, (state, action) => {
       state.loading = "loading";
@@ -45,5 +39,4 @@ const urlSlice = createSlice({
   },
 });
 
-export const { getApiConfiguration} = urlSlice.actions;
 export default urlSlice.reducer;

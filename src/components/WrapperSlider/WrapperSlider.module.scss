@@ -2,23 +2,26 @@
 
 .carousel {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
+  @include md {
+    margin-bottom: 40px;
+  }
   .wrapper {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
-    margin-bottom: 30px;
+    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    @include xs {
+      align-items: center;
+      flex-direction: row;
+    }
     &_error{
       flex-direction: column;
       align-items: flex-start;
       gap: 30px;
     }
-  }
-  .carousel__title {
-    text-transform: uppercase;
-    font-size: 24px;
-    color: white;
-    font-weight: normal;
   }
 }
 

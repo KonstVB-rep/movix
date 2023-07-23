@@ -8,7 +8,7 @@ import { store } from "../store/index.js";
 import {fetchUrl} from "../store/slices/urlSlice.js";
 
 const queryClient = new QueryClient(
-  {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000}}}
+  {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000, keepPreviousData:true}}}
 );
 
 function App() {

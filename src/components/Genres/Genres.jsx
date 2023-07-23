@@ -1,30 +1,27 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-
-import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
+import {useSelector} from "react-redux";
 
 import cn from './Genres.module.scss'
-
+// width: 100%;
+// height: 20px;
+// margin-bottom: 10px;
+// background-color: #434b4b;
+// border-radius: 12px;
 
 
 const Genres = ({genresMovie, classname}) => {
   const { genres } = useSelector((state) => state.genres);
 
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(fetchAllGenres())
-  }, [])
-
   return (
-    <div className={`${cn.genres} ${cn[classname]}`}>
-      {genresMovie?.map((id) =>
+    <>
+      {genresMovie?.length ? ( <div className={`${cn.genres} ${cn[classname]}`}>
+        {genresMovie?.map((id) =>
           <div key={id} className={cn.genre}>
             {genres[id]?.name}
           </div>
-      )}
-    </div>
+        )}
+      </div>) : <div className={cn['genres-empty']}></div>}
+    </>
   );
 };
 

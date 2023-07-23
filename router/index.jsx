@@ -17,10 +17,10 @@ export const router = createBrowserRouter(
           path: "/",
           element: <Main />,
         },
-        // {
-        //   path: ":type/:id",
-        //   element: <SearchPage />,
-        // },
+        {
+          path: "search/:query",
+          element: <SearchPage />,
+        },
         {
           path: ":movieType/:id",
           element: <MoviePage />,

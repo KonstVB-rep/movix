@@ -30,8 +30,8 @@
 @media only screen and (min-width: 768px) {
   .rating_single-movie {
     max-width: 90px;
-    width: 77px;
-    height: 77px;
+    width: 83px;
+    height: 83px;
   }
 }
 .rating_single-movie .CircularProgressbar-text {

@@ -1,23 +1,30 @@
 .carousel {
   position: relative;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 768px) {
+  .carousel {
+    margin-bottom: 40px;
+  }
 }
 .carousel .wrapper {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
-  margin-bottom: 30px;
+  gap: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 480px) {
+  .carousel .wrapper {
+    align-items: center;
+    flex-direction: row;
+  }
 }
 .carousel .wrapper_error {
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
-}
-.carousel .carousel__title {
-  text-transform: uppercase;
-  font-size: 24px;
-  color: white;
-  font-weight: normal;
 }
 
 /*# sourceMappingURL=WrapperSlider.module.css.map */

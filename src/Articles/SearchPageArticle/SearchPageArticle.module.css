@@ -1,0 +1,12 @@
+.search-section {
+  margin-top: 100px;
+}
+.search-section .list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  margin: 40px auto;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=SearchPageArticle.module.css.map */

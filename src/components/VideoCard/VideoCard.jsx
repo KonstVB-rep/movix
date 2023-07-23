@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 import cn from "./VideoCard.module.scss";
 
-const VideoCard = ({ data,endpoint }) => {
+const VideoCard = ({ data,endpoint, classname = 'slide_flex' }) => {
 
   const url = useSelector((state) => state.urlBaseForImages.url);
 
@@ -28,7 +28,7 @@ const VideoCard = ({ data,endpoint }) => {
   return (
     <li
       key={id}
-      className={cn.slide}
+      className={`${cn.slide} ${cn[classname]}`}
     >
       <Link to={`/${media_type || endpoint}/${id}`} className='link'/>
       <div className={cn.poster}>

@@ -16,30 +16,35 @@ const WatchTrailerButton = ({ classname }) => {
     `/${movieType}/${id}/videos`,
     id
   );
+  const isPlayerShow = data?.results.length || videoId;
 
   const startTrailer = () => {
     const trailer = data?.results.find((item) => item.name.includes("Trailer"));
-    setShow(true);
-    setVideoId(trailer.key);
+    if (trailer) {
+      setVideoId(trailer.key);
+
+      setShow(true);
+    }
   };
-  console.log(videoId);
+
+
   return (
     <>
-      {videoId ? (
-        <>
-          {" "}
-          <div className={cn[classname]} onClick={startTrailer}>
-            <PlayBtn />
-            <span className={cn.title}>Watch Trailer</span>
-          </div>
-          <VideoPlayer
-            show={show}
-            setShow={setShow}
-            videoId={videoId}
-            setVideoId={setVideoId}
-            isError={isError}
-          />
-        </>
+      {isPlayerShow ? (
+      <>
+        {" "}
+        <div className={cn[classname]} onClick={startTrailer}>
+          <PlayBtn />
+          <span className={cn.title}>Watch Trailer</span>
+        </div>
+        <VideoPlayer
+          show={show}
+          setShow={setShow}
+          videoId={videoId}
+          setVideoId={setVideoId}
+          isError={isError}
+        />
+      </>
       ) : null}
     </>
   );

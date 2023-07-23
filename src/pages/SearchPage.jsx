@@ -1,7 +1,12 @@
 import React from "react";
+import SearchPageArticle from "../Articles/SearchPageArticle/SearchPageArticle.jsx";
 
 const SearchPage = () => {
-  return <h1>SearchPage</h1>;
+  return (
+    <div className='wrapper'>
+      <SearchPageArticle/>
+    </div>
+  );
 };
 
 export default SearchPage;

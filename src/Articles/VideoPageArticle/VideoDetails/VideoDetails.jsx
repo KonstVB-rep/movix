@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import Poster from "./Poster/Poster.jsx";
 import { useGetData } from "../../hooks/useGetData.js";
 import { Skeleton } from "./Skeleton/index.jsx";
-import Description from "./Desciption/Description.jsx";
+import {Description} from "./Desciption/";
 
 import cn from "./VideoDetails.module.scss";
 
@@ -15,7 +15,7 @@ const VideoDetails = () => {
   const { movieType, id } = useParams();
   const { url } = useSelector((state) => state.urlBaseForImages);
 
-  const { data, isLoading, isError, error } = useGetData(
+  const { data, isLoading, isError, error, isFetching } = useGetData(
     movieType,
     `/${movieType}/${id}`,
     id
@@ -23,7 +23,7 @@ const VideoDetails = () => {
 
   return (
     <div className={cn.details}>
-      {isLoading ? (
+      {isLoading || isFetching ? (
         <Skeleton />
       ) : (
         <>

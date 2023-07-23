@@ -17,6 +17,7 @@ const useGetKeyData = () => {
     'trailers_list'  : (movieType,id) => useGetData('trailers_list', `/${movieType}/${id}/videos`, id),
     'similar'        : (movieType,id) => useGetData('similar', `/${movieType}/${id}/similar`, id),
     'recommendations': (movieType,id) => useGetData('recommendations', `/${movieType}/${id}/recommendations`, id),
+    'search_query'    : (query, pageNum) => useGetData('search_query',`/search/multi?query=${query}&page=${pageNum}`, query)
   }
 };
 
