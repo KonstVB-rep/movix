@@ -2,7 +2,7 @@ import React from "react";
 
 import { WrapperSlider } from "../../../components/WrapperSlider";
 import {SwitchTabs} from "../../../components/SwitchTabs";
-import useGetKeyData from "../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../hooks/commonHooks/useGetKeyData.js";
 import {VideosCardList} from "../../../components/VideosCardList";
 
 const Popular = () => {
@@ -14,7 +14,6 @@ const Popular = () => {
       title="Popular"
       isError={isError}
       error={error}
-      loading={isLoading}
       endpoint={endpoint}
       data={data?.results}
       isFetching={isFetching}

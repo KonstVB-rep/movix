@@ -1,9 +1,10 @@
 import React from 'react';
 
 import {useGetData} from "./useGetData.js";
-import useGetMovies from "./hooksMain/useGetMovies.js";
-import useGetBanner from "./hooksMain/useGetBanner.js";
-import useGetEmployeeCrew from "./hooksMoviePage/useGetEmployeeCrew.js";
+import useGetMovies from "../hooksMain/useGetMovies.js";
+import useGetBanner from "../hooksMain/useGetBanner.js";
+import useGetEmployeeCrew from "../hooksMoviePage/useGetEmployeeCrew.js";
+import useGetVideosSearchByQuery from "../hooksSearchPage/index.js";
 
 const useGetKeyData = () => {
   return {
@@ -17,7 +18,7 @@ const useGetKeyData = () => {
     'trailers_list'  : (movieType,id) => useGetData('trailers_list', `/${movieType}/${id}/videos`, id),
     'similar'        : (movieType,id) => useGetData('similar', `/${movieType}/${id}/similar`, id),
     'recommendations': (movieType,id) => useGetData('recommendations', `/${movieType}/${id}/recommendations`, id),
-    'search_query'    : (query, pageNum) => useGetData('search_query',`/search/multi?query=${query}&page=${pageNum}`, query)
+    'search_query'    : (query) => useGetVideosSearchByQuery(query),
   }
 };
 

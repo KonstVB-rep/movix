@@ -1,4 +1,4 @@
-import { getData } from "../../../utils/api.js";
+import { getData } from "../../../../utils/api.js";
 import { useQuery } from "react-query";
 
 import axios from "axios";

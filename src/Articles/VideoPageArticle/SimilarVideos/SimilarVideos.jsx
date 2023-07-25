@@ -1,7 +1,7 @@
 import React from 'react';
 import {WrapperSlider} from "../../../components/WrapperSlider/index.jsx";
 import {VideosCardList} from "../../../components/VideosCardList";
-import useGetKeyData from "../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../hooks/commonHooks/useGetKeyData.js";
 import {useParams} from "react-router-dom";
 
 
@@ -16,7 +16,6 @@ const SimilarVideos = () => {
       title={title}
       isError={isError}
       error={error}
-      loading={isLoading}
       endpoint={endpoint}
       data={data?.results}
     >

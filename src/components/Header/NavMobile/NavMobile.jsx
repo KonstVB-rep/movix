@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
-import useClickOutside from "../../../Articles/hooks/useClickOutside.js";
+import useClickOutside from "../../../Articles/hooks/commonHooks/useClickOutside.js";
 import cn from "../Header.module.scss";
 
 const NavMobile = ({ showNavMobile, setShowNavMobile }) => {

@@ -19,26 +19,29 @@
 .play .triangle {
   stroke-dasharray: 240;
   stroke-dashoffset: 480;
-  stroke: white;
+  stroke: var(--secondary);
   transform: translateY(0);
   transition: all 0.7s ease-in-out;
 }
 .play .circle {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-dasharray: 650;
   stroke-dashoffset: 1300;
   transition: all 0.5s ease-in-out;
 }
-.play:hover .text {
+.play .play__btn:hover .text,
+.play .play__btn:focus-visible .text {
   color: var(--pink);
 }
-.play:hover .triangle {
+.play .play__btn:hover .triangle,
+.play .play__btn:focus-visible .triangle {
   stroke-dashoffset: 0;
   opacity: 1;
   stroke: var(--pink);
   animation: trailorPlay 0.7s ease-in-out;
 }
-.play:hover .circle {
+.play .play__btn:hover .circle,
+.play .play__btn:focus-visible .circle {
   stroke-dashoffset: 0;
   stroke: var(--pink);
 }
@@ -55,36 +58,39 @@
     width: 80px;
   }
 }
-.play-item button {
-  position: absolute;
-  inset: 0;
-}
 .play-item .title {
   display: none;
 }
 .play-item .triangle {
   stroke-dasharray: 240;
   stroke-dashoffset: 480;
-  stroke: white;
+  stroke: var(--secondary);
   transform: translateY(0);
   transition: all 0.7s ease-in-out;
 }
 .play-item .circle {
-  stroke: white;
+  stroke: var(--secondary);
   stroke-dasharray: 650;
   stroke-dashoffset: 1300;
   transition: all 0.5s ease-in-out;
 }
-.play-item:hover .text {
+.play-item .play__btn {
+  position: absolute;
+  inset: 0;
+}
+.play-item .play__btn:hover, .play-item .play__btn:focus-visible {
+  background-color: rgba(7, 7, 253, 0.25);
+}
+.play-item .play__btn:hover .text, .play-item .play__btn:focus-visible .text {
   color: var(--pink);
 }
-.play-item:hover .triangle {
+.play-item .play__btn:hover .triangle, .play-item .play__btn:focus-visible .triangle {
   stroke-dashoffset: 0;
   opacity: 1;
   stroke: var(--pink);
   animation: trailorPlay 0.7s ease-in-out;
 }
-.play-item:hover .circle {
+.play-item .play__btn:hover .circle, .play-item .play__btn:focus-visible .circle {
   stroke-dashoffset: 0;
   stroke: var(--pink);
 }

@@ -13,13 +13,13 @@
   -webkit-backdrop-filter: blur(3.5px);
 }
 .header.show {
-  background-color: var(--black3);
+  background-color: var(--main3);
 }
 .header.hide {
   transform: translateY(-60px);
 }
 .header.mobile__view {
-  background: var(--black3);
+  background: var(--main3);
 }
 .header .nav {
   display: flex;
@@ -63,7 +63,7 @@
 .header .nav .nav__list {
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--secondary);
 }
 @media only screen and (min-width: 480px) {
   .header .nav .nav__list {
@@ -115,7 +115,7 @@
 .header .nav .nav__list .nav__item-mobile .nav__btn {
   width: 45px;
   height: 45px;
-  color: white;
+  color: var(--secondary);
   padding: 10px;
 }
 .header .nav .nav__list .nav__item-mobile .nav__btn-icon {
@@ -126,7 +126,7 @@
   position: absolute;
   width: 100%;
   height: 60px;
-  background-color: white;
+  background-color: var(--secondary);
   top: 60px;
   left: 0;
 }
@@ -141,7 +141,7 @@
   flex-shrink: 0;
   width: 45px;
   height: 45px;
-  color: white;
+  color: var(--secondary);
   padding: 10px;
 }
 .header .search .form__btn svg {
@@ -155,7 +155,7 @@
 .header .search .form input {
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: var(--secondary);
   outline: 0;
   border: 0;
   border-radius: 30px 0 0 30px;
@@ -174,8 +174,8 @@
   width: 100%;
   top: 60px;
   left: 0;
-  background: var(--black3);
-  color: white;
+  background: var(--main3);
+  color: var(--secondary);
 }
 .header .nav_mobile-dropdown .nav__mobile-list {
   display: grid;

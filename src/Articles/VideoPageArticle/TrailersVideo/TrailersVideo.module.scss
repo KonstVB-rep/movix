@@ -10,7 +10,7 @@
   text-align: center;
   width: 240px;
   aspect-ratio: 16/9;
-  color: white;
+  color: var(--secondary);
   flex-shrink: 0;
   @include md {
     width: 280px;
@@ -38,45 +38,9 @@
       display: block;
       transition: all 0.7s ease-in-out;
     }
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      height: 50px;
-    }
-    .triangle {
-      stroke-dasharray: 240;
-      stroke-dashoffset: 480;
-      stroke: white;
-      transform: translateY(0);
-      transition: all 0.7s ease-in-out;
-    }
-    .circle {
-      stroke: white;
-      stroke-dasharray: 650;
-      stroke-dashoffset: 1300;
-      transition: all 0.5s ease-in-out;
-    }
-    &:hover {
-      img {
-        opacity: 0.5;
-      }
-      .triangle {
-        stroke-dashoffset: 0;
-        opacity: 1;
-        stroke: var(--pink);
-        animation: trailorPlay 0.7s ease-in-out;
-      }
-      .circle {
-        stroke-dashoffset: 0;
-        stroke: var(--pink);
-      }
-    }
   }
   .video__title {
-    color: white;
+    color: var(--text-grey);
     font-size: 14px;
     line-height: 20px;
     flex-grow: 1;

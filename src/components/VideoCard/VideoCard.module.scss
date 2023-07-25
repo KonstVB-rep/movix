@@ -13,7 +13,7 @@
       content: "";
       position: absolute;
       display: block;
-      color: white;
+      color: var(--secondary);
       text-align: center;
       box-sizing: border-box;
       width: 100%;
@@ -54,7 +54,7 @@
     &:hover + .poster::before,
     &:focus-visible + .poster::before {
       opacity: 1;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
       z-index: 1;
     }
@@ -75,7 +75,7 @@
       content: "Go to the video page";
       position: absolute;
       inset: 0;
-      color: white;
+      color: var(--secondary);
       text-transform: uppercase;
       line-height: 30px;
       padding: 10%;
@@ -97,7 +97,7 @@
       height: 40px;
       position: relative;
       top: 30px;
-      background-color: white;
+      background-color: var(--secondary);
       flex-shrink: 0;
       @include md {
         width: 50px;
@@ -117,7 +117,7 @@
   }
 
   .text {
-    color: white;
+    color: var(--secondary);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -134,7 +134,7 @@
 
     .date {
       font-size: 14px;
-      opacity: 0.5;
+      color: var(--text-grey);;
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useGetData} from "../useGetData.js";
+import {useGetData} from "../commonHooks/useGetData.js";
 import {getUniqData} from "/utils/helpers.js";
 
 const useGetEmployeeCrew = (movieType,id) => {

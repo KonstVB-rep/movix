@@ -1,10 +1,10 @@
 import React from "react";
-import SearchPageArticle from "../Articles/SearchPageArticle/SearchPageArticle.jsx";
+import {SearchPageSection} from "../Articles/SearchPageSection";
 
 const SearchPage = () => {
   return (
     <div className='wrapper'>
-      <SearchPageArticle/>
+      <SearchPageSection/>
     </div>
   );
 };

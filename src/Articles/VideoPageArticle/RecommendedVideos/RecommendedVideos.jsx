@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import useGetKeyData from "../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../hooks/commonHooks/useGetKeyData.js";
 import {WrapperSlider} from "../../../components/WrapperSlider/index.jsx";
 import {VideosCardList} from "../../../components/VideosCardList";
 
@@ -13,9 +13,9 @@ const RecommendedVideos = () => {
       title="Recommendations"
       isError={isError}
       error={error}
-      loading={isLoading}
       endpoint={endpoint}
       data={data?.results}
+      x ='Recommendations'
     >
       <VideosCardList data={data?.results} loading={isLoading} endpoint={endpoint}/>
     </WrapperSlider>

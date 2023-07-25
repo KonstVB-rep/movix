@@ -10,7 +10,7 @@
   justify-content: space-between;
   height: 34px;
   width: 200px;
-  background-color: white;
+  background-color: var(--secondary);
   border-radius: 20px;
 }
 .tab .tab__wrapper .tab__label {
@@ -27,7 +27,7 @@
   transition: color 0.3s ease-in-out;
 }
 .tab .tab__wrapper .tab__label.active {
-  color: white;
+  color: var(--secondary);
 }
 .tab .tab__wrapper .tab__label .tab__item {
   width: 50%;

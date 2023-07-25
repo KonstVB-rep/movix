@@ -10,7 +10,7 @@ import cn from './Genres.module.scss'
 
 
 const Genres = ({genresMovie, classname}) => {
-  const { genres } = useSelector((state) => state.genres);
+  const genres = useSelector((state) => state.genres.genresList);
 
   return (
     <>

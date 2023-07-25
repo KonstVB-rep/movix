@@ -2,7 +2,7 @@
 .details {
   position: relative;
   width: 100%;
-  background-color: var(--black);
+  background-color: var(--main);
   padding-top: 100px;
   padding-bottom: 50px;
   @include sm {
@@ -34,7 +34,7 @@
     background: linear-gradient(
       180deg,
       rgba(4, 21, 45, 0) 0%,
-      var(--black) 79.17%
+      var(--main) 79.17%
     );
     position: absolute;
     bottom: 0;
@@ -61,10 +61,14 @@
       }
     }
     .describe {
-      color: white;
+      color: var(--secondary);
       .title {
         font-size: 28px;
         line-height: 40px;
+        a{
+          display: block;
+          width: 100%;
+        }
         @include md {
           font-size: 34px;
           line-height: 44px;
@@ -75,7 +79,7 @@
           line-height: 24px;
           margin-bottom: 15px;
           font-style: italic;
-          opacity: 0.5;
+          color: var(--text-grey);;
           @include sm {
             font-size: 20px;
             line-height: 28px;

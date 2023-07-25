@@ -8,13 +8,13 @@ import { useParams } from "react-router-dom";
 import { ProfitabilityFilm } from "../ProfitabilityFilm";
 import { DurationOfSeries } from "../DurationOfSeries";
 import {InfoRow} from "../IInfoRow/index.jsx";
-import useGetKeyData from "../../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../../hooks/commonHooks/useGetKeyData.js";
 
 import cn from "./About.module.scss";
 
 const About = () => {
   const { movieType, id } = useParams();
-  const url = useSelector((state) => state.urlBaseForImages.url);
+  const urlBackdrop = useSelector((state) => state.urlBaseForImages.url?.backdrop);
 
   const {data: movieDetails} = useGetKeyData().movie_details(movieType,id)
 
@@ -75,7 +75,7 @@ const About = () => {
               title={name}
             >
               {logo_path ? (
-                <Img src={url?.backdrop + logo_path} />
+                <Img src={urlBackdrop + logo_path} />
               ) : (
                 <div className={cn["icon-placeholder"]}>
                   <MdOutlineImageNotSupported />

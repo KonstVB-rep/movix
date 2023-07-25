@@ -19,7 +19,7 @@
 }
 .info .text {
   margin-right: 10px;
-  opacity: 0.5;
+  color: var(--text-grey);
   line-height: 24px;
   text-transform: capitalize;
 }

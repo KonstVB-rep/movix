@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { PlayBtn } from "../PlayBtn";
+import { PlayBtn } from "./PlayBtn";
 import cn from "./WatchTrailerButton.module.scss";
 import VideoPlayer from "../VideoPleer/VideoPlayer.jsx";
-import { useGetData } from "../../hooks/useGetData.js";
+import { useGetData } from "../../hooks/commonHooks/useGetData.js";
 import { useParams } from "react-router-dom";
 
 const WatchTrailerButton = ({ classname }) => {

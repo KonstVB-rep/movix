@@ -5,7 +5,7 @@ import { Img } from "../../../components/Img";
 import { useSelector } from "react-redux";
 
 import Poster from "./Poster/Poster.jsx";
-import { useGetData } from "../../hooks/useGetData.js";
+import { useGetData } from "../../hooks/commonHooks/useGetData.js";
 import { Skeleton } from "./Skeleton/index.jsx";
 import {Description} from "./Desciption/";
 
@@ -13,7 +13,7 @@ import cn from "./VideoDetails.module.scss";
 
 const VideoDetails = () => {
   const { movieType, id } = useParams();
-  const { url } = useSelector((state) => state.urlBaseForImages);
+  const urlBackdrop = useSelector((state) => state.urlBaseForImages.url?.backdrop);
 
   const { data, isLoading, isError, error, isFetching } = useGetData(
     movieType,
@@ -30,7 +30,7 @@ const VideoDetails = () => {
           {data && (
             <>
               <div className={cn.backdrop}>
-                <Img src={url?.backdrop + data?.backdrop_path} />
+                <Img src={urlBackdrop + data?.backdrop_path} />
               </div>
               <div className={cn["opacity-layer"]}></div>
               <div className={`${cn.wrapper} wrapper`}>

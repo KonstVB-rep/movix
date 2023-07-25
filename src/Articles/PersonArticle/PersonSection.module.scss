@@ -1,0 +1,122 @@
+@import '../../mixins.scss';
+
+.profile{
+  padding: 100px 0 50px;
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  line-height: 30px;
+  &__foto{
+    min-width: 300px;
+    width: 40%;
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 700px;
+    & > span{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__info{
+    color: var(--secondary);
+    width: 100%;
+    .info-item{
+      padding: 5px;
+      border-radius: 12px;
+    }
+    .info-item,
+    .info-span{
+      color: #ec5f2b;
+      font-size: 1rem;
+      text-transform: uppercase;
+      .text{
+        text-transform:initial;
+        padding-left: 5px;
+        font-size: 1.2rem;
+        color: var(--secondary);
+      }
+    }
+    .biography{
+      position: relative;
+      padding: 5px;
+      border-radius: 12px;
+      &__btn{
+        position: absolute;
+        inset:0;
+        border-radius: 12px;
+        &:hover{
+          background-color: #ff450021;
+        }
+        &:focus,
+        &:focus-visible{
+          outline:auto;
+        }
+      }
+      &_short{
+        padding: 0;
+        display: -webkit-box;
+        text-align: start;
+        margin: 0 auto;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: var(--secondary);
+      }
+    }
+  }
+}
+
+.modal{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 30;
+  &__content{
+    position: absolute;
+    width: 90%;
+    max-height: 80vh;
+    font-size: 18px;
+    top: 50%;
+    left: 50%;
+    color: black;
+    transform: translate(-50%, -50%);
+    &::before,
+    &::after{
+      content:'';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background-color: var(--main);
+
+    }
+    &::before{
+      top: -1px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    &::after{
+      bottom: -1px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .modal__text{
+      max-height: inherit;
+      overflow: auto;
+      border-radius: 20px;
+      background-color: var(--main);
+      color: var(--secondary);
+      padding: 20px;
+      white-space: break-spaces;
+    }
+    @include md{
+      width: 70%;
+    }
+  }
+}
+
+

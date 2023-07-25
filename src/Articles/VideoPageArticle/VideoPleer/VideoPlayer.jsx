@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import cn from "./VideoPlayer.module.scss";
 import { ErrorElement } from "../../../components/ErrorElement/index.jsx";
 import {IoCloseCircleSharp} from "react-icons/io5";
+import ButtonClose from "../../../components/Buttons/ButtonClose/index.jsx";
 
 const VideoPlayer = ({
   show,
@@ -20,9 +21,7 @@ const VideoPlayer = ({
     <div className={`${cn.video} ${show ? cn.visible : ""}`}>
       <div className={cn["opacity-layer"]} onClick={hidePopup}></div>
       <div className={cn.player}>
-        <button className={cn.close} onClick={hidePopup}>
-          <IoCloseCircleSharp/>
-        </button>
+        <ButtonClose close={hidePopup}/>
         {isError ? (
           <ErrorElement classname="error-trailer">Video not found</ErrorElement>
         ) : (

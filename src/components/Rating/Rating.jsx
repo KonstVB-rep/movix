@@ -1,10 +1,10 @@
-import React from "react";
+import React, {memo} from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 import cn from "./Rating.module.scss";
 
-const Rating = ({ rating, classname }) => {
+const Rating = memo(({ rating, classname }) => {
   return (
     <div className={`${cn.rating} ${cn[classname]}`}>
       <CircularProgressbar
@@ -19,6 +19,6 @@ const Rating = ({ rating, classname }) => {
       />
     </div>
   );
-};
+});
 
 export default Rating;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useGetKeyData from "../../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../../hooks/commonHooks/useGetKeyData.js";
 import { ActorCard } from "../ActorCard";
 import { Skeleton } from "../Skeleton";
 import cn from "../Actors.module.scss";

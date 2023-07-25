@@ -6,7 +6,7 @@
   align-items: center;
   text-align: center;
   width: 125px;
-  color: white;
+  color: var(--secondary);
 }
 @media only screen and (min-width: 768px) {
   .item {
@@ -18,7 +18,7 @@
   height: 125px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid white;
+  border: 2px solid var(--secondary);
   background-color: var(--bg-skeleton);
 }
 @media only screen and (min-width: 768px) {
@@ -61,7 +61,7 @@
 .item .character {
   font-size: 14px;
   line-height: 20px;
-  opacity: 0.5;
+  color: var(--text-grey);
   flex-grow: 1;
 }
 .item .character span {

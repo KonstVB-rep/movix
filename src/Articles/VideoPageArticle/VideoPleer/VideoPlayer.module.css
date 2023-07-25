@@ -43,33 +43,6 @@
   color: black;
   z-index: -1;
 }
-.video .player .close {
-  position: absolute;
-  top: -50px;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  right: 0;
-  color: white;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-.video .player .close:hover, .video .player .close:focus-visible {
-  scale: 1.3;
-  color: black;
-}
-.video .player .close:hover svg, .video .player .close:focus-visible svg {
-  stroke: white;
-  stroke-width: 5px;
-}
-.video .player .close:active {
-  scale: 0.9;
-  color: white;
-}
-.video .player .close svg {
-  width: 100%;
-  height: 100%;
-}
 .video.visible {
   opacity: 1;
   visibility: visible;

@@ -1,5 +1,37 @@
 @import "../../../mixins.scss";
 
+@mixin svg-default {
+  .triangle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: var(--secondary);
+    transform: translateY(0);
+    transition: all 0.7s ease-in-out;
+  }
+  .circle {
+    stroke: var(--secondary);
+    stroke-dasharray: 650;
+    stroke-dashoffset: 1300;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+@mixin svg-hover {
+  .text {
+    color: var(--pink);
+  }
+  .triangle {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    stroke: var(--pink);
+    animation: trailorPlay 0.7s ease-in-out;
+  }
+  .circle {
+    stroke-dashoffset: 0;
+    stroke: var(--pink);
+  }
+}
+
 .play {
   display: flex;
   align-items: center;
@@ -15,33 +47,10 @@
     font-size: 20px;
     transition: all 0.7s ease-in-out;
   }
-  .triangle {
-    stroke-dasharray: 240;
-    stroke-dashoffset: 480;
-    stroke: white;
-    transform: translateY(0);
-    transition: all 0.7s ease-in-out;
-  }
-  .circle {
-    stroke: white;
-    stroke-dasharray: 650;
-    stroke-dashoffset: 1300;
-    transition: all 0.5s ease-in-out;
-  }
-  &:hover {
-    .text {
-      color: var(--pink);
-    }
-    .triangle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-      stroke: var(--pink);
-      animation: trailorPlay 0.7s ease-in-out;
-    }
-    .circle {
-      stroke-dashoffset: 0;
-      stroke: var(--pink);
-    }
+  @include svg-default;
+  .play__btn:hover,
+  .play__btn:focus-visible{
+    @include svg-hover;
   }
 }
 
@@ -54,39 +63,17 @@
       width: 80px;
     }
   }
-  button{
-    position: absolute;
-    inset:0;
-  }
   .title {
     display: none;
   }
-  .triangle {
-    stroke-dasharray: 240;
-    stroke-dashoffset: 480;
-    stroke: white;
-    transform: translateY(0);
-    transition: all 0.7s ease-in-out;
-  }
-  .circle {
-    stroke: white;
-    stroke-dasharray: 650;
-    stroke-dashoffset: 1300;
-    transition: all 0.5s ease-in-out;
-  }
-  &:hover {
-    .text {
-      color: var(--pink);
-    }
-    .triangle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-      stroke: var(--pink);
-      animation: trailorPlay 0.7s ease-in-out;
-    }
-    .circle {
-      stroke-dashoffset: 0;
-      stroke: var(--pink);
+  @include svg-default;
+  .play__btn {
+    position: absolute;
+    inset: 0;
+    &:hover,
+    &:focus-visible {
+      background-color: rgba(7, 7, 253, 0.25);
+      @include svg-hover;
     }
   }
 }

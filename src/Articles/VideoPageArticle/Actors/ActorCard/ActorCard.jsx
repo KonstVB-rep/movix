@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 const ActorCard = ({data}) => {
 
-  const url = useSelector((state) => state.urlBaseForImages.url);
+  const url = useSelector((state) => state.urlBaseForImages.url?.profile);
 
   const {id, profile_path, name, character} = data;
 
@@ -15,7 +15,7 @@ const ActorCard = ({data}) => {
     <li className={cn.item}>
       <Link to={`/person/${id}`} className='link'/>
       <p className={cn.avatar}>
-        <Img src={profile_path ? url?.profile + profile_path : avatar} />
+        <Img src={profile_path ? url + profile_path : avatar} />
       </p>
       <p className={cn.name}>{name}</p>
       <p className={cn.character}>

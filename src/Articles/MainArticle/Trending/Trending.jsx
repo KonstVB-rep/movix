@@ -2,7 +2,7 @@ import React from "react";
 
 import { WrapperSlider } from "../../../components/WrapperSlider";
 import { SwitchTabs } from "../../../components/SwitchTabs/index.jsx";
-import useGetKeyData from "../../hooks/useGetKeyData.js";
+import useGetKeyData from "../../hooks/commonHooks/useGetKeyData.js";
 import {VideosCardList} from "../../../components/VideosCardList";
 
 const Trending = () => {
@@ -11,7 +11,6 @@ const Trending = () => {
   return (
     <WrapperSlider
       title="Trending"
-      loading={isLoading}
       isError={isError}
       error={error}
       endpoint={endpoint}

@@ -16,7 +16,7 @@
 .banner {
   width: 100%;
   height: 450px;
-  background-color: var(--black);
+  background-color: var(--main);
   display: flex;
   align-items: center;
   position: relative;
@@ -31,16 +31,6 @@
     left: 0;
     opacity: 0.5;
     overflow: hidden;
-    //.lazy-load-image-background {
-    //  width: 100%;
-    //  height: 100%;
-    //  img {
-    //    width: 100%;
-    //    height: 100%;
-    //    object-fit: cover;
-    //    object-position: center;
-    //  }
-    //}
   }
   .opacity-layer {
     width: 100%;
@@ -54,7 +44,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: var(--secondary);
     text-align: center;
     position: relative;
     max-width: 800px;
@@ -101,7 +91,7 @@
         padding: 0 120px 0 15px;
         font-size: 14px;
         &:focus-visible{
-          background-color: white;
+          background-color: var(--secondary);
         }
         &::placeholder{
           color:black;
@@ -122,7 +112,7 @@
         width: 100px;
         height: 46px;
         background-color: var(--blue);
-        color: white;
+        color: var(--secondary);
         outline: 0;
         border-radius: 30px;
         font-size: 16px;
@@ -133,7 +123,7 @@
         & span{
           position: relative;
           z-index: 2;
-          color:white;
+          color:var(--secondary);
         }
         &:before{
           position: absolute;
@@ -147,10 +137,10 @@
         }
         &:hover,
         &:focus-visible{
-          border-color:white;
+          border-color:var(--secondary);
         }
         &:active{
-          border-color:white;
+          border-color:var(--secondary);
         }
         &:active:before{
           width: 100%;

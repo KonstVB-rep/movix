@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useGetData} from "../useGetData.js";
+import {useGetData} from "../commonHooks/useGetData.js";
 
 const useGetMovies = (value,endpoints =[], urlStart='', urlEnd='', config) => {
 

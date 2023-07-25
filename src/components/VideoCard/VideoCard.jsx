@@ -12,7 +12,7 @@ import cn from "./VideoCard.module.scss";
 
 const VideoCard = ({ data,endpoint, classname = 'slide_flex' }) => {
 
-  const url = useSelector((state) => state.urlBaseForImages.url);
+  const urlPoster = useSelector((state) => state.urlBaseForImages.url?.poster);
 
   const [poster, setPoster] = useState(LoadingImg);
 
@@ -20,10 +20,10 @@ const VideoCard = ({ data,endpoint, classname = 'slide_flex' }) => {
 
   useEffect(() => {
     const posterUrl = poster_path
-      ? url && `${url?.poster}${poster_path}`
+      ? urlPoster && `${urlPoster}${poster_path}`
       : PosterFallback;
     setPoster(posterUrl);
-  }, [data, url]);
+  }, [data, urlPoster]);
 
   return (
     <li

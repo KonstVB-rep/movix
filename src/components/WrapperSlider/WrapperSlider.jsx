@@ -7,7 +7,6 @@ import cn from "./WrapperSlider.module.scss";
 
 const WrapperSlider = ({
   data,
-  loading,
   title,
   endpoint,
   isError,
@@ -15,6 +14,7 @@ const WrapperSlider = ({
   children,
   isFetching,
 }) => {
+
   if (isError) {
     return (
       <div className={cn.carousel}>
@@ -36,7 +36,8 @@ const WrapperSlider = ({
             <h3 className= {'title-article'}>{title}</h3>
             {children[1]}
           </div>
-          <Slider endpoint={endpoint} loading={loading} isFetching={isFetching}>
+          <Slider endpoint={endpoint}
+                  isFetching={isFetching} >
             {children[0] || children}
           </Slider>
         </div>

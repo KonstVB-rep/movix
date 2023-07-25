@@ -5,7 +5,7 @@
     position: relative;
     .slider__title {
       font-size: 24px;
-      color: white;
+      color: var(--secondary);
       margin-bottom: 20px;
       font-weight: normal;
     }
@@ -14,12 +14,12 @@
       width: 50px;
       height: 50px;
       padding: 10px;
-      top: 35%;
+      top: 40%;
       display: none;
       border-radius: 50%;
       transform: translateY(-50%);
       font-size: 30px;
-      color: white;
+      color: var(--secondary);
       z-index: 10;
       transition: all 0.2s ease-in-out;
       &::before{
@@ -54,22 +54,17 @@
       right: 30px;
     }
     .slides {
-      //display: grid;
-      //grid-auto-flow: column;
-      //grid-template-columns: repeat(auto-fit,minmax(216px,1fr));
-      //align-items: center;
-      //margin: 40px auto;
-      //gap: 20px;
       display: flex;
       gap: 20px;
+      cursor: grab;
       overflow-y: hidden;
-      padding: 40px 0;
+      padding: 20px 5px;
       width: calc(100vw - 40px);
       @include xl{
         gap: 20px;
         overflow: hidden;
         margin: 0;
-        padding: 0;
+        padding: 40px 5px;
         width: 100%;
       }
     }

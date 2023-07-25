@@ -1,8 +1,8 @@
-import cn from '../WatchTrailerButton/WatchTrailerButton.module.scss'
+import cn from '../WatchTrailerButton.module.scss'
 
 const PlayBtn = () => {
   return (
-    <button title='Watch Trailer'>
+    <button title='Watch Trailer' className={cn.play__btn}>
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

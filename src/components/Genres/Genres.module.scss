@@ -13,7 +13,7 @@
     font-size: 12px;
     height: auto;
     border-radius: 4px;
-    color: white;
+    color: var(--secondary);
     white-space: nowrap;
   }
   &_slide{
@@ -29,9 +29,9 @@
   }
 }
 .genres-empty{
-  width: 100%;
+  width: 60%;
   height: 20px;
   margin-bottom: 10px;
-  background-color: #434b4b;
+  background-color: var(--text-grey);
   border-radius: 12px;
 }

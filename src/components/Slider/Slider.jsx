@@ -5,11 +5,18 @@ import {
 } from "react-icons/bs";
 
 import cn from "./Slider.module.scss";
-import { debounce } from "../../../utils/helpers.js";
+import { useParams } from "react-router-dom";
 
-const Slider = ({ loading, isFetching, endpoint = "", children }) => {
+const isVisibleArrowsDir = (ref, fn) => {
+  const { scrollWidth: sliderScrollWidth, offsetWidth: sliderOffsetWidth } =
+    ref;
+  fn(sliderScrollWidth > sliderOffsetWidth);
+};
+
+const Slider = ({ isFetching, endpoint = "", children }) => {
+  const { id } = useParams();
+
   const sliderContainer = useRef(null);
-  const sliderWrapper = useRef(null);
   const [disabledArrow, setDisabledArrow] = useState("left");
   const [visible, setVisible] = useState("false");
 
@@ -17,7 +24,6 @@ const Slider = ({ loading, isFetching, endpoint = "", children }) => {
     const container = sliderContainer.current;
 
     if (container) {
-
       const scrollAmount =
         dir === "left"
           ? container.scrollLeft - (container.offsetWidth + 20)
@@ -34,28 +40,21 @@ const Slider = ({ loading, isFetching, endpoint = "", children }) => {
         left: scrollAmount,
         behavior: "smooth",
       });
-
     }
-  };
-
-  const debounceResize = () => {
-    const { scrollWidth: sliderScrollWidth, offsetWidth: sliderOffsetWidth } =
-      sliderContainer.current;
-    setVisible(sliderScrollWidth > sliderOffsetWidth);
   };
 
   useEffect(() => {
-    if (sliderContainer.current && !loading && !isFetching) {
+    if (sliderContainer.current && !isFetching) {
       sliderContainer.current.scrollLeft = 0;
-      debounceResize();
     }
+    isVisibleArrowsDir(sliderContainer.current, setVisible);
     setDisabledArrow("left");
-  }, [endpoint, loading, isFetching]);
+  }, [endpoint, isFetching, id]);
 
   return (
     <div className={cn.slider}>
-      <div className={`${cn.wrapper} wrapper`} ref={sliderWrapper}>
-        {visible && !loading && !isFetching ? (
+      <div className={`${cn.wrapper} wrapper`}>
+        {visible && !isFetching ? (
           <>
             <button
               onClick={() => navigation("left")}

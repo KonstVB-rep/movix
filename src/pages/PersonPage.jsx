@@ -1,13 +1,14 @@
 import React from 'react';
-import useGetKeyData from "../Articles/hooks/useGetKeyData.js";
+import useGetKeyData from "../Articles/hooks/commonHooks/useGetKeyData.js";
 import {useParams} from "react-router-dom";
 
+import {useSelector} from "react-redux";
+import {PersonSection} from "../Articles/PersonArticle";
+
 const PersonPage = () => {
-  const{id} = useParams()
-  const {data} = useGetKeyData().person(id)
   return (
-    <div>
-      Person
+    <div className='wrapper'>
+        <PersonSection/>
     </div>
   );
 };

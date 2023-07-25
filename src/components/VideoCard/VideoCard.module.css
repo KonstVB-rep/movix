@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   display: block;
-  color: white;
+  color: var(--secondary);
   text-align: center;
   box-sizing: border-box;
   width: 100%;
@@ -54,7 +54,7 @@
 }
 .slide a:hover + .poster::before, .slide a:focus-visible + .poster::before {
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   z-index: 1;
 }
@@ -74,7 +74,7 @@
   content: "Go to the video page";
   position: absolute;
   inset: 0;
-  color: white;
+  color: var(--secondary);
   text-transform: uppercase;
   line-height: 30px;
   padding: 10%;
@@ -95,7 +95,7 @@
   height: 40px;
   position: relative;
   top: 30px;
-  background-color: white;
+  background-color: var(--secondary);
   flex-shrink: 0;
 }
 @media only screen and (min-width: 768px) {
@@ -116,7 +116,7 @@
   }
 }
 .slide .text {
-  color: white;
+  color: var(--secondary);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -139,7 +139,7 @@
 }
 .slide .text .date {
   font-size: 14px;
-  opacity: 0.5;
+  color: var(--text-grey);
 }
 
 /*# sourceMappingURL=VideoCard.module.css.map */

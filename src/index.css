@@ -8,11 +8,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --black: #272727;
-  --black2: #041226;
-  --black3: #020c1b;
-  --black-lighter: #1c4b91;
-  --black-light: #173d77;
+  --main: #272727;
+  --secondary: snow;
+  --main2: #041226;
+  --main3: #020c1b;
+  --main-lighter: #1c4b91;
+  --main-light: #173d77;
+  --text-grey: grey;
   --pink: #da2f68;
   --orange: #f89e00;
   --green: #076b3f;
@@ -34,11 +36,14 @@ html {
 
 body {
   height: 100vh;
-  background-color: var(--black);
+  background-color: var(--main);
+}
+body.overflow-hidden {
+  overflow: hidden;
 }
 
 #root {
-  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -63,7 +68,7 @@ img {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
 }
 
 ul {
@@ -109,8 +114,12 @@ ul {
 .title-article {
   text-transform: uppercase;
   font-size: 24px;
-  color: white;
+  color: var(--secondary);
   font-weight: normal;
+}
+
+button, a, img {
+  user-select: none;
 }
 
 /*# sourceMappingURL=index.css.map */

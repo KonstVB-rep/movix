@@ -29,31 +29,20 @@ export const fetchAllGenres = createAsyncThunk(
 const initialState = {
   loading: '',
   error: '',
-  genres: {},
+  genresList: {},
 };
 
 const genresSlice = createSlice({
   name: "main",
   initialState,
-  reducers: {
-    getApiConfiguration(state, action) {
-      if (action.payload) {
-        state.url = action.payload;
-      }
-    },
-    getGenres(state, action) {
-      if (action.payload) {
-        state.genres = action.payload;
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAllGenres.pending, (state, action) => {
       state.loading = "loading";
       state.error = '';
     });
     builder.addCase(fetchAllGenres.fulfilled, (state, action) => {
-      state.genres = action.payload;
+      state.genresList = action.payload;
       state.loading = "fulfilled";
     });
     builder.addCase(fetchAllGenres.rejected, (state, action) => {
@@ -63,5 +52,4 @@ const genresSlice = createSlice({
   },
 });
 
-export const { getGenres } = genresSlice.actions;
 export default genresSlice.reducer;

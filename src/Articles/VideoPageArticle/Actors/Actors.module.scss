@@ -8,7 +8,7 @@
   align-items: center;
   text-align: center;
   width: 125px;
-  color: white;
+  color: var(--secondary);
   @include md {
     width: 175px;
   }
@@ -18,7 +18,7 @@
     height: 125px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid white;
+    border: 2px solid var(--secondary);
     background-color: var(--bg-skeleton);
     @include md {
       width: 175px;
@@ -59,7 +59,7 @@
   .character {
     font-size: 14px;
     line-height: 20px;
-    opacity: 0.5;
+    color: var(--text-grey);;
     flex-grow: 1;
 
     & span {

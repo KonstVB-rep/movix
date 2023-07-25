@@ -5,13 +5,13 @@ import cn from './Poster.module.scss'
 import {useSelector} from "react-redux";
 
 const Poster = ({poster}) => {
-  const url = useSelector((state) => state.urlBaseForImages.url);
+  const urlBackdrop = useSelector((state) => state.urlBaseForImages.url?.backdrop);
   return (
     <div className={cn.poster}>
       {poster ? (
         <Img
           className={cn.poster__img}
-          src={url?.backdrop + poster}
+          src={urlBackdrop + poster}
         />
       ) : (
         <Img className={cn.poster__img} src={PosterFallback} />
