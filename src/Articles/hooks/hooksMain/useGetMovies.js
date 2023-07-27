@@ -1,17 +1,22 @@
-import React, {useState} from 'react';
-import {useGetData} from "../commonHooks/useGetData.js";
+import React, { useEffect, useState } from "react";
+import { useGetData } from "../commonHooks/useGetData.js";
+import useSwitchTabs from "../commonHooks/useSwitchTabs.js";
 
-const useGetMovies = (value,endpoints =[], urlStart='', urlEnd='', config) => {
+const useGetMovies = (value, endpoint, urlStart = "", urlEnd = "", config) => {
+  const { data, isLoading, isError, error, isFetching } = useGetData(
+    value,
+    `/${urlStart}${endpoint}${urlEnd}`,
+    endpoint,
+    config
+  );
 
-  const [endpoint, setEndpoint] = useState(endpoints[0]);
-
-  const {data, isLoading, isError, error, isFetching} = useGetData(value,`/${urlStart}${endpoint}${urlEnd}`,endpoint,config )
-
-  const onTabChange = (index) => {
-    setEndpoint(!index ? endpoints[0] : endpoints[1]);
+  return {
+    data,
+    isLoading,
+    isError,
+    error,
+    isFetching,
   };
-
-  return {onTabChange,data,endpoint,isLoading,isError,error, isFetching}
 };
 
 export default useGetMovies;

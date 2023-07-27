@@ -2,23 +2,17 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {getData} from "../../utils/api.js";
 
 export const fetchAllGenres = createAsyncThunk(
-  "main/fetchAllGenres",
+  "genresList/fetchAllGenres",
   async () => {
     let promises = [];
     let endPoints = ["tv", "movie"];
-    let allGenres = {};
 
     try {
       endPoints.forEach((point) => {
         promises.push(getData(`/genre/${point}/list`));
       });
 
-      const data = await Promise.all(promises);
-
-      data.map(({ genres }) => {
-        return genres.map((item) => (allGenres[item.id] = item));
-      });
-      return allGenres;
+      return await Promise.all(promises);
 
     } catch (e) {
       return e.response.data.status_message;
@@ -29,11 +23,13 @@ export const fetchAllGenres = createAsyncThunk(
 const initialState = {
   loading: '',
   error: '',
-  genresList: {},
+  all: {},
+  tv:[],
+  movie:[],
 };
 
 const genresSlice = createSlice({
-  name: "main",
+  name: "genresList",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -42,7 +38,11 @@ const genresSlice = createSlice({
       state.error = '';
     });
     builder.addCase(fetchAllGenres.fulfilled, (state, action) => {
-      state.genresList = action.payload;
+      action.payload.map(({ genres }) => {
+        return genres.map((item) => state.all[item.id] = item.name);
+      });
+      state.tv= action.payload[0].genres.map((item => ({label: item.name, value:item.id})))
+      state.movie =action.payload[1].genres.map((item => ({label: item.name, value:item.id})))
       state.loading = "fulfilled";
     });
     builder.addCase(fetchAllGenres.rejected, (state, action) => {

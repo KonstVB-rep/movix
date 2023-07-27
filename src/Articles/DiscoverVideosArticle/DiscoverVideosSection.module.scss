@@ -1,0 +1,65 @@
+@import "../../mixins.scss";
+.select-group {
+  .select :global {
+    & .ant-select-selector {
+      border-radius: 20px;
+      background-color: #dabe95;
+
+      &:hover,
+      &:focus-visible,
+      &:focus-within{
+        background-color: var(--secondary);
+      }
+
+      .ant-select-selection-placeholder {
+        color: var(--bg-body);
+      }
+    }
+  }
+}
+
+
+:global {
+  .ant-select-dropdown{
+    background-color: var(--bg-body);
+  }
+  .ant-select-item.ant-select-item-option{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: var(--secondary);
+  }
+  .ant-select-item.ant-select-item-option.ant-select-item-option-active {
+    background-color: var(--secondary);
+    color: var(--bg-body)
+  }
+  .ant-select-selection-placeholder {
+    color: var(--secondary);
+  }
+}
+
+
+.select-group {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  @include md {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .select {
+    width:100%;
+    border-radius: 20px;
+    @include sm{
+      width:50%;
+    }
+    @include lg {
+      width: 100%;
+    }
+  }
+}
+
+

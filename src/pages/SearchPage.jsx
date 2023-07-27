@@ -1,5 +1,5 @@
 import React from "react";
-import {SearchPageSection} from "../Articles/SearchPageSection";
+import SearchPageSection from "../Articles/SearchPageSection";
 
 const SearchPage = () => {
   return (

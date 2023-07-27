@@ -1,4 +1,7 @@
-.loader {
+.wrapper-loader {
+  grid-column: 1/-1;
+}
+.wrapper-loader .loader {
   width: 100%;
   margin: 20px 0;
   border-radius: 12px;
@@ -8,8 +11,7 @@
   background: rgba(255, 255, 255, 0.15);
   overflow: hidden;
 }
-
-.loader::after {
+.wrapper-loader .loader::after {
   content: "";
   width: 192px;
   height: 4.8px;
@@ -32,4 +34,4 @@
   }
 }
 
-/*# sourceMappingURL=Loader.module.css.map */
+/*# sourceMappingURL=Index.module.css.map */

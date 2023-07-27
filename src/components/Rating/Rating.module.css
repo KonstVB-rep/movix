@@ -1,13 +1,21 @@
 .rating {
   width: 50px;
+  position: relative;
   height: 50px;
   flex-shrink: 0;
-  background-color: var(--main);
+  background-color: var(--bg-body);
   border-radius: 50%;
   overflow: hidden;
   padding: 2px;
 }
-.rating_slide {
+.rating::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0;
+}
+.rating_card {
   position: absolute;
   bottom: -20px;
   left: 20px;
@@ -15,7 +23,7 @@
 .rating .text {
   font-size: 34px;
   font-weight: 700;
-  fill: var(--main);
+  fill: var(--bg-body);
 }
 .rating .text > .CircularProgressbar-trail {
   stroke: transparent;
@@ -27,7 +35,7 @@
   padding: 0;
   background-color: var(--main2);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .rating_single-movie {
     max-width: 90px;
     width: 83px;

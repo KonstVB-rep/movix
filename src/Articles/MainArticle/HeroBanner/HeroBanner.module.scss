@@ -16,7 +16,7 @@
 .banner {
   width: 100%;
   height: 450px;
-  background-color: var(--main);
+  background-color: var(--bg-body);
   display: flex;
   align-items: center;
   position: relative;
@@ -35,7 +35,7 @@
   .opacity-layer {
     width: 100%;
     height: 220px;
-    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #272727 80%);
+    background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, var(--bg-body) 80%);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -84,7 +84,6 @@
         width: 100%;
         height: 50px;
         background-color: #dabe95;
-        //color: #1c2c93;
         outline: 0;
         border: 0;
         border-radius: 30px;
@@ -145,7 +144,7 @@
         &:active:before{
           width: 100%;
           transform: translateX(100%);
-          background-color: #0fa20f;
+          background-color: #017000;
         }
         @include md {
           width: 150px;

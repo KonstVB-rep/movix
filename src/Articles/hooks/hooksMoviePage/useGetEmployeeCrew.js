@@ -7,7 +7,8 @@ const useGetEmployeeCrew = (movieType,id) => {
   const {data, isLoading, isError,error} = useGetData(
     "crew",
     `/${movieType}/${id}/credits`,
-    id
+    id,
+    {enabled: !!(movieType && id)}
   )
 
   const director = data?.crew?.filter((person) => person.job === "Director");

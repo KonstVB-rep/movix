@@ -1,23 +1,17 @@
 @import "../../mixins.scss";
-
-.error-slider{
-  height: 300px;
-  max-height: 406px;
-  width: 100%;
-  border-radius: 15px;
-  background-color: var(--bg-skeleton);
-  color:aliceblue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include md {
-    height: 400px;
+.error-wrapper{
+  margin-top: 100px;
+  .error{
+    height: 300px;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--bg-skeleton);
+    color:aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
-.error-trailer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
+
+

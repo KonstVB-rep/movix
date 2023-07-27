@@ -1,52 +1,45 @@
 @import "../../mixins.scss";
 
-.skeletons {
-  display: flex;
+.skeletons__item {
+  position: relative;
   width: 100%;
-  gap: 10px;
-  overflow-y: hidden;
-  margin-right: -20px;
-  margin-left: -20px;
-  padding: 0 20px;
-  @include md {
-    gap: 20px;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  .skeletons__item {
-    width: 125px;
-    height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  &_flex{
+    flex-grow: 1;
+    max-width: 216px;
     @include md {
-      width: calc(25% - 15px);
+      max-width: 314px;
     }
     @include lg {
-      width: calc(20% - 16px);
+      max-width: 274px;
     }
-    flex-shrink: 0;
-    .poster {
-      border-radius: 12px;
+  }
+  .poster {
+    border-radius: 12px;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    margin-bottom: 30px;
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    .title {
       width: 100%;
-      aspect-ratio: 1 / 1.5;
-      margin-bottom: 30px;
+      height: 20px;
+      margin-bottom: 10px;
     }
-    .text {
-      display: flex;
-      flex-direction: column;
-      .title {
-        width: 100%;
-        height: 20px;
-        margin-bottom: 10px;
-      }
-      .genre{
-        width: 100%;
-        min-height: 20px;
-        margin-bottom: 10px;
-      }
-      .date {
-        width: 75%;
-        height: 20px;
-      }
+    .genre {
+      width: 100%;
+      min-height: 20px;
+      margin-bottom: 10px;
+    }
+    .date {
+      width: 75%;
+      height: 20px;
     }
   }
 }

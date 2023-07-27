@@ -2,9 +2,9 @@ import React, {useMemo} from 'react';
 import {getData} from "../../../../utils/api.js";
 import {useInfiniteQuery} from "react-query";
 
-const useGetVideosSearchByQuery= (query) => {
+const useGetVideosSearchByQuery= (url, queryParams,name_request) => {
   const getSearchByQuery = ({ pageParam = 1 }) =>
-    getData(`/search/multi?query=${query}&page=${pageParam}`);
+    getData(`${url}`,{...queryParams, page: pageParam});
 
   const {
     data,
@@ -12,8 +12,9 @@ const useGetVideosSearchByQuery= (query) => {
     isLoading,
     fetchNextPage,
     hasNextPage,
-    isError
-  } = useInfiniteQuery(["search_query", query], getSearchByQuery, {
+    isError,
+    isFetching
+  } = useInfiniteQuery([name_request,url], getSearchByQuery, {
     getNextPageParam: (lastPage) =>
       lastPage.page < lastPage.total_pages ? lastPage.page + 1 : false,
   });
@@ -31,7 +32,7 @@ const useGetVideosSearchByQuery= (query) => {
   const total_results = data?.pages[0]?.total_results;
   const dataPages = data?.pages
 
-  return {videos,error, isError, isLoading, fetchNextPage, hasNextPage, total_results,dataPages}
+  return {videos,error, isError, isLoading, fetchNextPage, hasNextPage, total_results,dataPages,isFetching}
 };
 
 export default useGetVideosSearchByQuery;

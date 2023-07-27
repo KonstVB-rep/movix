@@ -1,13 +1,13 @@
 import React from 'react';
-import useGetKeyData from "../Articles/hooks/commonHooks/useGetKeyData.js";
+import useApi from "../Articles/hooks/commonHooks/useApi.js";
 import {useParams} from "react-router-dom";
 
 import {useSelector} from "react-redux";
-import {PersonSection} from "../Articles/PersonArticle";
+import PersonSection from "../Articles/PersonArticle";
 
 const PersonPage = () => {
   return (
-    <div className='wrapper'>
+    <div className='main wrapper'>
         <PersonSection/>
     </div>
   );

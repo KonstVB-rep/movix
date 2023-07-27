@@ -7,7 +7,7 @@
 .play svg {
   width: 60px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .play svg {
     width: 80px;
   }
@@ -53,7 +53,7 @@
 .play-item svg {
   width: 60px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .play-item svg {
     width: 80px;
   }

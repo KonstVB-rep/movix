@@ -1,21 +1,15 @@
-.search-section {
-  margin-top: 100px;
-  h1 > span:nth-child(1) {
-    color: var(--text-grey);
-    font-size: 28px;
-  }
-  h1 > span:nth-child(2) {
-    color: var(--text-grey);
-    font-size: 18px;
-  }
-  .list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    align-items: center;
-    margin: 40px auto;
-    gap: 20px;
-    .wrapper-loader {
-      grid-column: 1/-1;
-    }
-  }
+
+.title__span {
+  margin-right: 10px;
+}
+
+.title__span_total {
+  color: var(--text-grey);
+  font-size: 28px;
+}
+
+.title__span_text,
+.title__span_loading {
+  color: var(--text-grey);
+  font-size: 18px;
 }

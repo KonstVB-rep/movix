@@ -1,8 +1,9 @@
 .profile {
-  padding: 100px 0 50px;
+  padding: 0 0 50px;
   display: flex;
   width: 100%;
   gap: 30px;
+  height: 525px;
   line-height: 30px;
 }
 .profile__foto {
@@ -17,12 +18,9 @@
   height: 100%;
 }
 .profile__info {
+  height: fit-content;
   color: var(--secondary);
   width: 100%;
-}
-.profile__info .info-item {
-  padding: 5px;
-  border-radius: 12px;
 }
 .profile__info .info-item,
 .profile__info .info-span {
@@ -37,32 +35,52 @@
   font-size: 1.2rem;
   color: var(--secondary);
 }
-.profile__info .biography {
-  position: relative;
-  padding: 5px;
-  border-radius: 12px;
-}
-.profile__info .biography__btn {
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-}
-.profile__info .biography__btn:hover {
-  background-color: rgba(255, 69, 0, 0.1294117647);
-}
-.profile__info .biography__btn:focus, .profile__info .biography__btn:focus-visible {
-  outline: auto;
-}
 .profile__info .biography_short {
-  padding: 0;
-  display: -webkit-box;
+  position: relative;
+  padding: 0 0 35px 0;
   text-align: start;
   margin: 0 auto;
+  display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--secondary);
+}
+.profile__info .biography_short:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 35px;
+  bottom: 0;
+  background-color: var(--bg-body);
+}
+.profile__info .biography_short .more__btn {
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  outline: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  background-color: var(--bg-body);
+  color: #ec5f2b;
+}
+.profile__info .biography_short .more__btn svg {
+  width: 100%;
+  height: 100%;
+}
+.profile__info .biography_short .more__btn:hover {
+  background-color: var(--secondary);
+  color: var(--main);
+}
+.profile__info .biography_short .more__btn:focus, .profile__info .biography_short .more__btn:focus-visible {
+  outline: auto;
 }
 
 .modal {
@@ -90,7 +108,7 @@
   left: 0;
   right: 0;
   height: 30px;
-  background-color: var(--main);
+  background-color: var(--bg-body);
 }
 .modal__content::before {
   top: -1px;
@@ -106,15 +124,24 @@
   max-height: inherit;
   overflow: auto;
   border-radius: 20px;
-  background-color: var(--main);
+  background-color: var(--bg-body);
   color: var(--secondary);
   padding: 20px;
   white-space: break-spaces;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .modal__content {
     width: 70%;
   }
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heading .title {
+  color: var(--secondary);
 }
 
 /*# sourceMappingURL=PersonSection.module.css.map */

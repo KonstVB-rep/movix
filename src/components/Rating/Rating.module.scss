@@ -2,13 +2,21 @@
 
 .rating {
   width: 50px;
+  position: relative;
   height: 50px;
   flex-shrink: 0;
-  background-color: var(--main);
+  background-color: var(--bg-body);
   border-radius: 50%;
   overflow: hidden;
   padding: 2px;
-  &_slide{
+  &::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    background-color: black;
+    opacity: 0;
+  }
+  &_card{
     position: absolute;
     bottom: -20px;
     left: 20px;
@@ -16,7 +24,7 @@
   .text {
     font-size: 34px;
     font-weight: 700;
-    fill: var(--main);
+    fill: var(--bg-body);
   }
 
   .text > .CircularProgressbar-trail {

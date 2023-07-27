@@ -2,7 +2,7 @@
 .details {
   position: relative;
   width: 100%;
-  background-color: var(--main);
+  background-color: var(--bg-body);
   padding-top: 100px;
   padding-bottom: 50px;
   @include sm {
@@ -34,7 +34,7 @@
     background: linear-gradient(
       180deg,
       rgba(4, 21, 45, 0) 0%,
-      var(--main) 79.17%
+      var(--bg-body) 80%
     );
     position: absolute;
     bottom: 0;

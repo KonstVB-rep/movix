@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--main3);
   z-index: 20;
 }
 .header.top {
-  background: rgba(0, 0, 0, 0.25);
+  background-color: var(--main3);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
 }
@@ -162,7 +162,7 @@
   padding: 0 15px;
   font-size: 14px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .header .search .form input {
     height: 60px;
     font-size: 20px;

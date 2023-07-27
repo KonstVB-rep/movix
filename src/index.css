@@ -8,10 +8,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --bg-body: #1d2329;
   --main: #272727;
   --secondary: snow;
   --main2: #041226;
-  --main3: #020c1b;
+  --main3: #1f2833;
   --main-lighter: #1c4b91;
   --main-light: #173d77;
   --text-grey: grey;
@@ -22,6 +23,7 @@
   --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
   --gradient-reverse: linear-gradient(98.37deg, #da2f68 0.99%, #f89e00 100%);
   --bg-skeleton: #0a2955;
+  --count-slides-skeleleton: 3 ;
 }
 
 html {
@@ -36,7 +38,7 @@ html {
 
 body {
   height: 100vh;
-  background-color: var(--main);
+  background-color: var(--bg-body);
 }
 body.overflow-hidden {
   overflow: hidden;
@@ -120,6 +122,33 @@ ul {
 
 button, a, img {
   user-select: none;
+}
+
+.main {
+  margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  margin: 40px auto;
+  gap: 15px;
+}
+@media only screen and (min-width: 639px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+}
+@media only screen and (min-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

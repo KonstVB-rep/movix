@@ -1,0 +1,57 @@
+.select-group .select :global .ant-select-selector {
+  border-radius: 20px;
+  background-color: #dabe95;
+}
+.select-group .select :global .ant-select-selector:hover, .select-group .select :global .ant-select-selector:focus-visible, .select-group .select :global .ant-select-selector:focus-within {
+  background-color: var(--secondary);
+}
+.select-group .select :global .ant-select-selector .ant-select-selection-placeholder {
+  color: var(--bg-body);
+}
+
+:global .ant-select-dropdown {
+  background-color: var(--bg-body);
+}
+:global .ant-select-item.ant-select-item-option {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  color: var(--secondary);
+}
+:global .ant-select-item.ant-select-item-option.ant-select-item-option-active {
+  background-color: var(--secondary);
+  color: var(--bg-body);
+}
+:global .ant-select-selection-placeholder {
+  color: var(--secondary);
+}
+
+.select-group {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+@media only screen and (min-width: 767px) {
+  .select-group {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+.select-group .select {
+  width: 100%;
+  border-radius: 20px;
+}
+@media only screen and (min-width: 639px) {
+  .select-group .select {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .select-group .select {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=DiscoverVideosSection.module.css.map */
