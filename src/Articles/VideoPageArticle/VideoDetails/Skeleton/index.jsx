@@ -4,7 +4,7 @@ import cn from "../VideoDetails.module.scss";
 const Skeleton = () => {
   return (
     <div className={cn.skeleton}>
-      <div className={`${cn.wrapper} wrapper`}>
+      <div className={cn.wrapper}>
         <div className={`${cn.left} skeleton`}/>
         <div className={cn.right}>
           <h1 className={`${cn.row} ${cn.title} skeleton`}/>

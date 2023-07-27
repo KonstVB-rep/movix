@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from "../../../../components/Img";
 import {useSelector} from "react-redux";
-import avatar from "../../../../assets/avatar.png";
+import avatar from "../../../../assets/avatar.webp";
 import cn from "../Actors.module.scss";
 import {Link} from "react-router-dom";
 

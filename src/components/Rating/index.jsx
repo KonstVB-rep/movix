@@ -11,7 +11,6 @@ const Rating = memo(({ rating, classname }) => {
         value={rating}
         maxValue={10}
         text={rating}
-        className={cn.text}
         styles={buildStyles({
           pathColor:
             rating < 5 ? "red" : rating < 7 ? "orange" : "green",

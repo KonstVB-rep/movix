@@ -9,11 +9,11 @@ const Biography = memo(({ data }) => {
   const refContent = useRef(null);
   const refBiography = useRef(null);
 
-  const isBlockBtnModal = refContent.current?.offsetHeight > refBiography.current?.offsetHeight
+  // const isBlockBtnModal = refContent.current?.offsetHeight > refBiography.current?.offsetHeight
 
 
   const [open, setOpen] = useState(false);
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
   const openModal = () => {
     setOpen(true);
@@ -26,10 +26,10 @@ const Biography = memo(({ data }) => {
     }
   };
 
-  const getValueShowMore = () => {
-    console.log(refContent.current?.offsetHeight, refBiography.current?.offsetHeight)
-    setShowMore(refContent.current?.offsetHeight > refBiography.current?.offsetHeight)
-  }
+  // const getValueShowMore = () => {
+  //   console.log(refContent.current?.offsetHeight, refBiography.current?.offsetHeight)
+  //   setShowMore(refContent.current?.offsetHeight > refBiography.current?.offsetHeight)
+  // }
 
   return (
     <>
@@ -43,7 +43,7 @@ const Biography = memo(({ data }) => {
             <button
               className={cn.more__btn}
               // hidden={showMore}
-              title ='Open full text biography'
+              title ='Read more'
               onClick={openModal}
             ><IoIosArrowDown/></button>
           </p>

@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import cn from './Genres.module.scss'
 
 const Genres = ({genresMovie, classname}) => {
+
   const genres = useSelector((state) => state.genres.all);
 
   return (

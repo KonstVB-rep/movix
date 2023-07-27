@@ -7,6 +7,7 @@ import WatchTrailerButton from "../../WatchTrailerButton";
 import About from "../About";
 
 const Description = ({ data }) => {
+
   const {homepage,name, title,genres,release_date,tagline,vote_average,overview} = data;
 
   const genresList = genres.map((genre) => genre.id);

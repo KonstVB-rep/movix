@@ -32,7 +32,6 @@ const SliderCardsVideos = ({ title, keyApi, endpoints = [], tabsNames = [] }) =>
         error={error}
         isError={isError}
         endpoint={endpoint}
-        data={data?.results}
         isFetching={isFetching}
       >
         <VideosCardList

@@ -1,35 +1,29 @@
 @import '../../mixins.scss';
 
 .rating {
-  width: 50px;
   position: relative;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   background-color: var(--bg-body);
   border-radius: 50%;
   overflow: hidden;
   padding: 2px;
-  &::before{
-    content: '';
-    position: absolute;
-    inset:0;
-    background-color: black;
-    opacity: 0;
+  @include xs{
+    width: 70px;
+    height: 70px;
+  }
+  @include lg{
+    width: 60px;
+    height: 60px;
   }
   &_card{
     position: absolute;
     bottom: -20px;
     left: 20px;
   }
-  .text {
-    font-size: 34px;
-    font-weight: 700;
-    fill: var(--bg-body);
-  }
 
-  .text > .CircularProgressbar-trail {
-    stroke: transparent;
-  }
+
   &_single-movie{
     position: static;
     width: 60px;
@@ -43,6 +37,15 @@
     }
     .CircularProgressbar-text {
       fill: var(--secondary);
+    }
+  }
+}
+
+:global{
+  .CircularProgressbar .CircularProgressbar-text {
+    font-size: 26px;
+    @include md {
+      font-size: 20px;;
     }
   }
 }

@@ -5,7 +5,7 @@
   align-items: center;
   height: 60px;
   background-color: var(--main3);
-  z-index: 20;
+  z-index: 25;
 }
 .header.top {
   background-color: var(--main3);

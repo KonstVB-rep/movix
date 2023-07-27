@@ -5,6 +5,7 @@ import InfinityScrollList from "../../components/InfinityScrollList/index.jsx";
 import cn from "./DiscoverVideosSection.module.scss";
 import { Select } from "antd";
 import { useSelector } from "react-redux";
+import ErrorElement from "../../components/ErrorElement/index.jsx";
 
 const optionsYears = [];
 
@@ -110,56 +111,58 @@ const DiscoverVideosSection = () => {
       .localeCompare((optionB?.label ?? "").toLowerCase());
 
   return (
-    <main className="main wrapper">
-      <h1 className="title-article">Discovery {discoveryType}</h1>
-      <div className={cn["select-group"]}>
-        <Select
-          key= {`${movieType}_sort`}
-          showSearch
-          allowClear
-          placeholder="Sort by..."
-          optionFilterProp="children"
-          onChange={handleChangeSortBy}
-          filterOption={handleFilter}
-          filterSort={filterSort}
-          options={options}
-          className={cn.select}
-        />
+    <ErrorElement isError={isError} error={error} title={`Discovery ${discoveryType}`} classname='main'>
+      <main className="wrapper main">
+        <h1 className="title-article">Discovery {discoveryType}</h1>
+        <div className={cn["select-group"]}>
+          <Select
+            key= {`${movieType}_sort`}
+            showSearch
+            allowClear
+            placeholder="Sort by..."
+            optionFilterProp="children"
+            onChange={handleChangeSortBy}
+            filterOption={handleFilter}
+            filterSort={filterSort}
+            options={options}
+            className={cn.select}
+          />
 
-        <Select
-          key= {`${movieType}_year`}
-          showSearch
-          allowClear
-          placeholder="Select to year"
-          optionFilterProp="children"
-          onChange={handleChangeSortYear}
-          filterOption={handleFilter}
-          filterSort={filterSort}
-          options={optionsYears}
-          className={cn.select}
+          <Select
+            key= {`${movieType}_year`}
+            showSearch
+            allowClear
+            placeholder="Select to year"
+            optionFilterProp="children"
+            onChange={handleChangeSortYear}
+            filterOption={handleFilter}
+            filterSort={filterSort}
+            options={optionsYears}
+            className={cn.select}
+          />
+          <Select
+            key= {`${movieType}_genres`}
+            showSearch
+            allowClear
+            mode="multiple"
+            placeholder="Select to genres"
+            optionFilterProp="children"
+            onChange={handleChangeSortGenres}
+            filterOption={handleFilter}
+            filterSort={filterSort}
+            options={optionsGenres}
+            className={cn.select}
+          />
+        </div>
+        <InfinityScrollList
+          isLoading={isLoading}
+          hasNextPage={hasNextPage}
+          fetchNextPage={fetchNextPage}
+          data={videos}
+          dataPages={dataPages}
         />
-        <Select
-          key= {`${movieType}_genres`}
-          showSearch
-          allowClear
-          mode="multiple"
-          placeholder="Select to genres"
-          optionFilterProp="children"
-          onChange={handleChangeSortGenres}
-          filterOption={handleFilter}
-          filterSort={filterSort}
-          options={optionsGenres}
-          className={cn.select}
-        />
-      </div>
-      <InfinityScrollList
-        isLoading={isLoading}
-        hasNextPage={hasNextPage}
-        fetchNextPage={fetchNextPage}
-        data={videos}
-        dataPages={dataPages}
-      />
-    </main>
+      </main>
+    </ErrorElement>
   );
 };
 

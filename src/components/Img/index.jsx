@@ -4,7 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 const Img = ({ src, className='' }) => {
-  return <LazyLoadImage className={className} alt="Banner" effect="blur" src={src} onLoad={() => 'load'}/>;
+  return <LazyLoadImage className={className} alt="Banner" effect="blur" src={src} />;
 };
 
 export default Img;

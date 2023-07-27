@@ -8,7 +8,7 @@ import { store } from "../store/index.js";
 
 
 const queryClient = new QueryClient(
-  {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000, keepPreviousData:true}}}
+  {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000,retry: 3, keepPreviousData:true}}}
 );
 
 function App() {

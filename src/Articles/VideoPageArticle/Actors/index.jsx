@@ -10,7 +10,7 @@ import ErrorElement from "../../../components/ErrorElement";
 const Actors = () => {
   const { movieType, id } = useParams();
 
-  const { actors, isError, error } = useApi().crew(movieType, id);
+  const { isError, error } = useApi().crew(movieType, id);
 
   return (
     <>
@@ -19,7 +19,6 @@ const Actors = () => {
           title="Top actors"
           isError={isError}
           error={error}
-          data={actors}
         >
           <ActorsList />
         </WrapperSlider>

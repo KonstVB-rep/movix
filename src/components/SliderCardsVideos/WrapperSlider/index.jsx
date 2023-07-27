@@ -6,7 +6,6 @@ import Slider from "../Slider";
 import cn from "./WrapperSlider.module.scss";
 
 const WrapperSlider = ({
-  data,
   title,
   endpoint='',
   isError,
@@ -15,26 +14,20 @@ const WrapperSlider = ({
   children,
 }) => {
 
-  if (isError) {
-    return (
-        <ErrorElement classname={"error-slider"} title={title} erro={error}/>
-    );
-  }
+
 
   return (
-    <>
-      {data?.length ? (
+    <ErrorElement isError={isError} error={error} title={title}>
         <div className={cn.carousel}>
           <div className={`${cn.wrapper} wrapper`}>
-            <h3 className={"title-article"}>{title}</h3>
+            <h3 className="title-article">{title}</h3>
             {children[1]}
           </div>
           <Slider endpoint={endpoint} isFetching={isFetching}>
-            {children[0] || children}
+            { children[0] || children}
           </Slider>
         </div>
-      ) : null}
-    </>
+    </ErrorElement>
   );
 };
 

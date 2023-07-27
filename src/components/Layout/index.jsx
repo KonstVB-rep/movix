@@ -24,7 +24,7 @@ const Layout = () => {
       {loading ? (
         <>
           <Header />
-          <Outlet />
+            <Outlet />
           <ScrollRestoration />
           {createPortal(<ScrollTopBtn/>, document.getElementById('root'), 'buttonUp')}
           {createPortal(<ThemeSwitch/>, document.getElementById('root'), 'themeSwitch')}

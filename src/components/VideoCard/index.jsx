@@ -4,7 +4,7 @@ import Img from "../Img";
 import Rating from "../Rating";
 import Genres from "../Genres";
 import dayjs from "dayjs";
-import PosterFallback from "../../assets/no-poster.png";
+import PosterFallback from "../../assets/no-poster.jpg";
 import LoadingImg from "../../assets/loading.gif";
 import { useSelector } from "react-redux";
 

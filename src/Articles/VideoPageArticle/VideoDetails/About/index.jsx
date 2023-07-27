@@ -67,23 +67,23 @@ const About = () => {
         title="Production companies"
         classname="border-none"
       >
-        <div className={cn.company}>
-          {movieDetails?.production_companies?.map(({name,logo_path}) => (
+        {<div className = {cn.company}>
+          {movieDetails?.production_companies?.map(({name, logo_path}) => (
             <div
-              className={cn.company__logo}
-              key={name}
-              title={name}
+              className = {cn.company__logo}
+              key = {name}
+              title = {name}
             >
               {logo_path ? (
-                <Img src={urlBackdrop + logo_path} />
+                <Img src = {urlBackdrop + logo_path} />
               ) : (
-                <div className={cn["icon-placeholder"]}>
+                <div className = {cn["icon-placeholder"]}>
                   <MdOutlineImageNotSupported />
                 </div>
               )}
             </div>
           ))}
-        </div>
+        </div>}
       </InfoRow>
     </div>
   );

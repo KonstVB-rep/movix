@@ -19,7 +19,6 @@ const TrailersVideo = () => {
         title="Official videos"
         isError={isError}
         error={error}
-        data={data?.results}
         isFetching={isFetching}
       >
         <TrailersList data={data?.results} loading={isLoading} />

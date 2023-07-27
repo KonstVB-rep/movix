@@ -1,41 +1,67 @@
 .profile {
-  padding: 0 0 50px;
   display: flex;
+  flex-direction: column;
+}
+.profile__content {
+  padding: 40px 0 50px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 30px;
-  height: 525px;
   line-height: 30px;
 }
-.profile__foto {
-  min-width: 300px;
-  width: 40%;
-  border-radius: 12px;
-  overflow: hidden;
-  max-height: 700px;
+@media only screen and (min-width: 639px) {
+  .profile__content {
+    flex-direction: row;
+    height: 570px;
+  }
 }
-.profile__foto > span {
+.profile__content__photo {
+  min-width: 240px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--bg-skeleton);
+  overflow: hidden;
+}
+@media only screen and (min-width: 767px) {
+  .profile__content__photo {
+    width: 65%;
+    gap: 10px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .profile__content__photo {
+    width: 50%;
+    gap: 10px;
+  }
+}
+.profile__content__photo > span {
   width: 100%;
   height: 100%;
 }
-.profile__info {
+.profile__content__photo > span img {
+  border-radius: 12px;
+  object-position: top;
+}
+.profile__content__info {
   height: fit-content;
   color: var(--secondary);
   width: 100%;
 }
-.profile__info .info-item,
-.profile__info .info-span {
+.profile__content__info .info-item,
+.profile__content__info .info-span {
   color: #ec5f2b;
   font-size: 1rem;
   text-transform: uppercase;
 }
-.profile__info .info-item .text,
-.profile__info .info-span .text {
+.profile__content__info .info-item .text,
+.profile__content__info .info-span .text {
   text-transform: initial;
   padding-left: 5px;
   font-size: 1.2rem;
   color: var(--secondary);
 }
-.profile__info .biography_short {
+.profile__content__info .biography_short {
   position: relative;
   padding: 0 0 35px 0;
   text-align: start;
@@ -47,7 +73,7 @@
   text-overflow: ellipsis;
   color: var(--secondary);
 }
-.profile__info .biography_short:after {
+.profile__content__info .biography_short:after {
   content: "";
   position: absolute;
   left: 0;
@@ -56,7 +82,7 @@
   bottom: 0;
   background-color: var(--bg-body);
 }
-.profile__info .biography_short .more__btn {
+.profile__content__info .biography_short .more__btn {
   width: 50px;
   height: 30px;
   position: absolute;
@@ -71,20 +97,49 @@
   background-color: var(--bg-body);
   color: #ec5f2b;
 }
-.profile__info .biography_short .more__btn svg {
+.profile__content__info .biography_short .more__btn svg {
   width: 100%;
   height: 100%;
 }
-.profile__info .biography_short .more__btn:hover {
+.profile__content__info .biography_short .more__btn:hover {
   background-color: var(--secondary);
   color: var(--main);
 }
-.profile__info .biography_short .more__btn:focus, .profile__info .biography_short .more__btn:focus-visible {
+.profile__content__info .biography_short .more__btn:focus, .profile__content__info .biography_short .more__btn:focus-visible {
   outline: auto;
+}
+.profile__content__info_skeleton {
+  display: grid;
+  gap: 10px;
+}
+.profile__content__info_skeleton .info-item_skeleton {
+  height: 20px;
+}
+.profile__content__info_skeleton .info-item_skeleton:first-child {
+  width: 70%;
+}
+.profile__content__info_skeleton .info-item_skeleton:nth-child(2) {
+  width: 145px;
+}
+.profile__content__info_skeleton .info-item_skeleton:nth-child(3) {
+  width: 200px;
+}
+.profile__content__info_skeleton .info-item_skeleton:nth-child(4) {
+  width: 220px;
+}
+.profile__content__info_skeleton .info-item_skeleton:nth-child(5) {
+  width: 100%;
+}
+.profile__content__info_skeleton .info-item_skeleton:last-child {
+  width: 190px;
+}
+.profile__content__info_skeleton .biography_skeleton {
+  height: 220px;
+  margin-bottom: 30px;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +171,7 @@
   border-top-right-radius: 20px;
 }
 .modal__content::after {
-  bottom: -1px;
+  bottom: -6px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

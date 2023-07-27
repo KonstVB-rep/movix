@@ -1,18 +1,17 @@
 import React from "react";
 import cn from "./InfoRow.module.scss";
 
-const IInfoRow = ({
-                    data,
-                    title,
-                    keyName = "",
-                    list = false,
-                    classname = "",
-                    children,
-                  }) => {
-
+const InfoRow = ({
+  data,
+  title,
+  keyName = "",
+  list = false,
+  classname = "",
+  children,
+}) => {
   return (
     <>
-      {(data > 0 || data?.length) ? (
+      {data > 0 || data?.length ? (
         <div className={`${cn.info} ${cn[classname]}`}>
           <span className={`${cn.text} ${cn.bold}`}>{title}</span>
           <div className={cn.info__content}>
@@ -33,4 +32,4 @@ const IInfoRow = ({
   );
 };
 
-export default IInfoRow;
+export default InfoRow;

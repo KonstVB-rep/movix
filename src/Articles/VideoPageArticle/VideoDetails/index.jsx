@@ -25,28 +25,29 @@ const VideoDetails = () => {
   );
 
   return (
-    <ErrorElement isError={isError} error={error} title='Video description'>
+    <ErrorElement
+      isError={isError}
+      error={error}
+      title="Video description"
+      classname="main"
+    >
       <div className={cn.details}>
-        {isLoading || isFetching ? (
-          <Skeleton />
-        ) : (
-          <>
-            {data && (
-              <>
-                <div className={cn.backdrop}>
-                  <Img src={urlBackdrop + data?.backdrop_path} />
-                </div>
-                <div className={cn["opacity-layer"]}></div>
-                <div className='wrapper'>
-                  <div className={cn.content}>
-                    <Poster poster={data.poster_path} />
-                    <Description data={data} />
-                  </div>
-                </div>
-              </>
-            )}
-          </>
-        )}
+        <div className={cn.backdrop}>
+          <Img src={urlBackdrop + data?.backdrop_path} />
+        </div>
+        <div className={cn["opacity-layer"]}></div>
+        <div className="wrapper">
+          <h1 className="title-article">{`${movieType.toUpperCase()} description`}</h1>
+          {isLoading || isFetching ? (
+            <Skeleton />
+          ) : (
+            <div className={cn.content}>
+              <Poster poster={data.poster_path} />
+              <Poster poster={data.poster_path} backdrop={true} />
+              <Description data={data} />
+            </div>
+          )}
+        </div>
       </div>
     </ErrorElement>
   );

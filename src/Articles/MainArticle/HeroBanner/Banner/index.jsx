@@ -5,7 +5,7 @@ import useApi from "../../../hooks/commonHooks/useApi.js";
 import Img from "../../../../components/Img";
 
 const Banner = () => {
-  const { isLoading, isError, banner } = useApi().banner;
+  const { isLoading, banner } = useApi().banner;
 
   return (
     <>

@@ -1,32 +1,29 @@
 .rating {
-  width: 50px;
   position: relative;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   flex-shrink: 0;
   background-color: var(--bg-body);
   border-radius: 50%;
   overflow: hidden;
   padding: 2px;
 }
-.rating::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: black;
-  opacity: 0;
+@media only screen and (min-width: 480px) {
+  .rating {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .rating {
+    width: 60px;
+    height: 60px;
+  }
 }
 .rating_card {
   position: absolute;
   bottom: -20px;
   left: 20px;
-}
-.rating .text {
-  font-size: 34px;
-  font-weight: 700;
-  fill: var(--bg-body);
-}
-.rating .text > .CircularProgressbar-trail {
-  stroke: transparent;
 }
 .rating_single-movie {
   position: static;
@@ -44,6 +41,15 @@
 }
 .rating_single-movie .CircularProgressbar-text {
   fill: var(--secondary);
+}
+
+:global .CircularProgressbar .CircularProgressbar-text {
+  font-size: 26px;
+}
+@media only screen and (min-width: 767px) {
+  :global .CircularProgressbar .CircularProgressbar-text {
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=Rating.module.css.map */
