@@ -1,7 +1,7 @@
 .details {
   position: relative;
   width: 100%;
-  background-color: var(--bg-body);
+  background-color: var(--main);
   padding-top: 100px;
   padding-bottom: 50px;
 }
@@ -17,7 +17,7 @@
   height: 100%;
   position: absolute;
   inset: 0;
-  opacity: 0.1;
+  opacity: 0.25;
   overflow: hidden;
 }
 .details .backdrop > span {
@@ -72,7 +72,7 @@
 }
 .details .content .describe .title a {
   display: block;
-  width: max-content;
+  width: fit-content;
 }
 @media only screen and (min-width: 767px) {
   .details .content .describe .title {
@@ -86,7 +86,6 @@
   line-height: 24px;
   margin-bottom: 15px;
   font-style: italic;
-  color: var(--text-grey);
 }
 @media only screen and (min-width: 639px) {
   .details .content .describe .title .subtitle {

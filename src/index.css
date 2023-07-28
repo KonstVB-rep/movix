@@ -8,22 +8,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --bg-body: #1d2329;
-  --main: #272727;
+  --main: #1d2329;
   --secondary: snow;
-  --main2: #041226;
-  --main3: #1f2833;
-  --main-lighter: #1c4b91;
-  --main-light: #173d77;
-  --text-grey: grey;
+  --bg-body:var(--main);
+  --bg-header-footer: #1f2833;
+  --bg-skeleton: #0a2955;
+  --bg-even-slider: var(--main);
   --pink: #da2f68;
-  --orange: #f89e00;
   --green: #076b3f;
   --blue: #1c2c93;
   --gradient: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
   --gradient-reverse: linear-gradient(98.37deg, #da2f68 0.99%, #f89e00 100%);
-  --bg-skeleton: #0a2955;
-  --count-slides-skeleleton: 3 ;
+  --count-skeletons-grid: 2;
+  --count-skeletons-flex: 2;
+  --count-skeletons-actors: 3;
+  --count-skeletons-trailers: 1;
+  color-scheme: dark;
 }
 
 html {
@@ -125,7 +125,9 @@ ul {
   font-weight: normal;
 }
 
-button, a, img {
+button,
+a,
+img {
   user-select: none;
 }
 
@@ -138,6 +140,7 @@ button, a, img {
   grid-template-columns: 1fr;
   align-items: center;
   margin: 40px auto;
+  padding: 5px;
   gap: 15px;
 }
 @media only screen and (min-width: 639px) {
@@ -154,6 +157,47 @@ button, a, img {
   .grid {
     grid-template-columns: repeat(4, minmax(200px, 1fr));
   }
+}
+
+@media only screen and (min-width: 479px) {
+  :root {
+    --count-skeletons-grid: 1;
+    --count-skeletons-flex: 3;
+    --count-skeletons-actors: 4;
+  }
+}
+@media only screen and (min-width: 639px) {
+  :root {
+    --count-skeletons-grid: 4;
+    --count-skeletons-actors: 6;
+    --count-skeletons-trailers: 3;
+  }
+}
+@media only screen and (min-width: 767px) {
+  :root {
+    --count-skeletons-grid: 6;
+    --count-skeletons-flex: 3;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  :root {
+    --count-skeletons-grid: 8;
+    --count-skeletons-flex: 4;
+    --count-skeletons-trailers: 4;
+  }
+}
+[data-theme=light] {
+  --main: snow;
+  --secondary: #1d2329;
+  --bg-body: #c5c5de;
+  --bg-header-footer: #48494b;
+  --bg-skeleton: #acacb5;
+  --bg-even-slider: #2aa57e47;
+  color-scheme: light;
+}
+[data-theme=light] .skeleton::after {
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg, rgba(106, 106, 110, 0) 0, rgba(106, 106, 110, 0.2) 20%, rgba(110, 110, 112, 0.5) 80%, rgba(106, 106, 110, 0));
 }
 
 /*# sourceMappingURL=index.css.map */

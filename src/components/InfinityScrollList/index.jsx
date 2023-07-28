@@ -15,18 +15,15 @@ const InfinityScrollList = ({
   return (
     <>
       {isLoading ? (
-       <div className="grid">
-         <SkeletonVideosList classname='skeletons__item_grid'/>
-       </div>
+        <Loader/>
       ) : (
         <>
-          {" "}
           <InfiniteScroll
             className="grid"
             hasMore={hasNextPage || false}
             next={fetchNextPage}
             dataLength={data ? data.results.length : 0}
-            scrollThreshold={0.85}
+            scrollThreshold={1}
             loader={<Loader />}
           >
             {dataPages?.map((page) =>

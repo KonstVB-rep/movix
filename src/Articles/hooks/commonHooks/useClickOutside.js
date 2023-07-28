@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 const useClickOutside = (ref, cb) => {
   const closeHandler = (e) => {
     if (ref.current && !ref.current.contains(e.target)) {
-      cb();
+      cb(e);
     }
   };
 

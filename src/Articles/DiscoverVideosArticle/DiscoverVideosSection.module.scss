@@ -1,18 +1,51 @@
 @import "../../mixins.scss";
+
+
+.wrapper-discover{
+  &_show{
+    &:before{
+      position: absolute;
+      content: '';
+      inset:0;
+      background-color: transparent;
+      z-index: 2;
+    }
+  }
+}
+
+
 .select-group {
   .select :global {
     & .ant-select-selector {
       border-radius: 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
       background-color: #dabe95;
-
+      font-size: 16px;
       &:hover,
       &:focus-visible,
       &:focus-within{
-        background-color: var(--secondary);
+        background-color: snow;
       }
-
+      .ant-select-selection-search{
+        display: flex;
+        align-items: center;
+        input{
+          font-size: 16px;
+        }
+      }
       .ant-select-selection-placeholder {
-        color: var(--bg-body);
+        color: black;
+      }
+    }
+    & .ant-select-arrow{
+      color: black;
+    }
+    & .ant-select-clear{
+      border-radius: 50%;
+      & > span{
+        color: black
       }
     }
   }
@@ -21,7 +54,7 @@
 
 :global {
   .ant-select-dropdown{
-    background-color: var(--bg-body);
+    background-color: var(--main);
   }
   .ant-select-item.ant-select-item-option{
     display: flex;
@@ -31,35 +64,113 @@
   }
   .ant-select-item.ant-select-item-option.ant-select-item-option-active {
     background-color: var(--secondary);
-    color: var(--bg-body)
+    color: var(--main)
   }
   .ant-select-selection-placeholder {
     color: var(--secondary);
   }
 }
 
-
-.select-group {
-  padding-top: 20px;
+.sort-popup{position: relative;
+  height: auto;
   display: flex;
-  flex-direction: column;
   gap: 15px;
-  width: 100%;
-  @include md {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-
-  .select {
-    width:100%;
+  margin-bottom: 30px;
+  .sort-popup_btn{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
     border-radius: 20px;
-    @include sm{
-      width:50%;
-    }
-    @include lg {
+    text-transform: uppercase;
+    background: var(--bg-body);
+    color: var(--secondary);
+    border: 1px solid gray;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    z-index: 2;
+    & > span{
+      top: 50%;
+      left: 50%;
       width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 10px;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      z-index: 2;
+      & > svg{
+      height: 100%;
+      width: 20%;
+    }
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      inset:0;
+      width: 0;
+      background: var(--gradient);
+      z-index: 1;
+      transition: all 0.2s ease-in-out;
+    }
+    &:active{
+      scale:0.9;
+    }
+    &:hover::before,
+    &:focus-visible::before{
+      width: 100%;
+    }
+    @include sm {
+      display: none;
+    }
+  }
+  .select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    top: 65px;
+    background: var(--bg-body);
+    border:1px solid gray;
+    position: absolute;
+    z-index: 10;
+    @include sm {
+      margin-top: 20px;
+      position: static;
+      display: flex;
+      gap: 15px;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    &-hidden{
+      visibility: hidden;
+      height: 0;
+      opacity: 0;
+      @include sm {
+        visibility: visible;
+        height: auto;
+        display: flex;
+        opacity: 1;
+      }
+    }
+    .select {
+      width:100%;
+      border-radius: 20px;
+      height: 40px;
+      @include sm{
+        width:50%;
+      }
+      @include lg {
+        width: 100%;
+      }
     }
   }
 }
+
 
 

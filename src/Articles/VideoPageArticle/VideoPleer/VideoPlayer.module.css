@@ -39,8 +39,8 @@
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  background-color: darkgrey;
-  color: black;
+  background-color: var(--main);
+  color: var(--secondary);
   z-index: -1;
 }
 .video.visible {

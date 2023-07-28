@@ -1,5 +1,7 @@
 .tab{
   padding: 4px;
+  width: fit-content;
+  justify-self: flex-end;
   background-image: var(--gradient);
   border-radius: 20px;
   .tab__wrapper {
@@ -9,7 +11,7 @@
     justify-content: space-between;
     height: 34px;
     width: 200px;
-    background-color: var(--secondary);
+    background-color: var(--main);
     border-radius: 20px;
     .tab__label {
       position: relative;
@@ -19,12 +21,12 @@
       min-width: 50%;
       height: 34px;
       border-radius: 30px;
-      color:black;
+      color:var(--secondary);
       cursor: pointer;
       z-index: 10;
       transition: color 0.3s ease-in-out;
       &.active{
-        color:var(--secondary)
+        color:snow;
       }
       .tab__item {
         width: 50%;

@@ -1,3 +1,13 @@
+.opacity-backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+.opacity-backdrop > span img {
+  filter: blur(15px);
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -63,50 +73,46 @@
 }
 .profile__content__info .biography_short {
   position: relative;
-  padding: 0 0 35px 0;
   text-align: start;
-  margin: 0 auto;
+  padding-right: 10px;
   display: -webkit-box;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
+  margin: 20px auto;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   color: var(--secondary);
 }
-.profile__content__info .biography_short:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 35px;
-  bottom: 0;
-  background-color: var(--bg-body);
-}
 .profile__content__info .biography_short .more__btn {
   width: 50px;
-  height: 30px;
+  height: 35px;
   position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 2px;
+  right: -35px;
+  transform: translateX(-50%) rotate(270deg);
   z-index: 1;
   outline: none;
   border-radius: 12px;
   font-size: 1.2rem;
-  margin-bottom: 10px;
-  background-color: var(--bg-body);
   color: #ec5f2b;
+  transition: all 0.2s ease-in-out;
+}
+.profile__content__info .biography_short .more__btn:focus, .profile__content__info .biography_short .more__btn:active, .profile__content__info .biography_short .more__btn:focus-visible {
+  outline: none;
+}
+.profile__content__info .biography_short .more__btn:hover, .profile__content__info .biography_short .more__btn:focus-visible {
+  bottom: 0;
+}
+.profile__content__info .biography_short .more__btn:hover > svg, .profile__content__info .biography_short .more__btn:focus-visible .svg {
+  transform: rotate(90deg);
+  transition: all 0.2s ease-in-out;
+}
+.profile__content__info .biography_short .more__btn:active svg {
+  scale: 1;
 }
 .profile__content__info .biography_short .more__btn svg {
   width: 100%;
   height: 100%;
-}
-.profile__content__info .biography_short .more__btn:hover {
-  background-color: var(--secondary);
-  color: var(--main);
-}
-.profile__content__info .biography_short .more__btn:focus, .profile__content__info .biography_short .more__btn:focus-visible {
-  outline: auto;
 }
 .profile__content__info_skeleton {
   display: grid;
@@ -163,7 +169,7 @@
   left: 0;
   right: 0;
   height: 30px;
-  background-color: var(--bg-body);
+  background-color: var(--main);
 }
 .modal__content::before {
   top: -1px;
@@ -179,7 +185,7 @@
   max-height: inherit;
   overflow: auto;
   border-radius: 20px;
-  background-color: var(--bg-body);
+  background-color: var(--main);
   color: var(--secondary);
   padding: 20px;
   white-space: break-spaces;
@@ -197,6 +203,11 @@
 }
 .heading .title {
   color: var(--secondary);
+}
+
+.link_pink:hover,
+.link_pink:focus-visible {
+  color: var(--pink);
 }
 
 /*# sourceMappingURL=PersonSection.module.css.map */

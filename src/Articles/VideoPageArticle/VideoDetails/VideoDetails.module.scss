@@ -2,7 +2,7 @@
 .details {
   position: relative;
   width: 100%;
-  background-color: var(--bg-body);
+  background-color: var(--main);
   padding-top: 100px;
   padding-bottom: 50px;
   @include sm {
@@ -15,7 +15,7 @@
     height: 100%;
     position: absolute;
     inset: 0;
-    opacity: 0.1;
+    opacity: 0.25;
     overflow: hidden;
     & > span {
       width: 100%;
@@ -68,7 +68,7 @@
         line-height: 40px;
         a{
           display: block;
-          width: max-content;
+          width: fit-content;
         }
         @include md {
           font-size: 34px;
@@ -80,7 +80,7 @@
           line-height: 24px;
           margin-bottom: 15px;
           font-style: italic;
-          color: var(--text-grey);;
+         ;
           @include sm {
             font-size: 20px;
             line-height: 28px;

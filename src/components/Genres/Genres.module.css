@@ -14,7 +14,7 @@
   font-size: 12px;
   height: auto;
   border-radius: 4px;
-  color: var(--secondary);
+  color: snow;
   white-space: nowrap;
 }
 .genres_card {
@@ -33,7 +33,7 @@
   width: 60%;
   height: 20px;
   margin-bottom: 10px;
-  background-color: var(--text-grey);
+  background-color: gray;
   border-radius: 12px;
 }
 

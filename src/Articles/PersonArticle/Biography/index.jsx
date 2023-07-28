@@ -1,19 +1,22 @@
-import React, {memo, useEffect, useLayoutEffect, useRef, useState} from "react";
+import React, {
+  memo,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import cn from "../PersonSection.module.scss";
 import ButtonClose from "../../../components/Buttons/ButtonClose";
-import {IoIosArrowDown} from "react-icons/io";
-
+import { IoIosArrowDown } from "react-icons/io";
 
 const Biography = memo(({ data }) => {
-
   const refContent = useRef(null);
   const refBiography = useRef(null);
 
   // const isBlockBtnModal = refContent.current?.offsetHeight > refBiography.current?.offsetHeight
 
-
   const [open, setOpen] = useState(false);
-  // const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(false);
 
   const openModal = () => {
     setOpen(true);
@@ -26,26 +29,30 @@ const Biography = memo(({ data }) => {
     }
   };
 
-  // const getValueShowMore = () => {
-  //   console.log(refContent.current?.offsetHeight, refBiography.current?.offsetHeight)
-  //   setShowMore(refContent.current?.offsetHeight > refBiography.current?.offsetHeight)
-  // }
+  useEffect(() => {
+    const obj = refContent?.current?.getBoundingClientRect();
+    setShowMore(refContent?.current?.scrollHeight > obj?.height);
+  }, [showMore]);
 
   return (
     <>
       {data ? (
-        <div className={cn.biography} ref={refContent} >
-          <p className={`${cn["info-item"]} ${cn.biography_short}`}>
+        <div className={cn.biography} >
+          <p className={`${cn["info-item"]} ${cn.biography_short}`} ref={refContent}>
             <span className={`${cn["info-span"]}`}>Biography:</span>{" "}
-            <span className={`${cn.text} ${cn.biography_content}`} ref={refBiography}>
+            <span
+              className={`${cn.text} ${cn.biography_content}`}
+              ref={refBiography}
+            >
               {data}
             </span>
-            <button
-              className={cn.more__btn}
-              // hidden={showMore}
-              title ='Read more'
-              onClick={openModal}
-            ><IoIosArrowDown/></button>
+            {showMore ? <button
+              className = {cn.more__btn}
+              title = "Read more"
+              onClick = {openModal}
+            >
+              <IoIosArrowDown />
+            </button> : null}
           </p>
         </div>
       ) : null}
@@ -54,8 +61,8 @@ const Biography = memo(({ data }) => {
           <div className={cn.modal__content}>
             <ButtonClose close={closeModal} />
             <pre className={cn.modal__text} id="modal-biography">
-                  {data}
-                </pre>
+              {data}
+            </pre>
           </div>
         </div>
       ) : null}

@@ -1,17 +1,15 @@
 import React from "react";
 
 import HeroBanner from "../Articles/MainArticle/HeroBanner";
-import Popular from "../Articles/MainArticle/Popular";
-import TopRated from "../Articles/MainArticle/TopRated";
-import Trending from "../Articles/MainArticle/Trending";
+import MediaSliders from "../Articles/MainArticle/MediaSliders";
+
 
 const Main = () => {
+
   return (
     <div>
       <HeroBanner />
-        <Trending />
-      <Popular />
-      <TopRated />
+      <MediaSliders/>
     </div>
   );
 };

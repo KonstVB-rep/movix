@@ -2,6 +2,7 @@
 
 .video {
   position: relative;
+  flex-grow: 1;
   display: flex;
   gap:15px;
   flex-direction: column;
@@ -39,7 +40,7 @@
     }
   }
   .video__title {
-    color: var(--text-grey);
+
     font-size: 14px;
     line-height: 20px;
     flex-grow: 1;

@@ -15,7 +15,8 @@ const useGetDataInfinity = (url,queryParams,name_request, key) => {
     fetchNextPage,
     hasNextPage,
     isError,
-    isFetching
+    isFetching,
+    isSuccess
   } = useInfiniteQuery( [name_request, [key]], getSearchByQuery, {
     getNextPageParam: (lastPage) =>
       lastPage.page < lastPage.total_pages ? lastPage.page + 1 : false,
@@ -34,7 +35,7 @@ const useGetDataInfinity = (url,queryParams,name_request, key) => {
   const total_results = data?.pages[0]?.total_results;
   const dataPages = data?.pages
 
-  return {videos,error, isError, isLoading, fetchNextPage, hasNextPage, total_results,dataPages,isFetching}
+  return {videos,error, isError, isLoading, fetchNextPage, hasNextPage, total_results,dataPages,isFetching, isSuccess}
 };
 
 export default useGetDataInfinity;

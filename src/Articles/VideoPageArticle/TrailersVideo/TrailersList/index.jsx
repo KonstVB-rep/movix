@@ -3,11 +3,11 @@ import Skeleton from "../Skeleton";
 import TrailerCard from "../TrailerCard";
 import cn from "../TrailersVideo.module.scss";
 
-const TrailersList = ({data, loading}) => {
+const TrailersList = ({data, isLoading}) => {
 
   return (
     <>
-      {loading ?
+      {isLoading ?
         (
           <Skeleton data={data}/>
         ) :

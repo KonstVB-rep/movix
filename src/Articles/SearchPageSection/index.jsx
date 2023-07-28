@@ -18,8 +18,9 @@ const SearchPageSection = () => {
     hasNextPage,
     total_results,
     dataPages,
+    isSuccess
   } = useApi().search_query(`/search/multi`, { query }, "search_query", query);
-
+  console.log(total_results)
   return (
     <ErrorElement
       isError={isError}
@@ -30,13 +31,13 @@ const SearchPageSection = () => {
       <div className="main wrapper">
         <h1 className="title-article">
           <span className={cn.title__span}>Search results:</span>
-          {total_results ? (
+          {isSuccess && !total_results ? (
+              <span className={cn.title__span_loading}>Nothing was found for your query</span>
+          ) : (
             <>
               <span className={cn.title__span_total}>{total_results} </span>
               <span className={cn.title__span_text}>matches</span>
             </>
-          ) : (
-            <span className={cn.title__span_loading}>Loading...</span>
           )}
         </h1>
         <InfinityScrollList
@@ -45,6 +46,7 @@ const SearchPageSection = () => {
           fetchNextPage={fetchNextPage}
           data={videos}
           dataPages={dataPages}
+          isSuccess={isSuccess}
         />
       </div>
     </ErrorElement>

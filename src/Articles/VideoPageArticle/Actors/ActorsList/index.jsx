@@ -4,10 +4,7 @@ import useApi from "../../../hooks/commonHooks/useApi.js";
 import ActorCard from "../ActorCard";
 import Skeleton from "../Skeleton";
 
-const ActorsList = () => {
-  const { movieType, id } = useParams();
-
-  const { actors, isLoading } = useApi().crew(movieType, id);
+const ActorsList = ({actors,isLoading}) => {
 
   return (
     <>

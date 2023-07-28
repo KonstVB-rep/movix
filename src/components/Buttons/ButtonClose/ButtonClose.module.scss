@@ -5,7 +5,9 @@
   height: 50px;
   padding: 5px;
   right: 0;
-  color: var(--secondary);
+  border-radius: 50%;
+  overflow: hidden;
+  color: snow;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:before{
@@ -16,15 +18,15 @@
   &:hover,
   &:focus-visible{
     scale: 1.3;
-    color: black;
+    color: orangered;
     svg{
-      stroke: var(--secondary);
+      stroke: black;
       stroke-width: 5px;
     }
   }
   &:active{
     scale: 0.9;
-    color: var(--secondary);
+    color:snow;
   }
   svg{
     width: 100%;

@@ -1,0 +1,120 @@
+@import "../../mixins.scss";
+
+
+.slider-box{
+  display: grid;
+  gap: 20px;
+  padding-bottom: 10px;
+  position: relative;
+  &:nth-child(odd){
+    background: var(--bg-even-slider);
+    .opacity-layer {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, var(--bg-body) 80%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &:nth-child(even){
+    .opacity-layer {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, var(--bg-even-slider) 80%);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .heading{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+    @include xs {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+  .slider {
+    .wrapper {
+      position: relative;
+      .slider__title {
+        font-size: 24px;
+        color: var(--secondary);
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+      .arrow {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        top: 40%;
+        display: none;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        font-size: 30px;
+        color: var(--main);
+        z-index: 3;
+        transition: all 0.2s ease-in-out;
+        &::before{
+          content:'';
+          position: absolute;
+          border-radius: 50%;
+          margin: 5px;
+          inset:0;
+          z-index: -1;
+          background-image: var(--gradient);
+        }
+        & > svg {
+          height: 100%;
+          width: 100%;
+        }
+        @include md {
+          display: block;
+        }
+        &:disabled {
+          opacity: 0.5;
+        }
+        &:hover,
+        &:focus-visible {
+          scale: 1.2;
+          opacity: 1;
+          color: var(--secondary);
+        }
+      }
+      .arrow_left {
+        left: 30px;
+      }
+      .arrow_right {
+        right: 30px;
+      }
+      .arrow_hidden{
+        display: none;
+      }
+      .slides {
+        display: flex;
+        gap: 20px;
+        overflow-y: hidden;
+        padding: 20px 5px;
+        width: calc(100vw - 25px);
+        @include md{
+          width: calc(100vw - 40px);
+        }
+        @include xl{
+          gap: 20px;
+          overflow: hidden;
+          margin: 0;
+          padding: 40px 5px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+

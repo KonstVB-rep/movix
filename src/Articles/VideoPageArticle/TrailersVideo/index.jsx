@@ -3,9 +3,9 @@ import React from "react";
 import useApi from "../../hooks/commonHooks/useApi.js";
 import { useParams } from "react-router-dom";
 
-import WrapperSlider from "../../../components/SliderCardsVideos/WrapperSlider";
 import TrailersList from "./TrailersList";
 import ErrorElement from "../../../components/ErrorElement";
+import Slider from "../../../components/Slider/index.jsx";
 
 const TrailersVideo = () => {
   const { movieType, id } = useParams();
@@ -15,14 +15,9 @@ const TrailersVideo = () => {
 
   return (
     <ErrorElement isError={isError} error={error} title="Official videos">
-      <WrapperSlider
-        title="Official videos"
-        isError={isError}
-        error={error}
-        isFetching={isFetching}
-      >
-        <TrailersList data={data?.results} loading={isLoading} />
-      </WrapperSlider>
+      <Slider title="Official videos" data={data?.results}>
+        <TrailersList data={data?.results} isLoading={isLoading} />
+      </Slider>
     </ErrorElement>
   );
 };

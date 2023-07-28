@@ -33,7 +33,7 @@ const VideoDetails = () => {
     >
       <div className={cn.details}>
         <div className={cn.backdrop}>
-          <Img src={urlBackdrop + data?.backdrop_path} />
+          <Img src={`${urlBackdrop}${data?.backdrop_path}`} />
         </div>
         <div className={cn["opacity-layer"]}></div>
         <div className="wrapper">

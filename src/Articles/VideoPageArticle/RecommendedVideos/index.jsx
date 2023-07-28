@@ -1,10 +1,9 @@
 import React from "react";
-import SliderCardsVideos from "../../../components/SliderCardsVideos/index.jsx";
+import SliderBox from "../../../components/SliderBox/index.jsx";
 const RecommendedVideos = () => {
-
   return (
     <>
-      <SliderCardsVideos title="Recommendations" keyApi="recommendations" />
+      <SliderBox title="Recommendations" keyApi="recommendations" />
     </>
   );
 };

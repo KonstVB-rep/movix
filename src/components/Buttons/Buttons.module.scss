@@ -1,9 +1,11 @@
+@import "../../mixins.scss";
+
 .btn{
   position: fixed;
   width: 50px;
   height: 50px;
   padding: 10px;
-  background-color: var(--bg-body);
+  background-color: var(--main);
   border-radius: 50%;
   z-index: 20;
   box-shadow: 0 0 2px 2px var(--secondary);
@@ -18,12 +20,18 @@
     scale: 0.9;
   }
   &_theme{
-    bottom: 50px;
-    right: 50px;
+    bottom: 100px;
+    right: 20px;
+    @include md{
+      right: 50px
+    }
   }
   &_up{
-    bottom: 110px;
-    right: 50px;
+    bottom: 160px;
+    right: 20px;
+    @include md{
+      right: 50px
+    }
   }
   svg{
     color:var(--secondary);

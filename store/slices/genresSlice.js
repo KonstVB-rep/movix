@@ -41,8 +41,8 @@ const genresSlice = createSlice({
       action.payload.map(({ genres }) => {
         return genres.map((item) => state.all[item.id] = item.name);
       });
-      state.tv= action.payload[0].genres.map((item => ({label: item.name, value:item.id})))
-      state.movie =action.payload[1].genres.map((item => ({label: item.name, value:item.id})))
+      state.tv= action.payload[0].genres.map((item => ({label: item.name, value:item.id, filter: 'with_genres'})))
+      state.movie =action.payload[1].genres.map((item => ({label: item.name, value:item.id, filter: 'with_genres'})))
       state.loading = "fulfilled";
     });
     builder.addCase(fetchAllGenres.rejected, (state, action) => {

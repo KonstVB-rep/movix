@@ -48,17 +48,8 @@
 }
 @media only screen and (min-width: 1023px) {
   .card_flex {
-    max-width: 274px;
+    max-width: 272px;
   }
-}
-.card a {
-  z-index: 2;
-}
-.card a:hover + .poster::before, .card a:focus-visible + .poster::before {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 12px;
-  z-index: 1;
 }
 .card .poster {
   position: relative;
@@ -71,12 +62,17 @@
   align-items: flex-end;
   justify-content: space-between;
   border-radius: 12px;
+  box-shadow: 0 0 5px 2px black;
 }
-.card .poster::before {
+.card .poster a {
+  outline: none;
+  z-index: 2;
+}
+.card .poster a::before {
   content: "Go to the video page";
   position: absolute;
   inset: 0;
-  color: var(--secondary);
+  color: whitesmoke;
   text-transform: uppercase;
   line-height: 30px;
   padding: 10%;
@@ -87,6 +83,18 @@
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   will-change: opacity;
+}
+.card .poster a:hover::before, .card .poster a:focus-visible::before {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  z-index: 1;
+}
+.card .poster a:hover ~ .rating_card::before, .card .poster a:focus-visible ~ .rating_card {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.card .poster a:hover ~ div::before, .card .poster:focus-visible ~ div::before {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .card .poster img {
   border-radius: 12px;
@@ -116,7 +124,6 @@
 }
 .card .text .date {
   font-size: 14px;
-  color: var(--text-grey);
 }
 
 /*# sourceMappingURL=VideoCard.module.css.map */

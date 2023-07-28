@@ -7,7 +7,6 @@ const useSwitchTabs = (endpoints) => {
   const onTabChange = (index) => {
     setEndpoint(!index ? [endpoints[0]] : [endpoints[1]]);
   };
-
   return {endpoint, onTabChange};
 };
 

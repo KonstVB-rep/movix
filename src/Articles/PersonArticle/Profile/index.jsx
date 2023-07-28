@@ -27,6 +27,13 @@ const Profile = () => {
       classname='main'
     >
     <div className={`${cn.profile} wrapper main`}>
+      <div className={cn['opacity-backdrop']}>
+        <Img
+          src = {
+            data?.profile_path ? urlProfile + data?.profile_path : null
+          }
+        />
+      </div>
       <h1 className="title-article">Profile</h1>
       {!isLoading ? <div className = {cn.profile__content}>
         <div className = {cn.profile__content__photo}>
@@ -76,6 +83,12 @@ const Profile = () => {
             <p className = {cn["info-item"]}>
               Place of birth:{" "}
               <span className = {cn.text}>{data?.place_of_birth}</span>
+            </p>
+          ) : null}
+          {data?.homepage ? (
+            <p className = {cn["info-item"]}>
+              Homepage:{" "}
+              <span className = {cn.text}><a href = {data?.homepage} title="Go to the actor's home page" className={cn.link_pink}>{data?.homepage}</a></span>
             </p>
           ) : null}
           <Biography data = {data?.biography} />
