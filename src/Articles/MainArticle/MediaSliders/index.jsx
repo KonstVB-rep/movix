@@ -12,7 +12,10 @@ const slidersListMain = [
 const MediaSliders = () => {
   return (
     <>
-      {slidersListMain.map(section => <SliderBox key={section.keyApi} {...section} /> )}
+      {slidersListMain.map(section => <SliderBox
+        key={section.keyApi}
+        {...section}
+      /> )}
     </>
   );
 };

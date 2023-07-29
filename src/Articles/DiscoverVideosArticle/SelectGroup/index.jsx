@@ -1,19 +1,23 @@
-import React from "react";
+import React, {memo} from "react";
 import cn from "../DiscoverVideosSection.module.scss";
 import { Select } from "antd";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {filterSort, handleFilter, optionsSort, optionsYears} from "../data/index.js";
+import {
+  filterSort,
+  handleFilter,
+  optionsSort,
+  optionsYears,
+} from "../data/index.js";
 import useOnChangeSelect from "../../hooks/hooksDiscovery/useOnChangeSelect.js";
 
-
-const SelectsGroup = ({ show, setSelectedOption }) => {
+const SelectsGroup = memo(({ show, setSelectedOption }) => {
   const { movieType } = useParams();
 
   const optionsGenres = useSelector((state) => state.genres[movieType]);
 
-  const {handleChangeSortBy,handleChangeSortYear,handleChangeSortGenres} =useOnChangeSelect(movieType,setSelectedOption)
-
+  const { handleChangeSortBy, handleChangeSortYear, handleChangeSortGenres } =
+    useOnChangeSelect(movieType, setSelectedOption);
 
   return (
     <div
@@ -58,6 +62,6 @@ const SelectsGroup = ({ show, setSelectedOption }) => {
       />
     </div>
   );
-};
+});
 
 export default SelectsGroup;

@@ -1,9 +1,9 @@
-import React from "react";
+import React, {memo} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "../Loader";
 import VideoCard from "../VideoCard";
 
-const InfinityScrollList = ({
+const InfinityScrollList = memo(({
   isLoading,
   hasNextPage,
   fetchNextPage,
@@ -14,16 +14,13 @@ const InfinityScrollList = ({
 
   return (
     <>
-      {(isLoading || isFetching) ? (
-        <Loader />
-      ) : (
-        <>
+          {(isLoading || isFetching) && <Loader />}
           <InfiniteScroll
             className="grid"
             hasMore={hasNextPage || false}
             next={fetchNextPage}
             dataLength={data ? data.results.length : 0}
-            scrollThreshold={1}
+            scrollThreshold={0.85}
             loader={<Loader />}
           >
             {dataPages?.map((page) =>
@@ -35,9 +32,7 @@ const InfinityScrollList = ({
             )}
           </InfiniteScroll>
         </>
-      )}
-    </>
   );
-};
+});
 
 export default InfinityScrollList;

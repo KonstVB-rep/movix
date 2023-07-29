@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import cn from '../HeroBanner.module.scss'
+import cn from "../HeroBanner.module.scss";
 
 const Content = () => {
+  const inputRef = useRef(null);
   const navigate = useNavigate();
-
-  const [query, setQuery] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (query.length > 0) {
-      navigate(`/search/${query}`);
+    if (inputRef.current.value) {
+      navigate(`/search/${inputRef.current.value}`);
     }
   };
 
@@ -26,9 +25,11 @@ const Content = () => {
           <input
             type="text"
             placeholder="Search for a movie or tv show...."
-            onChange={(e) => setQuery(e.target.value)}
+            ref={inputRef}
           />
-          <button className={cn.form__btn}><span>Search</span></button>
+          <button className={cn.form__btn}>
+            <span>Search</span>
+          </button>
         </form>
       </div>
     </>
@@ -36,4 +37,3 @@ const Content = () => {
 };
 
 export default Content;
-

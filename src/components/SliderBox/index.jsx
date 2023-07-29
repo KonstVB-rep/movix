@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import ErrorElement from "../ErrorElement/index.jsx";
 import { useParams } from "react-router-dom";
 import useSwitchTabs from "../../Articles/hooks/commonHooks/useSwitchTabs.js";
 import useApi from "../../Articles/hooks/commonHooks/useApi.js";
-import VideosCardList from "../VideosCardList/index.jsx";
 import SkeletonsListMedia from "../SkeletonsListMedia/index.jsx";
 import VideoCardListWithSlider from "../VideoCardListWithSlider";
 
@@ -16,11 +15,11 @@ const SliderBox = ({
 }) => {
   const { movieType, id } = useParams();
 
-  const [params, setParams] = useState([]);
+  const [params, setParams] = useState(endpoints[0]);
   const { endpoint, onTabChange } = useSwitchTabs(endpoints);
 
   const chooseParams = () => {
-    setParams(tabsNames.length ? endpoint : [movieType, id]);
+      setParams(tabsNames.length ? endpoint : [movieType, id]);
   };
 
   const { data, isLoading, isFetching, isError, error } = useApi()[keyApi](
@@ -28,7 +27,7 @@ const SliderBox = ({
   );
 
   useEffect(() => {
-    chooseParams();
+      chooseParams();
   }, [movieType, id, endpoint]);
 
   return (

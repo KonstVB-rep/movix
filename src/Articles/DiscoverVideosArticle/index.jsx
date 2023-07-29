@@ -28,7 +28,6 @@ const DiscoverVideosSection = () => {
     hiddenSelects,
   } = useGetState(movieType);
 
-
   return (
     <main
       className={`${cn["wrapper-discover"]} ${

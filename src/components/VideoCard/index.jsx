@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, {memo, useEffect, useMemo, useState} from "react";
 import { Link, useParams } from "react-router-dom";
 import Img from "../Img";
 import Rating from "../Rating";
@@ -10,12 +10,8 @@ import { useSelector } from "react-redux";
 
 import cn from "./VideoCard.module.scss";
 
-const VideoCard = ({ data, endpoint, classname = "card_flex" }) => {
+const VideoCard = memo(({ data, endpoint, classname = "card_flex" }) => {
   const { movieType } = useParams();
-
-  const urlPoster = useSelector((state) => state.urlBaseForImages.url?.poster);
-
-  const [poster, setPoster] = useState(LoadingImg);
 
   const {
     id,
@@ -29,12 +25,16 @@ const VideoCard = ({ data, endpoint, classname = "card_flex" }) => {
     first_air_date,
   } = data;
 
+  const urlPoster = useSelector((state) => state.urlBaseForImages.url?.poster);
+
+  const [poster, setPoster] = useState(LoadingImg);
+
+  const posterUrl = useMemo(() => poster_path ? urlPoster && `${urlPoster}${poster_path}` : PosterFallback, [urlPoster]);
+
+
   useEffect(() => {
-    const posterUrl = poster_path
-      ? urlPoster && `${urlPoster}${poster_path}`
-      : PosterFallback;
     setPoster(posterUrl);
-  }, [poster_path]);
+  }, [posterUrl]);
 
   return (
     <li key={id} className={`${cn.card} ${cn[classname]}`}>
@@ -55,6 +55,6 @@ const VideoCard = ({ data, endpoint, classname = "card_flex" }) => {
       </div>
     </li>
   );
-};
+});
 
 export default memo(VideoCard);

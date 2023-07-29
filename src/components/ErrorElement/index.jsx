@@ -1,7 +1,7 @@
-import React from "react";
+import React, {memo} from "react";
 import cn from "./ErrorElement.module.scss";
 
-const ErrorElement = ({ title, error, isError, children, classname }) => {
+const ErrorElement = memo(({ title, error, isError, children, classname }) => {
 
   return (
     <>
@@ -20,6 +20,6 @@ const ErrorElement = ({ title, error, isError, children, classname }) => {
       )}
     </>
   );
-};
+});
 
 export default ErrorElement;

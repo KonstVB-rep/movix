@@ -3,7 +3,6 @@
   position: absolute;
   width: 100%;
   inset: 0;
-  background-color: var(--bg-skeleton);
   filter: blur(0);
   border-radius: 12px;
 }
@@ -55,10 +54,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1/1.5;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 30px;
   display: flex;
+  background: url("../../assets/background_poster.webp") center center/cover no-repeat;
   align-items: flex-end;
   justify-content: space-between;
   border-radius: 12px;

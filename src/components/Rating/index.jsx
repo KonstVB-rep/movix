@@ -5,6 +5,7 @@ import "react-circular-progressbar/dist/styles.css";
 import cn from "./Rating.module.scss";
 
 const Rating = memo(({ rating, classname }) => {
+
   return (
     <div className={`${cn.rating} ${cn[classname]}`}>
       <CircularProgressbar

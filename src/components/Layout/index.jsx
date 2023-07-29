@@ -12,27 +12,29 @@ import ThemeSwitch from "../Buttons/ThemeSwitch";
 const Layout = () => {
   const dispatch = useDispatch();
 
-  const loading = useSelector((state) => state.urlBaseForImages.loading);
-
   useEffect(() => {
     dispatch(fetchUrl());
-    dispatch(fetchAllGenres())
+    dispatch(fetchAllGenres());
   }, []);
 
   return (
     <>
-      {loading ? (
-        <>
-          <Header />
-            <Outlet />
-          <ScrollRestoration />
-          {createPortal(<ScrollTopBtn/>, document.getElementById('root'), 'buttonUp')}
-          {createPortal(<ThemeSwitch/>, document.getElementById('root'), 'themeSwitch')}
-          <Footer />
-        </>
-      ) : null}
+      <Header />
+      <Outlet />
+      <ScrollRestoration />
+      {createPortal(
+        <ScrollTopBtn />,
+        document.getElementById("root"),
+        "buttonUp"
+      )}
+      {createPortal(
+        <ThemeSwitch />,
+        document.getElementById("root"),
+        "themeSwitch"
+      )}
+      <Footer />
     </>
   );
-};
+};;
 
 export default Layout;
