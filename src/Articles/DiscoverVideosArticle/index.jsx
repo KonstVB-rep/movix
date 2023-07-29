@@ -4,7 +4,7 @@ import InfinityScrollList from "../../components/InfinityScrollList/index.jsx";
 import cn from "./DiscoverVideosSection.module.scss";
 import ErrorElement from "../../components/ErrorElement/index.jsx";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import SelectsGroup from "./SelectsGroup.jsx";
+import SelectsGroup from "./SelectGroup/index.jsx";
 import useGetState from "../hooks/hooksDiscovery/useGetState.js";
 
 const DiscoverVideosSection = () => {

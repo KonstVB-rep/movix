@@ -1,6 +1,4 @@
 .slider-box {
-  display: grid;
-  gap: 20px;
   padding-bottom: 10px;
   position: relative;
 }
@@ -28,7 +26,7 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  margin-top: 20px;
+  padding-top: 20px;
   justify-content: space-between;
 }
 @media only screen and (min-width: 479px) {

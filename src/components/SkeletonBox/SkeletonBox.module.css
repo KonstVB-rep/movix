@@ -1,0 +1,76 @@
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.heading .ellipse {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-skeleton);
+  border-radius: 20px;
+}
+.heading .title {
+  height: 30px;
+  width: 120px;
+}
+.heading .switch {
+  height: 42px;
+  width: 208px;
+}
+
+.slides {
+  display: flex;
+  gap: 20px;
+  padding: 40px 0;
+  overflow: hidden;
+}
+.slides .skeletons__item {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+.slides .skeletons__item_flex {
+  flex-grow: 1;
+  max-width: 216px;
+}
+@media only screen and (min-width: 767px) {
+  .slides .skeletons__item_flex {
+    max-width: 314px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .slides .skeletons__item_flex {
+    max-width: 274px;
+  }
+}
+.slides .skeletons__item .poster {
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1/1.5;
+  margin-bottom: 30px;
+}
+.slides .skeletons__item .text {
+  display: flex;
+  flex-direction: column;
+}
+.slides .skeletons__item .text .title {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.slides .skeletons__item .text .genre {
+  width: 100%;
+  min-height: 20px;
+  margin-bottom: 10px;
+}
+.slides .skeletons__item .text .date {
+  width: 75%;
+  height: 20px;
+}
+
+/*# sourceMappingURL=SkeletonBox.module.css.map */

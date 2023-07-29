@@ -1,5 +1,4 @@
 import React from "react";
-import SkeletonVideosList from "../SkeletonVideosList";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "../Loader";
 import VideoCard from "../VideoCard";
@@ -10,12 +9,13 @@ const InfinityScrollList = ({
   fetchNextPage,
   data,
   dataPages,
+  isFetching,
 }) => {
 
   return (
     <>
-      {isLoading ? (
-        <Loader/>
+      {(isLoading || isFetching) ? (
+        <Loader />
       ) : (
         <>
           <InfiniteScroll

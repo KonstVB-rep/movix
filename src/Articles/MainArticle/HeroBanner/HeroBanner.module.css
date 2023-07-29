@@ -98,6 +98,7 @@
 }
 .banner__content .form input:focus-visible {
   background-color: var(--secondary);
+  color: var(--main);
 }
 .banner__content .form input::placeholder {
   color: black;

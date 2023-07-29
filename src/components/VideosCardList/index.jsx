@@ -1,20 +1,17 @@
-import React from 'react';
+import React from "react";
 import VideoCard from "../VideoCard";
-import SkeletonVideosList from "../SkeletonVideosList";
 
-const VideosCardList = ({loading, data, endpoint ,isFetching, classname, classnameCard}) => {
-
+const VideosCardList = ({ dataList, endpointCard, classnameCard }) => {
   return (
     <>
-      {loading || isFetching ? (
-        <SkeletonVideosList classname={classname} />
-      ) : (
-        <>
-          {data?.map((item, index) => (
-            <VideoCard data={item} endpoint={endpoint} key={index} classname={classnameCard}/>
-          ))}
-        </>
-      )}
+      {dataList?.map((item, index) => (
+        <VideoCard
+          data={item}
+          endpoint={endpointCard}
+          key={index}
+          classname={classnameCard}
+        />
+      ))}
     </>
   );
 };

@@ -5,19 +5,25 @@ import { useParams } from "react-router-dom";
 
 import TrailersList from "./TrailersList";
 import ErrorElement from "../../../components/ErrorElement";
-import Slider from "../../../components/Slider/index.jsx";
+import Skeleton from "../TrailersVideo/Skeleton";
 
 const TrailersVideo = () => {
   const { movieType, id } = useParams();
 
-  const { data, isLoading, isError, error, isFetching } =
-    useApi().trailers_list(movieType, id);
+  const { data, isLoading, isError, error } = useApi().trailers_list(
+    movieType,
+    id
+  );
 
   return (
     <ErrorElement isError={isError} error={error} title="Official videos">
-      <Slider title="Official videos" data={data?.results}>
-        <TrailersList data={data?.results} isLoading={isLoading} />
-      </Slider>
+      {isLoading && <Skeleton />}
+      <TrailersList
+        dataList={data?.results}
+        isLoading={isLoading}
+        title="Official videos"
+        data={data?.results}
+      />
     </ErrorElement>
   );
 };

@@ -1,10 +1,10 @@
-import React from "react";
-
-import cn from "./SkeletonVideosList.module.scss";
+import React from 'react';
+import cn from "../SkeletonBox/SkeletonBox.module.scss";
 import {getNumberSkeletons} from "../../../utils/getNumberSkeletons.js";
+import withSkeletonBox from "../../hoc/withSkeletonBox.jsx";
 
+const SkeletonsListMedia = ({classname = "skeletons__item_flex"}) => {
 
-const SkeletonVideosList = ({ classname = "skeletons__item_flex" }) => {
   const length = +getNumberSkeletons(classname);
 
   return (
@@ -25,4 +25,4 @@ const SkeletonVideosList = ({ classname = "skeletons__item_flex" }) => {
   );
 };
 
-export default SkeletonVideosList;
+export default  withSkeletonBox(SkeletonsListMedia);

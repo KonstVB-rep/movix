@@ -1,5 +1,6 @@
 import React from "react";
 import cn from '../TrailersVideo.module.scss'
+import withSkeletonBox from "../../../../hoc/withSkeletonBox.jsx";
 
 const Skeleton = () => {
 
@@ -17,5 +18,5 @@ const Skeleton = () => {
   );
 };
 
-export default Skeleton;
+export default withSkeletonBox(Skeleton);
 

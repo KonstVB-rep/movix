@@ -20,7 +20,7 @@ const SearchPageSection = () => {
     dataPages,
     isSuccess
   } = useApi().search_query(`/search/multi`, { query }, "search_query", query);
-  console.log(total_results)
+
   return (
     <ErrorElement
       isError={isError}

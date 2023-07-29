@@ -2,24 +2,18 @@ import React from 'react';
 import Skeleton from "../Skeleton";
 import TrailerCard from "../TrailerCard";
 import cn from "../TrailersVideo.module.scss";
+import withSlider from "../../../../hoc/withSlider.jsx";
 
-const TrailersList = ({data, isLoading}) => {
+const TrailersList = ({dataList}) => {
 
   return (
-    <>
-      {isLoading ?
-        (
-          <Skeleton data={data}/>
-        ) :
         <>
-          {data.map((trailer) => (
+          {dataList.map((trailer) => (
             <TrailerCard key={trailer.id} data={trailer}/>
           ))}
         </>
-      }
-    </>
   );
 };
 
-export default TrailersList;
+export default withSlider(TrailersList);
 

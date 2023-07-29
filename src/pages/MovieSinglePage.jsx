@@ -9,13 +9,13 @@ import RecommendedVideos from "../Articles/VideoPageArticle/RecommendedVideos";
 const MovieSinglePage = () => {
 
   return (
-    <div>
+    <>
       <VideoDetails/>
-      <Actors/>
-      <TrailersVideo/>
-      <SimilarVideos/>
-      <RecommendedVideos/>
-    </div>
+        <Actors/>
+        <TrailersVideo/>
+        <SimilarVideos/>
+        <RecommendedVideos/>
+    </>
   );
 };
 
