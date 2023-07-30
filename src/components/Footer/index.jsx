@@ -1,20 +1,7 @@
 import React from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedin,
-} from "react-icons/fa";
-
-import cn from"./Footer.module.scss";
+import cn from "./Footer.module.scss";
 import { Link } from "react-router-dom";
-
-const socialLinks = [
-  { icon: <FaFacebookF />, path: "https://www.facebook.com/" },
-  { icon: <FaInstagram />, path: "https://www.instagram.com/" },
-  { icon: <FaTwitter />, path: "https://twitter.com/" },
-  { icon: <FaLinkedin />, path: "https://www.linkedin.com/" },
-];
+import {socialLinks} from "./socailLinks/index.jsx";
 
 const navItems = ["Terms Of Use", "Privacy-Policy", "About", "Blog", "FAQ"];
 

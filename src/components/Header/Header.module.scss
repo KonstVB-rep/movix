@@ -5,7 +5,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  height: 60px;
+  height: auto;
   background-color: var(--bg-header-footer);
   z-index: 25;
   &.top {
@@ -25,8 +25,16 @@
 
   .nav {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin: auto;
+    gap: 10px;
+    padding: 20px 0;
+    @include xs {
+      flex-direction: row;
+      padding: 10px 0;
+    }
     .logo {
       position: relative;
       display: flex;
@@ -39,21 +47,21 @@
       -webkit-background-clip: text;
       transition: all 1s ease-in-out;
       &:hover,
-      &:focus-visible{
+      &:focus-visible {
         background-image: var(--gradient-reverse);
       }
       &:hover::before,
-      &:focus-visible::before{
+      &:focus-visible::before {
         background-image: var(--gradient-reverse);
         width: 100%;
         opacity: 1;
       }
-      &:before{
-        content:'';
+      &:before {
+        content: "";
         position: absolute;
         width: 0;
         height: 5px;
-        bottom:5%;
+        bottom: 5%;
         border-radius: 20px;
         background-image: var(--gradient-reverse);
         opacity: 0;
@@ -63,41 +71,37 @@
         height: 50px;
       }
     }
-
-    .nav__list {
-      display: flex;
-      align-items: center;
-      @include xs {
+    .nav__desktop {
+      display: none;
+      @include s {
+        display: flex;
         gap: 20px;
       }
-      .nav__item {
-        display: none;
+      &__item {
         cursor: pointer;
-        @include xs {
-          display: block;
-        }
-        .nav__link{
+        .nav__desktop__link {
           padding: 10px 0;
           display: block;
           position: relative;
           color: snow;
+          text-transform: uppercase;
           transition: all 0.2s ease-in-out;
           &:hover,
-          &:focus-visible{
-            color:var(--pink);
+          &:focus-visible {
+            color: var(--pink);
           }
           &:hover::before,
-          &:focus-visible::before{
+          &:focus-visible::before {
             background-image: var(--gradient-reverse);
             width: 100%;
             opacity: 1;
           }
-          &:before{
-            content:'';
+          &:before {
+            content: "";
             position: absolute;
             width: 0;
             height: 5px;
-            bottom:0;
+            bottom: 0;
             border-radius: 20px;
             background-image: var(--gradient-reverse);
             opacity: 0;
@@ -105,79 +109,47 @@
           }
         }
       }
-      .nav__item-mobile{
-        display: flex;
-        @include xs {
-          display: none;
-        }
-        .nav__btn {
-          width: 45px;
-          height: 45px;
-          color: snow;
-          padding: 10px;
-          border-radius: 50%;
-          transition: all 0.2s ease-in-out;
-          &:active{
-            scale:0.9;
-          }
-          &:hover,
-          &:focus-visible{
-            background-image: var(--gradient-reverse);
-          }
-          &-icon {
-            width: 100%;
-            height: 100%;
-          }
-        }
+    }
+    .buttons__mobile__menu {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      @include s {
+        display: none;
       }
     }
   }
 
-  .search {
+  .list {
     position: absolute;
-    width: 100%;
-    padding: 20px 0;
-    background-color: var(--bg-header-footer);
-    top: 60px;
     left: 0;
+    right: 0;
+    top: 150px;
+    margin: 0;
+    list-style-type: none;
+    background-color: var(--main);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    @include xs{
+      top: 70px;
+    }
+  }
+  .search {
+    padding: 20px 10px;
+    background-color: var(--bg-header-footer);
+    @include md {
+      padding: 30px 40px;
+    }
     .form {
       display: flex;
+      gap: 15px;
       flex-direction: column;
-      gap: 5px;
       align-items: center;
       width: 100%;
-      @include xs{
+      @include s {
         flex-direction: row;
+        align-items: start;
       }
-      .form__btn-group{
-        gap: 5px;
-        display: flex;
-        border-radius: 30px;
-        border: 2px solid snow;
-        .form__btn {
-          flex-shrink: 0;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          padding: 10px;
-          &:active{
-            scale:0.9;
-          }
-          &:hover,
-          &:focus-visible{
-            background-image: var(--gradient-reverse);
-          }
-          svg {
-            width: 100%;
-            height: 100%;
-            font-size: 18px;
-            flex-shrink: 0;
-            color: snow;
-            cursor: pointer;
-          }
-        }
-      }
-      input {
+      .input_search {
         position: relative;
         width: 100%;
         height: 50px;
@@ -188,60 +160,93 @@
         padding: 0 15px;
         font-size: 16px;
         color: var(--main);
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           height: 100%;
-          right:0;
-          width:50px;
+          right: 0;
+          width: 50px;
           border-radius: 30px 0 0 30px;
           background-color: var(--secondary);
-        }
-        @include md {
-          height: 60px;
-          font-size: 20px;
-          padding: 0 30px;
         }
       }
     }
   }
-
-  .nav_mobile-dropdown {
-    position: absolute;
-    width: 100%;
-    top: 60px;
-    left: 0;
-    background: var(--bg-header-footer);
-    .nav__mobile-list {
-      display: grid;
-      grid-auto-columns: 1fr;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      padding: 20px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      .nav__mobile-item {
-        font-size: 20px;
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0 5px;
+  .nav__mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10px;
+    height: auto;
+    background-color: var(--bg-header-footer);
+    @include xs{
+      height: 150px;
+    }
+    &__item {
+      color: snow;
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 12px;
+      transition: all 0.2s ease-in-out;
+      border-bottom: 1px solid grey;
+      border-top: 1px solid grey;
+      .nav__link {
         display: flex;
         align-items: center;
         justify-content: center;
-        .nav__link{
-          color: snow;
-          width: 100%;
-          padding: 15px 20px;
-          text-align: center;
-          border-radius: 12px;
-          transition: all 0.2s ease-in-out;
-          &:hover,
-          &:focus-visible{
-            color: var(--pink);
-            background-color: azure;
-          }
+        color: snow;
+        width: 100%;
+        padding: 15px 20px;
+        border-radius: 12px;
+        transition: all 0.2s ease-in-out;
+        text-transform: uppercase;
+        &:hover,
+        &:focus-visible {
+          color: var(--pink);
+          background-color: azure;
         }
+      }
+    }
+  }
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  &:active {
+    scale: 0.9;
+  }
+  &:hover,
+  &:focus-visible {
+    background-image: var(--gradient-reverse);
+  }
+  &_submit {
+    width: 100px;
+    border-radius: 20px;
+    & > img {
+      width: 40px;
+    }
+    @include s {
+      width: 50px;
+      border-radius: 50%;
+      & > img {
+        width: 100%;
       }
     }
   }

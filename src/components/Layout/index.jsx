@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Header from "../Header";
 import Footer from "../Footer";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, } from "react-redux";
 import { fetchUrl } from "../../../store/slices/urlSlice.js";
 import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
 import ScrollTopBtn from "../Buttons/ScrollTopBtn";
 import {createPortal} from "react-dom";
 import ThemeSwitch from "../Buttons/ThemeSwitch";
+
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Layout = () => {
 
   return (
     <>
-      <Header />
+      <Header/>
       <Outlet />
       <ScrollRestoration />
       {createPortal(

@@ -4,6 +4,7 @@ import cn from "../Actors.module.scss";
 import withSkeletonBox from "../../../../hoc/withSkeletonBox.jsx";
 
 const Skeleton = () => {
+
   const length = +getComputedStyle(
     document.querySelector(":root")
   ).getPropertyValue("--count-skeletons-actors");

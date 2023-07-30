@@ -9,7 +9,7 @@
   border-radius: 50%;
   overflow: hidden;
   padding: 2px;
-  @include xs{
+  @include s{
     width: 70px;
     height: 70px;
   }

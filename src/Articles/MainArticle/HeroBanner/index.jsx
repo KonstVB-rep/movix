@@ -9,9 +9,9 @@ const HeroBanner = () => {
       <div className={cn.banner}>
         <Banner />
         <div className={cn["opacity-layer"]}></div>
-        <div className="wrapper">
+        {/*<div className="wrapper">*/}
           <Content />
-        </div>
+        {/*</div>*/}
       </div>
   );
 };

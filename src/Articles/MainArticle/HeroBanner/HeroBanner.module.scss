@@ -47,9 +47,11 @@
     color: var(--secondary);
     text-align: center;
     position: relative;
-    max-width: 800px;
+    width: 100%;
+    //max-width: 800px;
     margin: 0 auto;
-
+    padding: 20px;
+    background-color: var(--bg-banner-text);
     .title {
       font-size: 50px;
       font-weight: 700;
@@ -74,10 +76,12 @@
       display: none;
       align-items: center;
       width: 100%;
+      max-width: 800px;
+      margin: auto;
       padding: 5px;
       background: var(--gradient);
       border-radius: 40px;
-      @include xs {
+      @include s {
         display: flex;
       }
       input {

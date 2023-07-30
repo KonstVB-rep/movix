@@ -54,7 +54,7 @@
   border-radius: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  color: var(--main);
+  fill: var(--main);
   z-index: 3;
   transition: all 0.2s ease-in-out;
 }
@@ -82,7 +82,7 @@
 .slider-box .slider .wrapper .arrow:hover, .slider-box .slider .wrapper .arrow:focus-visible {
   scale: 1.2;
   opacity: 1;
-  color: var(--secondary);
+  fill: var(--secondary);
 }
 .slider-box .slider .wrapper .arrow_left {
   left: 30px;

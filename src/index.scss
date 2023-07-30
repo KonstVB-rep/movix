@@ -19,6 +19,7 @@
   --bg-header-footer: #1f2833;
   --bg-skeleton: #0a2955;
   --bg-even-slider: var(--main);
+  --bg-banner-text: rgba(0, 0, 0, 0.45);
   --pink: #da2f68;
   --green: #076b3f;
   --blue: #1c2c93;
@@ -168,7 +169,7 @@ img {
 }
 
 
-@include xs{
+@include s{
 :root{
   --count-skeletons-grid: 1;
   --count-skeletons-flex: 3;
@@ -204,6 +205,7 @@ img {
   --secondary: #1d2329;
   --bg-body: #c5c5de;
   --bg-header-footer: #48494b;
+  --bg-banner-text: rgba(255, 255, 255, 0.4);
   --bg-skeleton: #acacb5;
   --bg-even-slider: #2aa57e47;
 

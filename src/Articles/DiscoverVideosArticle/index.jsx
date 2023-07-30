@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import InfinityScrollList from "../../components/InfinityScrollList/index.jsx";
+import InfinityScrollList from "../../components/InfinityScrollList";
 import cn from "./DiscoverVideosSection.module.scss";
-import ErrorElement from "../../components/ErrorElement/index.jsx";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import ErrorElement from "../../components/ErrorElement";
 import SelectsGroup from "./SelectGroup/index.jsx";
 import useGetState from "../hooks/hooksDiscovery/useGetState.js";
+import useOnChangeSelect from "../hooks/hooksDiscovery/useOnChangeSelect.js";
 
 const DiscoverVideosSection = () => {
   const { movieType } = useParams();
@@ -28,6 +28,9 @@ const DiscoverVideosSection = () => {
     hiddenSelects,
   } = useGetState(movieType);
 
+  const { handleChangeSortGenres } =
+    useOnChangeSelect(movieType, setSelectedOption);
+
   return (
     <main
       className={`${cn["wrapper-discover"]} ${
@@ -42,7 +45,10 @@ const DiscoverVideosSection = () => {
         <button onClick={toggleVisibleSelects} className={cn["sort-popup_btn"]}>
           <span>
             Sort by
-            <BsThreeDotsVertical />
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+            </svg>
           </span>
         </button>
         <SelectsGroup

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import ErrorElement from "../ErrorElement/index.jsx";
 import { useParams } from "react-router-dom";
 import useSwitchTabs from "../../Articles/hooks/commonHooks/useSwitchTabs.js";
@@ -15,14 +15,14 @@ const SliderBox = ({
 }) => {
   const { movieType, id } = useParams();
 
-  const [params, setParams] = useState(endpoints[0]);
+  const [params, setParams] = useState('');
   const { endpoint, onTabChange } = useSwitchTabs(endpoints);
 
   const chooseParams = () => {
       setParams(tabsNames.length ? endpoint : [movieType, id]);
   };
 
-  const { data, isLoading, isFetching, isError, error } = useApi()[keyApi](
+  let { data, isLoading, isError, error } = useApi()[keyApi](
     ...params
   );
 
@@ -32,7 +32,7 @@ const SliderBox = ({
 
   return (
     <ErrorElement isError={isError} error={error} title={title}>
-      <SkeletonsListMedia classname={classname} tabsNames={tabsNames} isLoading={isLoading} isFetching={isFetching}/>
+      <SkeletonsListMedia classname={classname} tabsNames={tabsNames} isLoading={isLoading} />
         <VideoCardListWithSlider
           dataList={data?.results}
           endpointCard={endpoint[0]}

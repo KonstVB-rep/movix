@@ -1,7 +1,6 @@
 import React from "react";
 import Img from "../../../../components/Img";
 import { useSelector } from "react-redux";
-import { MdOutlineImageNotSupported } from "react-icons/md";
 import { dataMovieCrew, dataMovieRelease } from "./data";
 
 import { useParams } from "react-router-dom";
@@ -9,6 +8,7 @@ import ProfitabilityFilm from "../ProfitabilityFilm";
 import DurationOfSeries from "../DurationOfSeries";
 import InfoRow from "../InfoRow";
 import useApi from "../../../hooks/commonHooks/useApi.js";
+import NotImage from '../../../../assets/not_image.svg';
 
 import cn from "./About.module.scss";
 
@@ -78,7 +78,7 @@ const About = () => {
                 <Img src = {urlBackdrop + logo_path} />
               ) : (
                 <div className = {cn["icon-placeholder"]}>
-                  <MdOutlineImageNotSupported />
+                  <img src = {NotImage} alt = "Not image" />
                 </div>
               )}
             </div>

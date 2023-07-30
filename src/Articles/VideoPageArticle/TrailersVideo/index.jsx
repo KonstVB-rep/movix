@@ -17,7 +17,7 @@ const TrailersVideo = () => {
 
   return (
     <ErrorElement isError={isError} error={error} title="Official videos">
-      {isLoading && <Skeleton />}
+      <Skeleton isLoading={isLoading}/>
       <TrailersList
         dataList={data?.results}
         isLoading={isLoading}

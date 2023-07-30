@@ -74,7 +74,7 @@
 .profile__content__info .biography_short {
   position: relative;
   text-align: start;
-  padding-right: 10px;
+  padding-right: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 6;
   margin: 20px auto;
@@ -89,12 +89,11 @@
   position: absolute;
   bottom: 2px;
   right: -35px;
-  transform: translateX(-50%) rotate(270deg);
+  transform: translateX(-50%);
   z-index: 1;
   outline: none;
   border-radius: 12px;
   font-size: 1.2rem;
-  color: #ec5f2b;
   transition: all 0.2s ease-in-out;
 }
 .profile__content__info .biography_short .more__btn:focus, .profile__content__info .biography_short .more__btn:active, .profile__content__info .biography_short .more__btn:focus-visible {

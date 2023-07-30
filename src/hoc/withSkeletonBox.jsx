@@ -1,13 +1,13 @@
 import React from "react";
-import SkeletonBox from "../components/SkeletonBox/index.jsx";
+import SkeletonBox from "../components/SkeletonBox";
 
 const withSkeletonBox = (Component) => {
   return (props) => {
-    const { tabsNames = [], isLoading, isFetching, ...rest } = props;
+    const { tabsNames = [],isLoading, ...rest } = props;
     return (
       <>
-        {(isLoading || isFetching) && (
-          <SkeletonBox tabsNames={tabsNames}>
+        {isLoading  && (
+          <SkeletonBox tabsNames={tabsNames} >
             <Component {...rest} />
           </SkeletonBox>
         )}

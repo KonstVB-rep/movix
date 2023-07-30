@@ -1,55 +1,37 @@
-import React, {useRef, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {HiOutlineSearch} from "react-icons/hi";
-import {VscChromeClose} from "react-icons/vsc";
-import useClickOutside from "../../../Articles/hooks/commonHooks/useClickOutside.js";
+import React, {useRef} from "react";
 import cn from "../Header.module.scss";
+import SearchIcon from "../../../assets/search.svg";
 
-const SearchForm = ({setShowSearch, showSearch}) => {
+import {useNavigate} from "react-router-dom";
+
+const SearchForm = ({ isSearchOpen }) => {
+
+  const inputRef = useRef(null);
   const navigate = useNavigate();
-  const searchRef = useRef(null);
 
-  const [query, setQuery] = useState("");
-
-  useClickOutside(searchRef, () => {
-    if (showSearch) {
-      setShowSearch(false);
-    }
-  });
-
-  const onSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    if (query.length > 0) {
-      navigate(`/search/${query}`);
-      setShowSearch(false);
+    if (inputRef.current.value) {
+      navigate(`/search/${inputRef.current.value}`);
     }
   };
 
+
   return (
     <>
-      {showSearch && (
-        <div className = {cn.search} ref = {searchRef}>
-          <div className = "wrapper">
-            <form className = {cn.form} onSubmit = {onSubmit}>
-              <input
-                type = "text"
-                placeholder = "Search for a movie or tv show...."
-                onChange = {(e) => setQuery(e.target.value)}
-              />
-              <div className = {cn['form__btn-group']}>
-                <button className = {cn.form__btn}>
-                  <HiOutlineSearch />
-                </button>
-                <button
-                  onClick = {() => setShowSearch(false)}
-                  type = "button"
-                  className = {cn.form__btn}
-                >
-                  <VscChromeClose />
-                </button>
-              </div>
-            </form>
-          </div>
+      {isSearchOpen && (
+        <div className={`${cn.list} ${cn.search}`}>
+          <form action="components/Header/SearchForm/index.jsx" className={cn.form} onSubmit={submitHandler}>
+            <input
+              type="text"
+              className={cn.input_search}
+              ref={inputRef}
+              placeholder="Search for a movie or tv show...."
+            />
+              <button className={`${cn.button} ${cn.button_submit}`}>
+                <img src={SearchIcon} alt="search" />
+              </button>
+          </form>
         </div>
       )}
     </>

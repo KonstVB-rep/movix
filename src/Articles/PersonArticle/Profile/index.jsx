@@ -26,7 +26,7 @@ const Profile = () => {
       title='Profile'
       classname='main'
     >
-    <div className={cn.profile}>
+    <div className={`${cn.profile} wrapper`}>
       <div className={cn['opacity-backdrop']}>
         <Img
           src = {

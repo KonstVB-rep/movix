@@ -6,7 +6,7 @@ import useApi from "../../hooks/commonHooks/useApi.js";
 import ActorsList from "./ActorsList";
 import ErrorElement from "../../../components/ErrorElement";
 
-import Skeleton from "./Skeleton/index.jsx";
+import Skeleton from "./Skeleton";
 
 const Actors = () => {
   const { movieType, id } = useParams();
@@ -15,7 +15,7 @@ const Actors = () => {
 
   return (
     <ErrorElement isError={isError} error={error} title="Top actors">
-      {isLoading && <Skeleton />}
+      <Skeleton isLoading={isLoading}/>
       <ActorsList title="Top actors" data={actors} dataList={actors} />
     </ErrorElement>
   );

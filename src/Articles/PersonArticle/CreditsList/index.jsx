@@ -17,22 +17,27 @@ const CreditsList = ({ endpoints, media_type }) => {
 
   return (
     <ErrorElement isError={isError} error={error} title="Profile">
-      <SkeletonsListMedia tabsNames={endpoints} isLoading={isLoading} isFetching={isFetching}/>
-      <div className={cn.heading}>
-        <h2 className="title-article">
-          {endpoint[0] === "movie" ? "Movies" : "TV Show"}
-        </h2>
-        <SwitchTabs data={media_type} onTabChange={onTabChange} />
-      </div>
-      <div className="grid">
-        <VideosCardList
-          dataList={data?.cast}
-          endpointCard={endpoint}
-          isFetching={isFetching}
-          loading={isLoading}
-          classname="skeletons__item_grid"
-          classnameCard="card_grid"
-        />
+      <SkeletonsListMedia
+        tabsNames={endpoints}
+        isLoading={isLoading}
+      />
+      <div className="wrapper">
+        <div className={cn.heading}>
+          <h2 className="title-article">
+            {endpoint[0] === "movie" ? "Movies" : "TV Show"}
+          </h2>
+          <SwitchTabs data={media_type} onTabChange={onTabChange} />
+        </div>
+        <div className="grid">
+          <VideosCardList
+            dataList={data?.cast}
+            endpointCard={endpoint}
+            isFetching={isFetching}
+            loading={isLoading}
+            classname="skeletons__item_grid"
+            classnameCard="card_grid"
+          />
+        </div>
       </div>
     </ErrorElement>
   );

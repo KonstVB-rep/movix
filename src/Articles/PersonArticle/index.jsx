@@ -7,7 +7,7 @@ import Profile from "./Profile";
 const PersonSection = () => {
 
   return (
-    <div className='wrapper main'>
+    <div className='main'>
         <Profile/>
         <CreditsList
           endpoints={["movie", "tv"]}

@@ -74,5 +74,8 @@
   box-shadow: 0 0 4px 4px orangered;
   color: var(--pink);
 }
+.footer .social__icons .icon svg {
+  scale: 0.5;
+}
 
 /*# sourceMappingURL=Footer.module.css.map */

@@ -36,10 +36,6 @@ export const router = createBrowserRouter(
           path: "discover/:movieType",
           element: <DiscoverVideosPage />,
         },
-        // {
-        //   path: "search/:query",
-        //   element: <RegisterPage />,
-        // },
         {
           path: "*",
           element: <NotFoundPage />,

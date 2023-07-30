@@ -32,7 +32,7 @@
     gap: 20px;
     padding-top: 20px;
     justify-content: space-between;
-    @include xs {
+    @include s {
       align-items: center;
       flex-direction: row;
     }
@@ -56,7 +56,7 @@
         border-radius: 50%;
         transform: translateY(-50%);
         font-size: 30px;
-        color: var(--main);
+        fill: var(--main);
         z-index: 3;
         transition: all 0.2s ease-in-out;
         &::before{
@@ -82,7 +82,7 @@
         &:focus-visible {
           scale: 1.2;
           opacity: 1;
-          color: var(--secondary);
+          fill: var(--secondary);
         }
       }
       .arrow_left {
