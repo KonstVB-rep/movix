@@ -5,11 +5,12 @@ import cn from "./Header.module.scss";
 import SearchIcon from "../../assets/search.svg";
 import CloseMenu from "../../assets/close_menu.svg";
 import BurgerMenu from "../../assets/burger_menu.svg";
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import useOutsideClick from "../../Articles/hooks/commonHooks/useOutsideClick.js";
+import useShowNavbarWhenScroll from "../../Articles/hooks/hooksMain/useShowNavbarWhenScroll.js";
 
-const Header =() => {
-
-  const {pathname} = useLocation()
+const Header = () => {
+  const { pathname } = useLocation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -19,58 +20,22 @@ const Header =() => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsSearchOpen(false)
+    setIsSearchOpen(false);
   }, [pathname]);
 
-  const ref = useRef(null);
-  const refMenu = useRef(null);
+  const menuMobileRef = useRef(null);
+  const menuBtnRef = useRef(null);
   const searchRef = useRef(null);
-  const searchBtn = useRef(null);
-  useEffect(() => {
-    const checkIfClickedOutside = (e) => {
-      if (
-        isMenuOpen &&
-        ref?.current &&
-        !ref?.current?.contains(e.target) &&
-        e.target !== refMenu?.current
-      ) {
-        setIsMenuOpen(false);
-      }
+  const searchBtnRef = useRef(null);
 
-      if (
-        isSearchOpen &&
-        searchRef?.current &&
-        !searchRef?.current?.contains(e.target) &&
-        e.target !== searchBtn?.current
-      ) {
-        setIsSearchOpen(false);
-      }
-    };
-    document.addEventListener("click", checkIfClickedOutside);
-    return () => {
-      document.removeEventListener("click", checkIfClickedOutside);
-    };
-  }, [isMenuOpen, isSearchOpen]);
+  const onCloseMenu = () => setIsMenuOpen(false);
+  const onCloseSearch = () => setIsSearchOpen(false);
 
-  const controlNavbar = () => {
-    if (window.scrollY > 200) {
-      if (window.scrollY > lastScrollY && !isMenuOpen) {
-        setShow("hide");
-      } else {
-        setShow("show");
-      }
-    } else {
-      setShow("top");
-    }
-    setLastScrollY(window.scrollY);
-  };
+  useOutsideClick(isMenuOpen, menuMobileRef, menuBtnRef, onCloseMenu);
+  useOutsideClick(isSearchOpen, searchRef, searchBtnRef, onCloseSearch);
+  useShowNavbarWhenScroll(lastScrollY,isMenuOpen,setShow,setLastScrollY)
 
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, [lastScrollY]);
+
   return (
     <header
       className={`${cn.header} ${isMenuOpen ? cn.mobile__view : ""} ${
@@ -98,7 +63,7 @@ const Header =() => {
             <button
               className={cn.button}
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              ref={searchBtn}
+              ref={searchBtnRef}
             >
               {!isSearchOpen ? (
                 <img src={SearchIcon} alt="Search" />
@@ -109,7 +74,7 @@ const Header =() => {
             <button
               className={cn.button}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              ref={refMenu}
+              ref={menuBtnRef}
             >
               {isMenuOpen ? (
                 <img src={CloseMenu} alt="Close" />
@@ -123,11 +88,11 @@ const Header =() => {
       <div ref={searchRef}>
         <SearchForm isSearchOpen={isSearchOpen} />
       </div>
-      <div ref={ref}>
+      <div ref={menuMobileRef}>
         <DropdownNav isMenuOpen={isMenuOpen} />
       </div>
     </header>
   );
-}
+};
 
 export default Header;

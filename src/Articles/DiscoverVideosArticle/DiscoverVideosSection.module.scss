@@ -97,6 +97,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: bolder;
       gap: 10px;
       padding: 0 10px;
       fill:var(--secondary);
@@ -174,7 +175,3 @@
 }
 
 
-
-.react-select__menu{
-  color: black
-}
