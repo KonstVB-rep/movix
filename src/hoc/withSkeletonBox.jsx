@@ -4,6 +4,7 @@ import SkeletonBox from "../components/SkeletonBox";
 const withSkeletonBox = (Component) => {
   return (props) => {
     const { tabsNames = [],isLoading, ...rest } = props;
+
     return (
       <>
         {isLoading  && (

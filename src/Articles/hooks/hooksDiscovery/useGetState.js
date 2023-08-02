@@ -16,12 +16,7 @@ const useGetState = (movieType) => {
     dataPages,
     total_results,
     isSuccess,
-  } = useApi().discover(
-    `/discover/${movieType}`,
-    selectedOption,
-    `discover_${movieType}`,
-    selectedOption
-  );
+  } = useApi().discover(`/discover/${movieType}`, selectedOption, `discover_${movieType}`, selectedOption);
 
   const [show, setShow] = useState(false);
 

@@ -42,9 +42,14 @@ const VideoDetails = () => {
             <Skeleton />
           ) : (
             <div className={cn.content}>
-              <Poster poster={data.poster_path} />
-              <Poster poster={data.poster_path} backdrop={true} />
-              <Description data={data} />
+              <div className={cn.indicators}>
+                <Poster poster={data?.poster_path} />
+                <Description data={data} />
+              </div>
+              <div className={cn.overview}>
+                <div className="title-article">Overview</div>
+                <div className={cn.description}>{data?.overview}</div>
+              </div>
             </div>
           )}
         </div>

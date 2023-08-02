@@ -10,13 +10,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    height: 50px;
     margin: 10px 0;
     align-items: center;
 
     .company__logo {
       display: flex;
-      height: 100%;
+      height: 50px;
       flex-shrink: 0;
       background: #c6cacc;
       border-radius: 15px;
@@ -54,7 +53,7 @@
     flex-wrap: wrap;
     gap: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 0;
+    padding: 10px 0;
 
     .item {
       .item__title {
@@ -66,6 +65,7 @@
 
         &_budget {
           color: gold;
+          text-shadow: 0 0 5px black;
         }
 
         &_deficit {
@@ -73,7 +73,7 @@
         }
 
         &_profit {
-          color: lightseagreen;
+          color: #149687;
         }
       }
     }

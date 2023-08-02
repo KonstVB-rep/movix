@@ -1,8 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import ActorCard from "../ActorCard";
 import withSlider from "../../../../hoc/withSlider.jsx";
 
-const ActorsList = ({ dataList }) => {
+const ActorsList = memo(({ dataList }) => {
   return (
     <>
       {dataList.map((actor, index) => (
@@ -10,6 +10,6 @@ const ActorsList = ({ dataList }) => {
       ))}
     </>
   );
-};
+});
 
 export default withSlider(ActorsList);

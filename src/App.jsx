@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 import { store } from "../store/index.js";
 
 
-const queryClient = new QueryClient(
+export const queryClient = new QueryClient(
   {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000,retry: 3, keepPreviousData:true}}}
 );
 

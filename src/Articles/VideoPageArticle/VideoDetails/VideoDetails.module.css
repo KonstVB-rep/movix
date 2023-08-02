@@ -9,7 +9,8 @@
   .details {
     margin-bottom: 0;
     padding-top: 120px;
-    min-height: 700px;
+    height: calc(100% + 220px);
+    min-height: 1000px;
   }
 }
 .details .backdrop {
@@ -39,6 +40,11 @@
   left: 0;
 }
 .details .content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.details .content .indicators {
   margin-top: 40px;
   display: flex;
   position: relative;
@@ -46,41 +52,41 @@
   gap: 25px;
 }
 @media only screen and (min-width: 767px) {
-  .details .content {
+  .details .content .indicators {
     flex-direction: row;
   }
 }
-.details .content .poster {
+.details .content .indicators .poster {
   flex-shrink: 0;
 }
-.details .content .poster .poster__img {
+.details .content .indicators .poster .poster__img {
   width: 100%;
   display: block;
   border-radius: 12px;
 }
 @media only screen and (min-width: 639px) {
-  .details .content .poster .poster__img {
+  .details .content .indicators .poster .poster__img {
     max-width: 350px;
   }
 }
-.details .content .describe {
+.details .content .indicators .describe {
   color: var(--secondary);
 }
-.details .content .describe .title {
+.details .content .indicators .describe .title {
   font-size: 28px;
   line-height: 40px;
 }
-.details .content .describe .title a {
+.details .content .indicators .describe .title a {
   display: block;
   width: fit-content;
 }
 @media only screen and (min-width: 767px) {
-  .details .content .describe .title {
+  .details .content .indicators .describe .title {
     font-size: 34px;
     line-height: 44px;
   }
 }
-.details .content .describe .title .subtitle {
+.details .content .indicators .describe .title .subtitle {
   display: block;
   font-size: 16px;
   line-height: 24px;
@@ -88,43 +94,53 @@
   font-style: italic;
 }
 @media only screen and (min-width: 639px) {
-  .details .content .describe .title .subtitle {
+  .details .content .indicators .describe .title .subtitle {
     font-size: 20px;
     line-height: 28px;
   }
 }
-.details .content .describe .overview {
-  margin-bottom: 10px;
-}
-.details .content .describe .overview .heading {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-.details .content .describe .overview .description {
-  line-height: 24px;
-  text-align: justify;
-}
-.details .content .describe .row {
+.details .content .indicators .describe .row {
   display: flex;
   align-items: center;
   gap: 25px;
   margin-bottom: 20px;
 }
+.details .content .overview {
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+.details .content .overview .heading {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.details .content .overview .description {
+  padding-top: 15px;
+  font-size: 1rem;
+  line-height: 30px;
+  text-align: justify;
+}
 .details .skeleton {
   position: relative;
   margin-top: 40px;
 }
-.details .skeleton .wrapper {
+.details .skeleton .content-skeleton {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
+.details .skeleton .content__indicators {
+  margin: 0;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 25px;
+}
 @media only screen and (min-width: 767px) {
-  .details .skeleton .wrapper {
+  .details .skeleton .content__indicators {
     flex-direction: row;
   }
 }
-.details .skeleton .left {
+.details .skeleton .content__indicators .left {
   position: relative;
   flex-shrink: 0;
   width: 100%;
@@ -134,79 +150,89 @@
   overflow: hidden;
 }
 @media only screen and (min-width: 767px) {
-  .details .skeleton .left {
+  .details .skeleton .content__indicators .left {
     width: 40%;
     max-height: 700px;
     aspect-ratio: 1/1.5;
   }
 }
-.details .skeleton .right {
+.details .skeleton .content__indicators .right {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.details .skeleton .right .row {
+.details .skeleton .content__indicators .right .row {
   width: 100%;
   height: 25px;
   border-radius: 50px;
 }
-.details .skeleton .right .row.title {
+.details .skeleton .content__indicators .right .row.title {
   width: 75%;
   height: 70px;
 }
-.details .skeleton .right .row.genres {
+.details .skeleton .content__indicators .right .row.genres {
   width: 50%;
 }
-.details .skeleton .right .row.overview {
+.details .skeleton .content__indicators .right .row.overview {
   width: 30%;
   height: 40px;
 }
-.details .skeleton .right .row.describe {
-  width: 100%;
-  height: 200px;
-}
-.details .skeleton .right .row.row_short:nth-child(odd) {
+.details .skeleton .content__indicators .right .row.row_short:nth-child(odd) {
   width: 60%;
 }
 @media only screen and (min-width: 767px) {
-  .details .skeleton .right .row.row_short:nth-child(odd) {
+  .details .skeleton .content__indicators .right .row.row_short:nth-child(odd) {
     width: 40%;
   }
 }
-.details .skeleton .right .row.row_short:nth-child(even) {
+.details .skeleton .content__indicators .right .row.row_short:nth-child(even) {
   width: 70%;
 }
 @media only screen and (min-width: 767px) {
-  .details .skeleton .right .row.row_short:nth-child(even) {
+  .details .skeleton .content__indicators .right .row.row_short:nth-child(even) {
     width: 60%;
   }
 }
-.details .skeleton .right .row.row_short:last-child {
+.details .skeleton .content__indicators .right .row.row_short:last-child {
   width: 90%;
   height: 60px;
 }
 @media only screen and (min-width: 767px) {
-  .details .skeleton .right .row.row_short:last-child {
+  .details .skeleton .content__indicators .right .row.row_short:last-child {
     width: 70%;
   }
 }
-.details .skeleton .right .group {
+.details .skeleton .content__indicators .right .group {
   display: inline-flex;
   flex-grow: 0;
   align-items: center;
   gap: 20px;
 }
-.details .skeleton .right .group > .circle {
+.details .skeleton .content__indicators .right .group > .circle {
   border-radius: 50%;
   height: 60px;
   width: 60px;
 }
 @media only screen and (min-width: 767px) {
-  .details .skeleton .right .group > .circle {
+  .details .skeleton .content__indicators .right .group > .circle {
     width: 80px;
     height: 80px;
   }
+}
+.details .skeleton .describe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.details .skeleton .describe__title {
+  height: 40px;
+  width: 150px;
+  border-right: 30px;
+}
+.details .skeleton .describe__text {
+  width: 100%;
+  height: 150px;
 }
 
 /*# sourceMappingURL=VideoDetails.module.css.map */

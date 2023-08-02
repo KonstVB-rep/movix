@@ -19,14 +19,14 @@ const InfinityScrollList = memo(({
             className="grid"
             hasMore={hasNextPage || false}
             next={fetchNextPage}
-            dataLength={data ? data.results.length : 0}
+            dataLength={data ? data?.results.length : 0}
             scrollThreshold={0.85}
             loader={<Loader />}
           >
             {dataPages?.map((page) =>
               page?.results.map((item) => {
                 return (
-                  <VideoCard key={item.id} data={item} classname="card_grid" />
+                  <VideoCard key={item.id} data={item} classnameCard="card_grid" />
                 );
               })
             )}

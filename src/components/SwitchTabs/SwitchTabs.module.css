@@ -1,7 +1,6 @@
 .tab {
   padding: 4px;
   width: fit-content;
-  justify-self: flex-end;
   background-image: var(--gradient);
   border-radius: 20px;
 }

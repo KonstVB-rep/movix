@@ -89,7 +89,7 @@ const Header = () => {
         <SearchForm isSearchOpen={isSearchOpen} />
       </div>
       <div ref={menuMobileRef}>
-        <DropdownNav isMenuOpen={isMenuOpen} />
+        <DropdownNav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       </div>
     </header>
   );

@@ -20,6 +20,7 @@ const SelectsGroup = memo(({ show, setSelectedOption }) => {
     useOnChangeSelect(movieType, setSelectedOption);
 
   return (
+
     <div
       className={`${cn["select-group"]} ${!show && cn["select-group-hidden"]}`}
     >

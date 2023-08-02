@@ -5,9 +5,10 @@ import VideoPlayer from "../VideoPleer";
 import { useGetData } from "../../hooks/commonHooks/useGetData.js";
 import { useParams } from "react-router-dom";
 
+const videosVariants = ["trailer", "clip", "teaser"];
+
 const WatchTrailerButton = ({ classname }) => {
   const { movieType, id } = useParams();
-
   const [show, setShow] = useState(false);
   const [videoId, setVideoId] = useState(null);
 
@@ -16,17 +17,21 @@ const WatchTrailerButton = ({ classname }) => {
     `/${movieType}/${id}/videos`,
     id
   );
+
   const isPlayerShow = data?.results.length || videoId;
 
   const startTrailer = () => {
-    const trailer = data?.results.find((item) => item.name.includes("Trailer"));
-    if (trailer) {
-      setVideoId(trailer.key);
+    const trailer = data?.results.find((item) =>
+      videosVariants.includes(item.type.toLowerCase())
+    );
+    const video = trailer || data?.results[0];
+
+    if (video) {
+      setVideoId(video.key);
       document.body.classList.add("overflow-hidden");
       setShow(true);
     }
   };
-
 
   return (
     <>

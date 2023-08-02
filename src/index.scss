@@ -12,14 +12,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-
   --main: #1d2329;
   --secondary: snow;
-  --bg-body:var(--main);
+  --bg-body: var(--main);
   --bg-header-footer: #1f2833;
   --bg-skeleton: #0a2955;
   --bg-even-slider: var(--main);
   --bg-banner-text: rgba(0, 0, 0, 0.45);
+  --text-person-name-span-color: #ec5f2b;
   --pink: #da2f68;
   --green: #076b3f;
   --blue: #1c2c93;
@@ -31,7 +31,7 @@
   --count-skeletons-actors: 3;
   --count-skeletons-trailers: 1;
 
-  color-scheme: dark;
+  color-scheme: light dark;
 }
 
 html {
@@ -54,7 +54,7 @@ body {
 }
 
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -147,20 +147,23 @@ img {
 }
 
 .main {
-  margin-top: 100px;
+  margin-top: 170px;
+  @include xs {
+    margin-top: 100px;
+  }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(240px, 1fr);
   align-items: center;
   margin: 40px auto;
-  padding: 5px;
-  gap: 15px;
-  @include sm {
+  gap: 30px;
+  @include s {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
   @include md {
+    gap: 15px;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
   @include lg {
@@ -168,46 +171,45 @@ img {
   }
 }
 
-
-@include s{
-:root{
-  --count-skeletons-grid: 1;
-  --count-skeletons-flex: 3;
-  --count-skeletons-actors: 4;
+@include s {
+  :root {
+    --count-skeletons-grid: 1;
+    --count-skeletons-flex: 3;
+    --count-skeletons-actors: 4;
+  }
 }
-}
-@include sm{
-  :root{
+@include sm {
+  :root {
     --count-skeletons-grid: 4;
     --count-skeletons-actors: 6;
     --count-skeletons-trailers: 3;
   }
 }
 
-@include md{
-  :root{
+@include md {
+  :root {
     --count-skeletons-grid: 6;
     --count-skeletons-flex: 3;
   }
 }
 
-@include lg{
-  :root{
+@include lg {
+  :root {
     --count-skeletons-grid: 8;
     --count-skeletons-flex: 4;
     --count-skeletons-trailers: 4;
   }
 }
 
-
 [data-theme="light"] {
   --main: snow;
   --secondary: #1d2329;
-  --bg-body: #c5c5de;
+  --bg-body: #bccbde;
   --bg-header-footer: #48494b;
   --bg-banner-text: rgba(255, 255, 255, 0.4);
   --bg-skeleton: #acacb5;
   --bg-even-slider: #2aa57e47;
+  --text-person-name-span-color: #136cb9;
 
   color-scheme: light;
 

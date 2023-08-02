@@ -6,7 +6,8 @@ const useOutsideClick = (condition, ref, refBtn, cb) => {
       if (
         condition &&
         ref?.current &&
-        !ref?.current?.contains(e.target) &&
+        !ref?.current?.contains(e.target)
+        &&
         e.target !== refBtn?.current
       ) {
         cb();

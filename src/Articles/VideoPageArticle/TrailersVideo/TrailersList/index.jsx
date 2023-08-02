@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Skeleton from "../Skeleton";
 import TrailerCard from "../TrailerCard";
 import cn from "../TrailersVideo.module.scss";
 import withSlider from "../../../../hoc/withSlider.jsx";
 
-const TrailersList = ({dataList}) => {
+const TrailersList = memo(({dataList}) => {
 
   return (
         <>
@@ -13,7 +13,7 @@ const TrailersList = ({dataList}) => {
           ))}
         </>
   );
-};
+});
 
 export default withSlider(TrailersList);
 

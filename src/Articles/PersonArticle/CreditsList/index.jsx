@@ -15,6 +15,7 @@ const CreditsList = ({ endpoints, media_type }) => {
   const { data, isLoading, isError, error, isFetching } =
     useApi().video_credits_person(id, endpoint[0]);
 
+
   return (
     <ErrorElement isError={isError} error={error} title="Profile">
       <SkeletonsListMedia
@@ -31,7 +32,7 @@ const CreditsList = ({ endpoints, media_type }) => {
         <div className="grid">
           <VideosCardList
             dataList={data?.cast}
-            endpointCard={endpoint}
+            endpointCard={endpoint[0]}
             isFetching={isFetching}
             loading={isLoading}
             classname="skeletons__item_grid"

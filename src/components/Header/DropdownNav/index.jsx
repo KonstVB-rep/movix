@@ -1,24 +1,38 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import cn from "../Header.module.scss";
+import { Link, useLocation } from "react-router-dom";
+import {AnimatePresence, motion} from "framer-motion";
 
-const DropdownNav = ({ isMenuOpen }) => {
+const DropdownNav = ({ isMenuOpen, setIsMenuOpen }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
   return (
-    <>
+    <AnimatePresence>
       {isMenuOpen && (
-        <ul className={`${cn.list} ${cn.nav__mobile}`}>
-          <li className={cn.nav__mobile__item}>
-            <a href="components/Header/DropdownNav/index.jsx" className={cn.nav__link}>
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1}}
+          exit={{ opacity: 0}}
+          transition={{ duration: 0.2 }}
+          className={`${cn.list} ${cn.nav__mobile}`}
+        >
+         <li className={cn.nav__mobile__item}>
+            <Link to="discover/movie" className={cn.nav__link}>
               Movies
-            </a>
+            </Link>
           </li>
-          <li className={cn.nav__mobile__item}>
-            <a href="components/Header/DropdownNav/index.jsx" className={cn.nav__link}>
-              TV Shows
-            </a>
-          </li>
-        </ul>
+            <li className={cn.nav__mobile__item}>
+            <Link to="discover/tv" className={cn.nav__link}>
+            TV Shows
+            </Link>
+            </li>
+        </motion.ul>
       )}
-    </>
+    </AnimatePresence>
   );
 };
 

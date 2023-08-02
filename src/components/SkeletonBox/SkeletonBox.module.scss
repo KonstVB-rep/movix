@@ -3,8 +3,14 @@
 .heading {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
   justify-content: space-between;
-  margin-top: 20px;
+  @include s{
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .ellipse{
     display: flex;
     align-items: center;
@@ -24,8 +30,11 @@
 .slides{
   display: flex;
   gap: 20px;
-  padding: 40px 0;
+  padding: 20px 0;
   overflow: hidden;
+  @include s{
+    padding: 40px 0;
+  }
   .skeletons__item {
     position: relative;
     width: 100%;

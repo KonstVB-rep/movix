@@ -47,28 +47,6 @@ export const dataMovieRelease = [
     classname: "",
   },
 ];
-export const dataMovieMoney = [
-  {
-    title: "Budget:",
-    prop: "budget",
-    list: false,
-    keyName: "",
-    classname: "border-none",
-    child(data) {
-      return data[this.prop] + ' $';
-    },
-  },
-  {
-    title: "Revenue:",
-    prop: "revenue",
-    list: false,
-    keyName: "",
-    classname: "border-none",
-    child(data) {
-      return data[this.prop] + ' $';
-    },
-  },
-];
 
 export const dataMovieCrew = [
   {

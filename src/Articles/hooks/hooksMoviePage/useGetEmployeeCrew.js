@@ -1,15 +1,17 @@
 import React from 'react';
 import {useGetData} from "../commonHooks/useGetData.js";
 import {getUniqData} from "/utils/helpers.js";
+import {useQuery} from "react-query";
+import {getData} from "../../../../utils/api.js";
 
 const useGetEmployeeCrew = (movieType,id) => {
 
-  const {data, isLoading, isError,error} = useGetData(
+  const { data, isLoading, isError, error } = useGetData(
     "crew",
     `/${movieType}/${id}/credits`,
     id,
-    {enabled: !!(movieType && id)}
-  )
+    { enabled: !!(movieType && id) }
+  );
 
   const director = data?.crew?.filter((person) => person.job === "Director");
   const writers = getUniqData(data?.crew, ['name', 'job'], ["Screenplay","Story","Writer"])

@@ -7,9 +7,7 @@ const Skeleton = () => {
   return (
     <>
       <div className={cn.profile__content}>
-        <div className={`${cn.profile__content__photo} skeleton`}>
-          <Img src={avatar} />
-        </div>
+        <div className={`${cn.profile__content__photo} skeleton`}/>
         <div className={`${cn.profile__content__info} ${cn["profile__content__info_skeleton"]}`}>
           {Array(6).fill('skeleton').map((_, index) =>
             <p key={index} className={`${cn["info-item"]} ${cn["info-item_skeleton"]} skeleton`}/>

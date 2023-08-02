@@ -31,7 +31,6 @@ const Slider = ({
     <>
       {data?.length ? (
         <div className={cn["slider-box"]}>
-          <div className={cn["opacity-layer"]}/>
           <div className={`${cn.heading} wrapper`}>
             <h3 className="title-article">{title}</h3>
             {tabsNames.length ? (

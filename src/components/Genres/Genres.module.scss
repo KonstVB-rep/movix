@@ -1,37 +1,53 @@
-.genres {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  gap: 10px;
-  width: max-content;
-  min-height: 20px;
-  align-content: flex-start;
-  .genre {
-    background-color: var(--pink);
-    padding: 5px;
+
+.genres-box{
+  position: relative;
+  .genres {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 10px;
+    width: max-content;
     min-height: 20px;
-    font-size: 12px;
-    height: auto;
-    border-radius: 4px;
-    color: snow;
-    white-space: nowrap;
+    align-content: flex-start;
+    .genre {
+      background-color: var(--pink);
+      padding: 5px;
+      min-height: 20px;
+      font-size: 12px;
+      height: auto;
+      border-radius: 4px;
+      color: snow;
+      white-space: nowrap;
+    }
+    &_card{
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    &_single-movie{
+      margin-bottom: 20px;
+      flex-flow: row wrap;
+      .genre{
+        font-size: 16px;
+      }
+    }
   }
-  &_card{
-    gap: 5px;
+  .genres-empty{
+    width: 60%;
+    height: 20px;
     margin-bottom: 10px;
+    background-color: gray;
+    border-radius: 12px;
   }
-  &_single-movie{
-    margin-bottom: 20px;
-    flex-flow: row wrap;
-    .genre{
-      font-size: 16px;
+  .genres-tooltip{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left:0;
+    max-width: 100%;
+    .genres{
+      margin: 0;
     }
   }
 }
-.genres-empty{
-  width: 60%;
-  height: 20px;
-  margin-bottom: 10px;
-  background-color: gray;
-  border-radius: 12px;
-}
+

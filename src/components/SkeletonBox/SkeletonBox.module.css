@@ -1,8 +1,16 @@
 .heading {
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
   justify-content: space-between;
-  margin-top: 20px;
+}
+@media only screen and (min-width: 479px) {
+  .heading {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 .heading .ellipse {
   display: flex;
@@ -22,8 +30,13 @@
 .slides {
   display: flex;
   gap: 20px;
-  padding: 40px 0;
+  padding: 20px 0;
   overflow: hidden;
+}
+@media only screen and (min-width: 479px) {
+  .slides {
+    padding: 40px 0;
+  }
 }
 .slides .skeletons__item {
   position: relative;

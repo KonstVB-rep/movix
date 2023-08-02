@@ -28,10 +28,12 @@
     }
     &__photo {
       min-width: 240px;
+      aspect-ratio: 9/16;
       width: 100%;
       border-radius: 12px;
       background-color: var(--bg-skeleton);
       overflow: hidden;
+      max-height: 600px;
       @include md {
         width: 65%;
         gap: 10px;
@@ -55,9 +57,12 @@
       width: 100%;
       .info-item,
       .info-span {
-        color: #ec5f2b;
         font-size: 1rem;
         text-transform: uppercase;
+        .name{
+          color: var(--text-person-name-span-color);
+          text-shadow: 1px 0 black;
+        }
         .text {
           text-transform: initial;
           padding-left: 5px;
@@ -196,13 +201,17 @@
     }
   }
 }
-.heading {
+
+.heading{
   display: flex;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
   justify-content: space-between;
-  margin-top: 20px;
-  .title {
-    color: var(--secondary);
+  @include s {
+    align-items: center;
+    flex-direction: row;
   }
 }
 

@@ -15,7 +15,7 @@ const Actors = () => {
 
   return (
     <ErrorElement isError={isError} error={error} title="Top actors">
-      <Skeleton isLoading={isLoading}/>
+      <Skeleton isLoading={isLoading} />
       <ActorsList title="Top actors" data={actors} dataList={actors} />
     </ErrorElement>
   );

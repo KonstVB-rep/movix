@@ -6,6 +6,7 @@ import SimilarVideos from "../Articles/VideoPageArticle/SimilarVideos";
 import RecommendedVideos from "../Articles/VideoPageArticle/RecommendedVideos";
 
 const MovieSinglePage = () => {
+
   return (
     <>
       <VideoDetails />

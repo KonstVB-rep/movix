@@ -6,6 +6,9 @@ import useGetBanner from "../hooksMain/useGetBanner.js";
 import useGetEmployeeCrew from "../hooksMoviePage/useGetEmployeeCrew.js";
 import useGetVideosSearchByQuery from "../hooksSearchPage/index.js";
 import useGetDataInfinity from "./useGetDataInfinity.js";
+import {useQuery} from "react-query";
+import {getData} from "../../../../utils/api.js";
+import {queryClient} from "../../../App.jsx";
 
 const useApi = () => {
   return {

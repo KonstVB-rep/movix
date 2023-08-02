@@ -1,12 +1,11 @@
-import React from 'react';
-import cn from "../About/About.module.scss";
-import {useParams} from "react-router-dom";
+import React, { memo } from "react";
+import cn from "../About.module.scss";
+import { useParams } from "react-router-dom";
 
-import {dataDurationOsSeries, dataMovieRelease} from "../About/data/index.jsx";
-import InfoRow from "../InfoRow";
+import { dataDurationOsSeries, dataMovieRelease } from "../data/index.jsx";
+import InfoRow from "../../InfoRow/index.jsx";
 
-const DurationOfSeries = ({movieDetails}) => {
-
+const DurationOfSeries = memo(({ movieDetails }) => {
   const { movieType } = useParams();
   return (
     <>
@@ -28,6 +27,6 @@ const DurationOfSeries = ({movieDetails}) => {
       )}
     </>
   );
-};
+});
 
 export default DurationOfSeries;

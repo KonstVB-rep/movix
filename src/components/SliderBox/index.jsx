@@ -16,13 +16,14 @@ const SliderBox = ({
   const { movieType, id } = useParams();
 
   const [params, setParams] = useState('');
+
   const { endpoint, onTabChange } = useSwitchTabs(endpoints);
 
   const chooseParams = () => {
       setParams(tabsNames.length ? endpoint : [movieType, id]);
   };
 
-  let { data, isLoading, isError, error } = useApi()[keyApi](
+  let { data, status, isError, error } = useApi()[keyApi](
     ...params
   );
 
@@ -32,7 +33,7 @@ const SliderBox = ({
 
   return (
     <ErrorElement isError={isError} error={error} title={title}>
-      <SkeletonsListMedia classname={classname} tabsNames={tabsNames} isLoading={isLoading} />
+      <SkeletonsListMedia classnameCard={classname} tabsNames={tabsNames} isLoading={status !== 'success'} />
         <VideoCardListWithSlider
           dataList={data?.results}
           endpointCard={endpoint[0]}

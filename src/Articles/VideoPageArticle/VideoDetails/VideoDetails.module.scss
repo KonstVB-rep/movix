@@ -8,7 +8,8 @@
   @include sm {
     margin-bottom: 0;
     padding-top: 120px;
-    min-height: 700px;
+    height: calc(100% + 220px);
+    min-height: 1000px;
   }
   .backdrop {
     width: 100%;
@@ -41,68 +42,76 @@
     left: 0;
   }
 
-  .content {
-    margin-top: 40px;
+  .content{
     display: flex;
-    position: relative;
     flex-direction: column;
-    gap: 25px;
-    @include md {
-      flex-direction: row;
-    }
-    .poster {
-      flex-shrink: 0;
-      .poster__img {
-        width: 100%;
-        display: block;
-        border-radius: 12px;
-        @include sm {
-          max-width: 350px;
-        }
+    gap: 30px;
+    .indicators {
+      margin-top: 40px;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      gap: 25px;
+      @include md {
+        flex-direction: row;
       }
-    }
-    .describe {
-      color: var(--secondary);
-      .title {
-        font-size: 28px;
-        line-height: 40px;
-        a{
+      .poster {
+        flex-shrink: 0;
+        .poster__img {
+          width: 100%;
           display: block;
-          width: fit-content;
-        }
-        @include md {
-          font-size: 34px;
-          line-height: 44px;
-        }
-        .subtitle {
-          display: block;
-          font-size: 16px;
-          line-height: 24px;
-          margin-bottom: 15px;
-          font-style: italic;
-         ;
+          border-radius: 12px;
           @include sm {
-            font-size: 20px;
-            line-height: 28px;
+            max-width: 350px;
           }
         }
       }
-      .overview {
-        margin-bottom: 10px;
-        .heading {
-          font-size: 24px;
-          margin-bottom: 10px;
+      .describe {
+        color: var(--secondary);
+        .title {
+          font-size: 28px;
+          line-height: 40px;
+          a{
+            display: block;
+            width: fit-content;
+          }
+          @include md {
+            font-size: 34px;
+            line-height: 44px;
+          }
+          .subtitle {
+            display: block;
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 15px;
+            font-style: italic;
+          ;
+            @include sm {
+              font-size: 20px;
+              line-height: 28px;
+            }
+          }
         }
-        .description {
-          line-height: 24px;
-          text-align: justify;
+        .row {
+          display: flex;
+          align-items: center;
+          gap: 25px;
+          margin-bottom: 20px;
         }
       }
-      .row {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        margin-bottom: 20px;
+    }
+    .overview {
+      color: var(--secondary);
+      margin-bottom: 10px;
+      .heading {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+      .description {
+        padding-top: 15px;
+        font-size: 1rem;
+        line-height: 30px;
+        text-align: justify;
       }
     }
   }
@@ -110,88 +119,106 @@
   .skeleton {
     position: relative;
     margin-top: 40px;
-    .wrapper {
+    .content-skeleton {
       display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .content__indicators{
+      margin: 0;
+      display: flex;
+      position: relative;
       flex-direction: column;
       gap: 25px;
       @include md {
         flex-direction: row;
       }
-    }
-    .left {
-      position: relative;
-      flex-shrink: 0;
-      width: 100%;
-      height: 100%;
-      aspect-ratio: 1/1.5;
-      border-radius: 12px;
-      overflow: hidden;
-      @include md{
-        width: 40%;
-        max-height: 700px;
+      .left {
+        position: relative;
+        flex-shrink: 0;
+        width: 100%;
+        height: 100%;
         aspect-ratio: 1/1.5;
+        border-radius: 12px;
+        overflow: hidden;
+        @include md{
+          width: 40%;
+          max-height: 700px;
+          aspect-ratio: 1/1.5;
+        }
+      }
+      .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .row {
+          width: 100%;
+          height: 25px;
+          border-radius: 50px;
+          &.title {
+            width: 75%;
+            height: 70px;
+          }
+          &.genres {
+            width: 50%;
+          }
+          &.overview{
+            width: 30%;
+            height: 40px;
+          }
+          &.row_short:nth-child(odd){
+            width: 60%;
+            @include md {
+              width: 40%;
+            }
+          }
+          &.row_short:nth-child(even){
+            width: 70%;
+            @include md {
+              width: 60%;
+            }
+          }
+          &.row_short:last-child{
+            width: 90%;
+            height: 60px;
+            @include md {
+              width: 70%;
+            }
+          }
+        }
+
+        .group {
+          display: inline-flex;
+          flex-grow: 0;
+          align-items: center;
+          gap: 20px;
+          & > .circle {
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            @include md {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
       }
     }
-    .right {
-      width: 100%;
+    .describe {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      .row {
-        width: 100%;
-        height: 25px;
-        border-radius: 50px;
-        &.title {
-          width: 75%;
-          height: 70px;
-        }
-        &.genres {
-          width: 50%;
-        }
-        &.overview{
-          width: 30%;
-          height: 40px;
-        }
-        &.describe {
-          width: 100%;
-          height: 200px;
-        }
-        &.row_short:nth-child(odd){
-          width: 60%;
-          @include md {
-            width: 40%;
-          }
-        }
-        &.row_short:nth-child(even){
-          width: 70%;
-          @include md {
-            width: 60%;
-          }
-        }
-        &.row_short:last-child{
-          width: 90%;
-          height: 60px;
-          @include md {
-            width: 70%;
-          }
-        }
+      gap: 20px;
+      &__title{
+        height: 40px;
+        width: 150px;
+        border-right: 30px;
       }
-
-      .group {
-        display: inline-flex;
-        flex-grow: 0;
-        align-items: center;
-        gap: 20px;
-        & > .circle {
-          border-radius: 50%;
-          height: 60px;
-          width: 60px;
-          @include md {
-            width: 80px;
-            height: 80px;
-          }
-        }
+      &__text{
+        width: 100%;
+        height: 150px;
       }
     }
   }
 }
+

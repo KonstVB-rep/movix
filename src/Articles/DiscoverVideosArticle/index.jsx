@@ -28,9 +28,6 @@ const DiscoverVideosSection = () => {
     hiddenSelects,
   } = useGetState(movieType);
 
-  const { handleChangeSortGenres } =
-    useOnChangeSelect(movieType, setSelectedOption);
-
   return (
     <main
       className={`${cn["wrapper-discover"]} ${

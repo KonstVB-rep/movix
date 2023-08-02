@@ -9,7 +9,6 @@ import Skeleton from "../TrailersVideo/Skeleton";
 
 const TrailersVideo = () => {
   const { movieType, id } = useParams();
-
   const { data, isLoading, isError, error } = useApi().trailers_list(
     movieType,
     id

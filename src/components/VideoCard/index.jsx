@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 import cn from "./VideoCard.module.scss";
 
-const VideoCard = memo(({ data, endpoint, classname = "card_flex" }) => {
+const VideoCard = memo(({ data, endpoint, classnameCard = "card_flex" }) => {
   const { movieType } = useParams();
 
   const {
@@ -37,7 +37,7 @@ const VideoCard = memo(({ data, endpoint, classname = "card_flex" }) => {
   }, [posterUrl]);
 
   return (
-    <li key={id} className={`${cn.card} ${cn[classname]}`}>
+    <li key={id} className={`${cn.card} ${cn[classnameCard]}`}>
       <div className={cn.poster}>
         <Link
           to={`/${media_type || endpoint || movieType}/${id}`}
@@ -48,7 +48,7 @@ const VideoCard = memo(({ data, endpoint, classname = "card_flex" }) => {
       </div>
       <div className={cn.text}>
         <span className={cn.title}>{title || name}</span>
-        <Genres genresMovie={genre_ids?.slice(0, 2)} classname="genres_card" />
+        <Genres genresMovie={genre_ids.slice(0, 2)} classname="genres_card" />
         <span className={cn.date}>
           {dayjs(release_date || first_air_date).format("MMM D, YYYY")}
         </span>

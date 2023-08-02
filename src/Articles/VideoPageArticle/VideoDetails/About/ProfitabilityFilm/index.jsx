@@ -1,10 +1,10 @@
-import React from 'react';
-import cn from "../About/About.module.scss";
-import {useParams} from "react-router-dom";
+import React, { memo } from "react";
+import cn from "../About.module.scss";
+import { useParams } from "react-router-dom";
 
-const ProfitabilityFilm = ({movieDetails}) => {
+const ProfitabilityFilm = memo(({ movieDetails }) => {
   const { movieType } = useParams();
-  const {budget, revenue} =movieDetails
+  const { budget, revenue } = movieDetails;
   return (
     <>
       {movieType === "movie" && budget ? (
@@ -16,8 +16,8 @@ const ProfitabilityFilm = ({movieDetails}) => {
               <span
                 className={`${cn["item__amount"]} ${cn["item__amount_budget"]}`}
               >
-                  {budget} $
-                </span>
+                {budget} $
+              </span>
             </div>
           ) : null}
           {revenue ? (
@@ -30,14 +30,14 @@ const ProfitabilityFilm = ({movieDetails}) => {
                     : cn["item__amount_profit"]
                 }`}
               >
-                  {revenue} $
-                </span>
+                {revenue} $
+              </span>
             </div>
           ) : null}{" "}
         </div>
       ) : null}
     </>
   );
-};
+});
 
 export default ProfitabilityFilm;

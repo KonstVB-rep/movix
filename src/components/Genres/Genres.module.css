@@ -1,4 +1,7 @@
-.genres {
+.genres-box {
+  position: relative;
+}
+.genres-box .genres {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
@@ -7,7 +10,7 @@
   min-height: 20px;
   align-content: flex-start;
 }
-.genres .genre {
+.genres-box .genres .genre {
   background-color: var(--pink);
   padding: 5px;
   min-height: 20px;
@@ -17,24 +20,34 @@
   color: snow;
   white-space: nowrap;
 }
-.genres_card {
+.genres-box .genres_card {
   gap: 5px;
   margin-bottom: 10px;
 }
-.genres_single-movie {
+.genres-box .genres_single-movie {
   margin-bottom: 20px;
   flex-flow: row wrap;
 }
-.genres_single-movie .genre {
+.genres-box .genres_single-movie .genre {
   font-size: 16px;
 }
-
-.genres-empty {
+.genres-box .genres-empty {
   width: 60%;
   height: 20px;
   margin-bottom: 10px;
   background-color: gray;
   border-radius: 12px;
+}
+.genres-box .genres-tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+.genres-box .genres-tooltip .genres {
+  margin: 0;
 }
 
 /*# sourceMappingURL=Genres.module.css.map */

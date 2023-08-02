@@ -4,7 +4,7 @@ import useSwitchTabs from "../commonHooks/useSwitchTabs.js";
 
 const useGetMovies = (value, endpoint, urlStart = "", urlEnd = "", config) => {
 
-  const { data, isLoading, isError, error, isFetching } = useGetData(
+  const { data, isLoading, isError, error, isFetching, status } = useGetData(
     value,
     `/${urlStart}${endpoint}${urlEnd}`,
     endpoint,
@@ -13,10 +13,9 @@ const useGetMovies = (value, endpoint, urlStart = "", urlEnd = "", config) => {
 
   return {
     data,
-    isLoading,
     isError,
     error,
-    isFetching,
+    status
   };
 };
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Index from "../../../components/SliderBox/index.jsx";
 import SliderBox from "../../../components/SliderBox/index.jsx";
 
 

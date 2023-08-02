@@ -10,7 +10,7 @@ const VideosCardList = ({ dataList, endpointCard, classnameCard }) => {
           data={item}
           endpoint={endpointCard}
           key={index}
-          classname={classnameCard}
+          classnameCard={classnameCard}
         />
       ))}
     </>

@@ -56,11 +56,17 @@
   aspect-ratio: 1/1.5;
   margin-bottom: 30px;
   display: flex;
-  background: url("../../assets/background_poster.webp") center center/cover no-repeat;
   align-items: flex-end;
   justify-content: space-between;
   border-radius: 12px;
-  box-shadow: 0 0 5px 2px black;
+}
+.card .poster::before {
+  content: "";
+  position: absolute;
+  border-radius: 12px;
+  inset: 0;
+  background: url("../../assets/background_poster.webp") center center/cover no-repeat;
+  mix-blend-mode: exclusion;
 }
 .card .poster a {
   outline: none;

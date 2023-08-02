@@ -33,7 +33,9 @@ const Biography = memo(({ data }) => {
             className={`${cn["info-item"]} ${cn.biography_short}`}
             ref={refContent}
           >
-            <span className={`${cn["info-span"]}`}>Biography:</span>{" "}
+            <span className={`${cn["info-span"]}`}>
+              <span className={cn.name}>Biography: </span>
+            </span>{" "}
             <span
               className={`${cn.text} ${cn.biography_content}`}
               ref={refBiography}

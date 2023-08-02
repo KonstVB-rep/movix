@@ -27,19 +27,6 @@
       width: 100%;
     }
   }
-  &_backdrop{
-    display: none;
-    position: absolute;
-    left: 0;
-    scale: 1;
-    bottom: 0;
-    filter: blur(150px);
-    background-color: transparent;
-    z-index: 1;
-    @include md{
-      display: block;
-    }
-  }
   @include md{
     width: 40%;
     max-height: 700px;
