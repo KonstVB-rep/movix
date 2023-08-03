@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import DropdownNav from "./DropdownNav";
-import SearchForm from "./SearchForm";
-import cn from "./Header.module.scss";
-import SearchIcon from "../../assets/search.svg";
-import CloseMenu from "../../assets/close_menu.svg";
-import BurgerMenu from "../../assets/burger_menu.svg";
 import { Link, useLocation } from "react-router-dom";
 import useOutsideClick from "../../Articles/hooks/commonHooks/useOutsideClick.js";
 import useShowNavbarWhenScroll from "../../Articles/hooks/hooksMain/useShowNavbarWhenScroll.js";
+import BurgerMenu from "../../assets/burger_menu.svg";
+import CloseMenu from "../../assets/close_menu.svg";
+import SearchIcon from "../../assets/search.svg";
+import DropdownNav from "./DropdownNav";
+import cn from "./Header.module.scss";
+import SearchForm from "./SearchForm";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -44,42 +44,42 @@ const Header = () => {
     >
       <div className="wrapper">
         <nav className={cn.nav}>
-          <Link to="/" className={cn.logo}>
+          <Link className={cn.logo} to="/">
             <span>Movies App</span>
           </Link>
           <ul className={cn.nav__desktop}>
             <li className={cn.nav__desktop__item}>
-              <Link to="discover/movie" className={cn.nav__desktop__link}>
+              <Link className={cn.nav__desktop__link} to="discover/movie">
                 Movies
               </Link>
             </li>
             <li className={cn.nav__desktop__item}>
-              <Link to="discover/tv" className={cn.nav__desktop__link}>
+              <Link className={cn.nav__desktop__link} to="discover/tv">
                 TV Shows
               </Link>
             </li>
           </ul>
           <div className={cn.buttons__mobile__menu}>
             <button
+              ref={searchBtnRef}
               className={cn.button}
               onClick={() => setIsSearchOpen(!isSearchOpen)}
-              ref={searchBtnRef}
             >
               {!isSearchOpen ? (
-                <img src={SearchIcon} alt="Search" />
+                <img alt="Search" src={SearchIcon} />
               ) : (
-                <img src={CloseMenu} alt="Close" />
+                <img alt="Close" src={CloseMenu} />
               )}
             </button>
             <button
+              ref={menuBtnRef}
               className={cn.button}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              ref={menuBtnRef}
             >
               {isMenuOpen ? (
-                <img src={CloseMenu} alt="Close" />
+                <img alt="Close" src={CloseMenu} />
               ) : (
-                <img src={BurgerMenu} alt="Menu" />
+                <img alt="Menu" src={BurgerMenu} />
               )}
             </button>
           </div>

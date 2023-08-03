@@ -1,10 +1,7 @@
 import React, {memo} from 'react';
-import VideosCardList from "../VideosCardList";
 import withSlider from "../../hoc/withSlider.jsx";
+import VideosCardList from "../VideosCardList";
 
-const VideoCardListWithSlider = memo((props) => {
-
-  return <VideosCardList {...props}/>
-});
+const VideoCardListWithSlider = memo((props) => <VideosCardList {...props}/>);
 
 export default withSlider(VideoCardListWithSlider);

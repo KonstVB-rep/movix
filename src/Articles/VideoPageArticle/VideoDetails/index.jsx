@@ -1,16 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import ErrorElement from "../../../components/ErrorElement";
 import Img from "../../../components/Img";
-import { useSelector } from "react-redux";
 
-import Poster from "./Poster";
 import { useGetData } from "../../hooks/commonHooks/useGetData.js";
-import Skeleton from "./Skeleton";
 import Description from "./Desciption/";
+import Poster from "./Poster";
+import Skeleton from "./Skeleton";
 
 import cn from "./VideoDetails.module.scss";
-import ErrorElement from "../../../components/ErrorElement";
 
 const VideoDetails = () => {
   const { movieType, id } = useParams();
@@ -26,10 +26,10 @@ const VideoDetails = () => {
 
   return (
     <ErrorElement
-      isError={isError}
-      error={error}
-      title="Video description"
       classname="main"
+      error={error}
+      isError={isError}
+      title="Video description"
     >
       <div className={cn.details}>
         <div className={cn.backdrop}>

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import cn from "../Header.module.scss";
-import { Link, useLocation } from "react-router-dom";
 import {AnimatePresence, motion} from "framer-motion";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import cn from "../Header.module.scss";
 
 const DropdownNav = ({ isMenuOpen, setIsMenuOpen }) => {
   const { pathname } = useLocation();
@@ -14,19 +14,19 @@ const DropdownNav = ({ isMenuOpen, setIsMenuOpen }) => {
     <AnimatePresence>
       {isMenuOpen && (
         <motion.ul
-          initial={{ opacity: 0 }}
           animate={{ opacity: 1}}
-          exit={{ opacity: 0}}
-          transition={{ duration: 0.2 }}
           className={`${cn.list} ${cn.nav__mobile}`}
+          exit={{ opacity: 0}}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
          <li className={cn.nav__mobile__item}>
-            <Link to="discover/movie" className={cn.nav__link}>
+            <Link className={cn.nav__link} to="discover/movie">
               Movies
             </Link>
           </li>
             <li className={cn.nav__mobile__item}>
-            <Link to="discover/tv" className={cn.nav__link}>
+            <Link className={cn.nav__link} to="discover/tv">
             TV Shows
             </Link>
             </li>

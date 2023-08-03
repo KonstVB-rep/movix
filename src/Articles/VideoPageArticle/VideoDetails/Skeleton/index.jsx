@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from "../VideoDetails.module.scss";
 
-const Skeleton = () => {
-  return (
+const Skeleton = () => (
     <div className={cn.skeleton}>
       <div className={cn['content-skeleton']}>
         <div className={cn['content__indicators']}>
@@ -19,6 +18,8 @@ const Skeleton = () => {
             <div className={`${cn.row} ${cn.row_short} skeleton`}/>
             <div className={`${cn.row} ${cn.row_short} skeleton`}/>
             <div className={`${cn.row} ${cn.row_short} skeleton`}/>
+            <div className={`${cn.row} ${cn.row_short} skeleton`}/>
+            <div className={`${cn.row} ${cn.row_short} skeleton`}/>
           </div>
         </div>
         <div className={cn.describe}>
@@ -28,6 +29,5 @@ const Skeleton = () => {
       </div>
     </div>
   );
-};
 
 export default Skeleton;

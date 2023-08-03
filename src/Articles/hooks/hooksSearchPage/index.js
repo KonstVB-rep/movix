@@ -1,6 +1,6 @@
-import React, {useMemo} from 'react';
-import {getData} from "../../../../utils/api.js";
+import {useMemo} from 'react';
 import {useInfiniteQuery} from "react-query";
+import {getData} from "../../../../utils/api.js";
 
 const useGetVideosSearchByQuery= (url, queryParams,name_request) => {
   const getSearchByQuery = ({ pageParam = 1 }) =>
@@ -21,11 +21,9 @@ const useGetVideosSearchByQuery= (url, queryParams,name_request) => {
 
   const videos = useMemo(
     () =>
-      data?.pages.reduce((prev, page) => {
-        return {
+      data?.pages.reduce((prev, page) => ({
           results: [...prev.results, ...page.results],
-        };
-      }),
+        })),
     [data]
   );
 

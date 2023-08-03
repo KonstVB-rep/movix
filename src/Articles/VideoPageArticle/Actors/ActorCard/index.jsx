@@ -1,9 +1,9 @@
 import React from 'react';
-import Img from "../../../../components/Img";
 import {useSelector} from "react-redux";
-import avatar from "../../../../assets/avatar.webp";
-import cn from "../Actors.module.scss";
 import {Link} from "react-router-dom";
+import avatar from "../../../../assets/avatar.webp";
+import Img from "../../../../components/Img";
+import cn from "../Actors.module.scss";
 
 const ActorCard = ({data}) => {
 
@@ -13,7 +13,7 @@ const ActorCard = ({data}) => {
 
   return (
     <li className={cn.item}>
-      <Link to={`/person/${id}`} className='link'/>
+      <Link className='link' to={`/person/${id}`}/>
       <p className={cn.avatar}>
         <Img src={profile_path ? url + profile_path : avatar} />
       </p>

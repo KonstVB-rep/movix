@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const useOutsideClick = (condition, ref, refBtn, cb) => {
   useEffect(() => {

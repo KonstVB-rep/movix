@@ -1,8 +1,6 @@
 import React from "react";
 import SearchPageSection from "../Articles/SearchPageSection";
 
-const SearchPage = () => {
-  return <SearchPageSection />;
-};
+const SearchPage = () => <SearchPageSection />;
 
 export default SearchPage;

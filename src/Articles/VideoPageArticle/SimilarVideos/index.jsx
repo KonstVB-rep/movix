@@ -8,7 +8,7 @@ const SimilarVideos = () => {
 
   const title = movieType === "tv" ? "Similar TV Shows" : "Similar Movies";
 
-  return <SliderBox title={title} keyApi="similar" />;
+  return <SliderBox keyApi="useSimilar" title={title} />;
 };
 
 export default SimilarVideos;

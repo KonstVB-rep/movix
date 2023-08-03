@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef, useState } from "react";
-import cn from "../PersonSection.module.scss";
 import ButtonClose from "../../../components/Buttons/ButtonClose";
+import cn from "../PersonSection.module.scss";
 
 const Biography = memo(({ data }) => {
   const refContent = useRef(null);
@@ -30,15 +30,15 @@ const Biography = memo(({ data }) => {
       {data ? (
         <div className={cn.biography}>
           <p
-            className={`${cn["info-item"]} ${cn.biography_short}`}
             ref={refContent}
+            className={`${cn["info-item"]} ${cn.biography_short}`}
           >
             <span className={`${cn["info-span"]}`}>
               <span className={cn.name}>Biography: </span>
             </span>{" "}
             <span
-              className={`${cn.text} ${cn.biography_content}`}
               ref={refBiography}
+              className={`${cn.text} ${cn.biography_content}`}
             >
               {data}
             </span>
@@ -49,14 +49,14 @@ const Biography = memo(({ data }) => {
                 onClick={openModal}
               >
                 <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="none" d="M0 0h256v256H0z" />
+                  <path d="M0 0h256v256H0z" fill="none" />
                   <path
+                    d="m96 48 80 80-80 80"
                     fill="none"
                     stroke="#ec5f2b"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="24"
-                    d="m96 48 80 80-80 80"
                   />
                 </svg>
               </button>
@@ -65,7 +65,7 @@ const Biography = memo(({ data }) => {
         </div>
       ) : null}
       {open ? (
-        <div className={cn.modal} onClick={closeModal} id="modal">
+        <div className={cn.modal} id="modal" onClick={closeModal}>
           <div className={cn.modal__content}>
             <ButtonClose close={closeModal} />
             <pre className={cn.modal__text} id="modal-biography">

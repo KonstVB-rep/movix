@@ -1,9 +1,9 @@
 import React, { memo } from "react";
+import { useSelector } from "react-redux";
+import NotImage from "../../../../../assets/not_image.svg";
+import Img from "../../../../../components/Img/index.jsx";
 import InfoRow from "../../InfoRow/index.jsx";
 import cn from "../About.module.scss";
-import Img from "../../../../../components/Img/index.jsx";
-import NotImage from "../../../../../assets/not_image.svg";
-import { useSelector } from "react-redux";
 
 const ProductionCompanies = memo(({ movieDetails }) => {
   const urlBackdrop = useSelector(
@@ -12,19 +12,19 @@ const ProductionCompanies = memo(({ movieDetails }) => {
 
   return (
     <InfoRow
+      classname="border-none"
       data={movieDetails?.production_companies}
       title="Production companies"
-      classname="border-none"
     >
       {
         <div className={cn.company}>
           {movieDetails?.production_companies?.map(({ name, logo_path }) => (
-            <div className={cn.company__logo} key={name} title={name}>
+            <div key={name} className={cn.company__logo} title={name}>
               {logo_path ? (
                 <Img src={urlBackdrop + logo_path} />
               ) : (
                 <div className={cn["icon-placeholder"]}>
-                  <img src={NotImage} alt="Not image" />
+                  <img alt="Not image" src={NotImage} />
                 </div>
               )}
             </div>

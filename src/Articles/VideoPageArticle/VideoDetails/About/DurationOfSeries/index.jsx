@@ -1,9 +1,9 @@
 import React, { memo } from "react";
-import cn from "../About.module.scss";
 import { useParams } from "react-router-dom";
-
-import { dataDurationOsSeries, dataMovieRelease } from "../data/index.jsx";
 import InfoRow from "../../InfoRow/index.jsx";
+import cn from "../About.module.scss";
+
+import { dataDurationOsSeries } from "../data/index.jsx";
 
 const DurationOfSeries = memo(({ movieDetails }) => {
   const { movieType } = useParams();
@@ -13,12 +13,12 @@ const DurationOfSeries = memo(({ movieDetails }) => {
         <div className={cn["info-group"]}>
           {dataDurationOsSeries.map((item) => (
             <InfoRow
-              data={movieDetails[item.prop]}
-              title={item.title}
-              list={item.list}
-              keyName={item.keyName}
-              classname={item.classname}
               key={item.title}
+              classname={item.classname}
+              data={movieDetails[item.prop]}
+              keyName={item.keyName}
+              list={item.list}
+              title={item.title}
             >
               {item.child ? item.child(movieDetails) : null}
             </InfoRow>

@@ -1,15 +1,15 @@
-import React, {memo} from "react";
-import cn from "../DiscoverVideosSection.module.scss";
 import { Select } from "antd";
-import { useParams } from "react-router-dom";
+import React, {memo} from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import useOnChangeSelect from "../../hooks/hooksDiscovery/useOnChangeSelect.js";
+import cn from "../DiscoverVideosSection.module.scss";
 import {
   filterSort,
   handleFilter,
   optionsSort,
   optionsYears,
 } from "../data/index.js";
-import useOnChangeSelect from "../../hooks/hooksDiscovery/useOnChangeSelect.js";
 
 const SelectsGroup = memo(({ show, setSelectedOption }) => {
   const { movieType } = useParams();
@@ -26,40 +26,40 @@ const SelectsGroup = memo(({ show, setSelectedOption }) => {
     >
       <Select
         key={`${movieType}_sort`}
-        showSearch
         allowClear
-        placeholder="Sort by..."
-        optionFilterProp="children"
-        onChange={handleChangeSortBy}
+        showSearch
+        className={cn.select}
         filterOption={handleFilter}
         filterSort={filterSort}
+        optionFilterProp="children"
         options={optionsSort}
-        className={cn.select}
+        placeholder="Sort by..."
+        onChange={handleChangeSortBy}
       />
       <Select
         key={`${movieType}_year`}
-        showSearch
         allowClear
-        placeholder="Select to year"
-        optionFilterProp="children"
-        onChange={handleChangeSortYear}
+        showSearch
+        className={cn.select}
         filterOption={handleFilter}
         filterSort={filterSort}
+        optionFilterProp="children"
         options={optionsYears}
-        className={cn.select}
+        placeholder="Select to year"
+        onChange={handleChangeSortYear}
       />
       <Select
         key={`${movieType}_genres`}
-        showSearch
         allowClear
-        mode="multiple"
-        placeholder="Select to genres"
-        optionFilterProp="children"
-        onChange={handleChangeSortGenres}
+        showSearch
+        className={cn.select}
         filterOption={handleFilter}
         filterSort={filterSort}
+        mode="multiple"
+        optionFilterProp="children"
         options={optionsGenres}
-        className={cn.select}
+        placeholder="Select to genres"
+        onChange={handleChangeSortGenres}
       />
     </div>
   );

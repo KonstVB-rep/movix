@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { Outlet, ScrollRestoration } from "react-router-dom";
-import Header from "../Header";
-import Footer from "../Footer";
-import { useDispatch, } from "react-redux";
-import { fetchUrl } from "../../../store/slices/urlSlice.js";
-import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
-import ScrollTopBtn from "../Buttons/ScrollTopBtn";
 import {createPortal} from "react-dom";
+import { useDispatch, } from "react-redux";
+import { Outlet, ScrollRestoration } from "react-router-dom";
+import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
+import { fetchUrl } from "../../../store/slices/urlSlice.js";
+import ScrollTopBtn from "../Buttons/ScrollTopBtn";
 import ThemeSwitch from "../Buttons/ThemeSwitch";
+import Footer from "../Footer";
+import Header from "../Header";
 
 
 const Layout = () => {
@@ -16,7 +16,7 @@ const Layout = () => {
   useEffect(() => {
     dispatch(fetchUrl());
     dispatch(fetchAllGenres());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -36,6 +36,6 @@ const Layout = () => {
       <Footer />
     </>
   );
-};;
+};
 
 export default Layout;

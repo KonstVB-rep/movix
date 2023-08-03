@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import InfinityScrollList from "../../components/InfinityScrollList";
-import cn from "./DiscoverVideosSection.module.scss";
-import ErrorElement from "../../components/ErrorElement";
-import SelectsGroup from "./SelectGroup/index.jsx";
-import useGetState from "../hooks/hooksDiscovery/useGetState.js";
 import ButtonGradient from "../../components/Buttons/ButtonGradient/index.jsx";
+import ErrorElement from "../../components/ErrorElement";
+import InfinityScrollList from "../../components/InfinityScrollList";
+import useGetState from "../hooks/hooksDiscovery/useGetState.js";
+import cn from "./DiscoverVideosSection.module.scss";
+import SelectsGroup from "./SelectGroup/index.jsx";
 
 const DiscoverVideosSection = () => {
   const { movieType } = useParams();
@@ -50,21 +50,21 @@ const DiscoverVideosSection = () => {
         </ButtonGradient>
       </div>
       <SelectsGroup
-        show={show}
-        setShow={setShow}
         setSelectedOption={setSelectedOption}
+        setShow={setShow}
+        show={show}
       />
       {isSuccess && !total_results ? (
         <h2 className="title-article">Nothing was found for your query</h2>
       ) : null}
-      <ErrorElement isError={isError} error={error} classname="non-padding">
+      <ErrorElement classname="non-padding" error={error} isError={isError}>
         <InfinityScrollList
-          isLoading={isLoading}
-          hasNextPage={hasNextPage}
-          fetchNextPage={fetchNextPage}
           data={videos}
           dataPages={dataPages}
+          fetchNextPage={fetchNextPage}
+          hasNextPage={hasNextPage}
           isFetching={isFetching}
+          isLoading={isLoading}
         />
       </ErrorElement>
     </main>

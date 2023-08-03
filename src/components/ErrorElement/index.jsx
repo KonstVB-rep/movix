@@ -1,9 +1,7 @@
 import React, {memo} from "react";
 import cn from "./ErrorElement.module.scss";
 
-const ErrorElement = memo(({ title, error, isError, children, classname }) => {
-
-  return (
+const ErrorElement = memo(({ title, error, isError, children, classname }) => (
     <>
       {isError ? (
         <div className={`wrapper ${cn["error-wrapper"]} ${classname === 'main' ? 'main' : cn[`${classname}`]}`}>
@@ -19,7 +17,6 @@ const ErrorElement = memo(({ title, error, isError, children, classname }) => {
         children
       )}
     </>
-  );
-});
+  ));
 
 export default ErrorElement;

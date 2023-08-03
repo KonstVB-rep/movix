@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import cn from "../TrailersVideo.module.scss";
+import React from 'react';
 import Img from "../../../../components/Img";
 import WatchTrailerButton from "../../WatchTrailerButton";
+import cn from "../TrailersVideo.module.scss";
 
 const TrailerCard = ({data}) => {
 

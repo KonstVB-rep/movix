@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import cn from "../Header.module.scss";
-import SearchIcon from "../../../assets/search.svg";
-
-import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import SearchIcon from "../../../assets/search.svg";
+import cn from "../Header.module.scss";
+
 
 const SearchForm = ({ isSearchOpen }) => {
   const inputRef = useRef(null);
@@ -20,21 +20,21 @@ const SearchForm = ({ isSearchOpen }) => {
     <AnimatePresence>
       {isSearchOpen && (
         <motion.div
-          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
           className={`${cn.list} ${cn.search}`}
+          exit={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
           <form action="" className={cn.form} onSubmit={submitHandler}>
             <input
-              type="text"
-              className={cn.input_search}
               ref={inputRef}
+              className={cn.input_search}
               placeholder="Search for a movie or tv show...."
+              type="text"
             />
             <button className={`${cn.button} ${cn.button_submit}`}>
-              <img src={SearchIcon} alt="search" />
+              <img alt="search" src={SearchIcon} />
             </button>
           </form>
         </motion.div>

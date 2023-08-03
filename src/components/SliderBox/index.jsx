@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
-import ErrorElement from "../ErrorElement/index.jsx";
+import {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import useSwitchTabs from "../../Articles/hooks/commonHooks/useSwitchTabs.js";
 import useApi from "../../Articles/hooks/commonHooks/useApi.js";
+import useSwitchTabs from "../../Articles/hooks/commonHooks/useSwitchTabs.js";
+import ErrorElement from "../ErrorElement/index.jsx";
 import SkeletonsListMedia from "../SkeletonsListMedia/index.jsx";
 import VideoCardListWithSlider from "../VideoCardListWithSlider";
 
@@ -32,15 +32,15 @@ const SliderBox = ({
   }, [movieType, id, endpoint]);
 
   return (
-    <ErrorElement isError={isError} error={error} title={title}>
-      <SkeletonsListMedia classnameCard={classname} tabsNames={tabsNames} isLoading={status !== 'success'} />
+    <ErrorElement error={error} isError={isError} title={title}>
+      <SkeletonsListMedia classnameCard={classname} isLoading={status !== 'success'} tabsNames={tabsNames} />
         <VideoCardListWithSlider
-          dataList={data?.results}
-          endpointCard={endpoint[0]}
           data={data?.results}
+          dataList={data?.results}
           endpoint={endpoint}
-          title={title}
+          endpointCard={endpoint[0]}
           tabsNames={tabsNames}
+          title={title}
           onTabChange={onTabChange}
         />
     </ErrorElement>

@@ -1,10 +1,10 @@
-import React, {memo, useMemo} from "react";
-import cn from "../VideoDetails.module.scss";
-import Title from "../Title";
+import React, {memo} from "react";
 import Genres from "../../../../components/Genres";
 import Rating from "../../../../components/Rating";
 import WatchTrailerButton from "../../WatchTrailerButton";
 import About from "../About";
+import Title from "../Title";
+import cn from "../VideoDetails.module.scss";
 
 const Description = memo(({ data }) => {
   const {
@@ -15,7 +15,6 @@ const Description = memo(({ data }) => {
     release_date,
     tagline,
     vote_average,
-    overview,
   } = data;
 
   const genresList = genres?.map((genre) => genre.id);
@@ -25,23 +24,19 @@ const Description = memo(({ data }) => {
       {data && (
         <div className={cn.describe}>
           <Title
-            link={homepage}
-            title={name || title}
             date={release_date}
+            link={homepage}
             subTitle={tagline}
+            title={name || title}
           />
-          <Genres genresMovie={genresList} classname="genres_single-movie" />
+          <Genres classname="genres_single-movie" genresMovie={genresList} />
           <div className={cn.row}>
             <Rating
-              rating={vote_average.toFixed(1)}
               classname="rating_single-movie"
+              rating={vote_average.toFixed(1)}
             />
             <WatchTrailerButton classname="play" />
           </div>
-          {/*<div className={cn.overview}>*/}
-          {/*  <div className={cn.heading}>Overview</div>*/}
-          {/*  <div className={cn.description}>{overview}</div>*/}
-          {/*</div>*/}
           <About />
         </div>
       )}

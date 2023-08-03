@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import cn from "../HeroBanner.module.scss";
@@ -23,9 +23,9 @@ const Content = () => {
         </h2>
         <form className={cn.form} onSubmit={submitHandler}>
           <input
-            type="text"
-            placeholder="Search for a movie or tv show...."
             ref={inputRef}
+            placeholder="Search for a movie or tv show...."
+            type="text"
           />
           <button className={cn.form__btn}>
             <span>Search</span>

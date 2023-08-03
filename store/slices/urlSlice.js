@@ -3,9 +3,7 @@ import {getData} from "../../utils/api.js";
 
 export const fetchUrl = createAsyncThunk(
   "main/fetchUrl",
-  async () => {
-    return getData('/configuration')
-  }
+  async () => getData('/configuration')
 );
 
 
@@ -20,7 +18,7 @@ const urlSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchUrl.pending, (state, action) => {
+    builder.addCase(fetchUrl.pending, (state) => {
       state.loading = "loading";
       state.error = '';
     });

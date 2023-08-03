@@ -1,10 +1,7 @@
 import React from "react";
 import cn from "../PersonSection.module.scss";
-import Img from "../../../components/Img";
-import avatar from "../../../assets/avatar.webp";
 
-const Skeleton = () => {
-  return (
+const Skeleton = () => (
     <>
       <div className={cn.profile__content}>
         <div className={`${cn.profile__content__photo} skeleton`}/>
@@ -16,8 +13,13 @@ const Skeleton = () => {
           <p className={`${cn["info-item"]} ${cn["info-item_skeleton"]} skeleton`} ></p>
         </div>
       </div>
+      <div className={cn['btn__group-skeleton']}>
+        <div className={`${cn['btn__sort-skeleton']} skeleton`}/>
+        <div className={`${cn['btn__sort-skeleton']} skeleton`}/>
+        <div className={`${cn['btn__sort-skeleton']} skeleton`}/>
+        <div className={`${cn['btn__sort-skeleton']} skeleton`}/>
+      </div>
     </>
   );
-};
 
 export default Skeleton;

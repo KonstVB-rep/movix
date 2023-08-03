@@ -10,29 +10,24 @@ const InfinityScrollList = memo(({
   data,
   dataPages,
   isFetching,
-}) => {
-
-  return (
+}) => (
     <>
           {(isLoading || isFetching) && <Loader />}
           <InfiniteScroll
             className="grid"
-            hasMore={hasNextPage || false}
-            next={fetchNextPage}
             dataLength={data ? data?.results.length : 0}
-            scrollThreshold={0.85}
+            hasMore={hasNextPage || false}
             loader={<Loader />}
+            next={fetchNextPage}
+            scrollThreshold={0.85}
           >
             {dataPages?.map((page) =>
-              page?.results.map((item) => {
-                return (
-                  <VideoCard key={item.id} data={item} classnameCard="card_grid" />
-                );
-              })
+              page?.results.map((item) => (
+                  <VideoCard key={item.id} classnameCard="card_grid" data={item} />
+                ))
             )}
           </InfiniteScroll>
         </>
-  );
-});
+  ));
 
 export default InfinityScrollList;

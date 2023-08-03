@@ -1,12 +1,8 @@
-import React from "react";
 import SliderBox from "../../../components/SliderBox/index.jsx";
-const RecommendedVideos = () => {
-
-  return (
+const RecommendedVideos = () => (
     <>
-      <SliderBox title="Recommendations" keyApi="recommendations" />
+      <SliderBox keyApi="useRecommendations" title="Recommendations" />
     </>
   );
-};
 
 export default RecommendedVideos;

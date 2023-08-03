@@ -3,13 +3,12 @@ import SliderBox from "../../../components/SliderBox/index.jsx";
 
 
 const slidersListMain = [
-  {title: 'Trending', keyApi: 'trending', endpoints: ["day", "week"], tabsNames: ["Day", "Week"]},
-  {title: 'Popular', keyApi: 'popular', endpoints: ["movie", "tv"], tabsNames: ["Movies", "TV Shows"]},
-  {title: 'Top rated', keyApi: 'topRated', endpoints: ["movie", "tv"], tabsNames: ["Movies", "TV Shows"]},
+  {title: 'Trending', keyApi: 'useTrending', endpoints: ["day", "week"], tabsNames: ["Day", "Week"]},
+  {title: 'Popular', keyApi: 'usePopular', endpoints: ["movie", "tv"], tabsNames: ["Movies", "TV Shows"]},
+  {title: 'Top rated', keyApi: 'useTopRated', endpoints: ["movie", "tv"], tabsNames: ["Movies", "TV Shows"]},
 ]
 
-const MediaSliders = () => {
-  return (
+const MediaSliders = () => (
     <>
       {slidersListMain.map(section => <SliderBox
         key={section.keyApi}
@@ -17,6 +16,5 @@ const MediaSliders = () => {
       /> )}
     </>
   );
-};
 
 export default MediaSliders;

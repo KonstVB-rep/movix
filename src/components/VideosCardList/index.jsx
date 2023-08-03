@@ -1,20 +1,17 @@
 import React from "react";
 import VideoCard from "../VideoCard";
 
-const VideosCardList = ({ dataList, endpointCard, classnameCard }) => {
-  console.log(dataList)
-  return (
+const VideosCardList = ({ dataList, endpointCard, classnameCard }) => (
     <>
       {dataList?.map((item, index) => (
         <VideoCard
-          data={item}
-          endpoint={endpointCard}
           key={index}
           classnameCard={classnameCard}
+          data={item}
+          endpoint={endpointCard}
         />
       ))}
     </>
   );
-};
 
 export default VideosCardList;

@@ -1,17 +1,16 @@
 import React from "react";
-import cn from "./Footer.module.scss";
 import { Link } from "react-router-dom";
+import cn from "./Footer.module.scss";
 import {socialLinks} from "./socailLinks/index.jsx";
 
 const navItems = ["Terms Of Use", "Privacy-Policy", "About", "Blog", "FAQ"];
 
-const Footer = () => {
-  return (
+const Footer = () => (
     <footer className={cn.footer}>
       <div className="wrapper">
         <ul className={cn.nav}>
           {navItems.map((item) => (
-            <li className={cn.nav__item} key={item}>
+            <li key={item} className={cn.nav__item}>
               <Link>{item}</Link>
             </li>
           ))}
@@ -28,10 +27,10 @@ const Footer = () => {
           {socialLinks.map((link) => (
             <Link
               key={link.path}
-              to={link.path}
               className={cn.icon}
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
+              to={link.path}
             >
               {link.icon}
             </Link>
@@ -40,6 +39,5 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
 
 export default Footer;

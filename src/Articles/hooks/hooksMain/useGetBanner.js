@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {useGetData} from "../commonHooks/useGetData.js";
 import {useSelector} from "react-redux";
+import {useGetData} from "../commonHooks/useGetData.js";
 
 
 

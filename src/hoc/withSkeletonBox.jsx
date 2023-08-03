@@ -1,8 +1,7 @@
 import React from "react";
 import SkeletonBox from "../components/SkeletonBox";
 
-const withSkeletonBox = (Component) => {
-  return (props) => {
+const withSkeletonBox = (Component) => (props) => {
     const { tabsNames = [],isLoading, ...rest } = props;
 
     return (
@@ -15,6 +14,5 @@ const withSkeletonBox = (Component) => {
       </>
     );
   };
-};
 
 export default withSkeletonBox;

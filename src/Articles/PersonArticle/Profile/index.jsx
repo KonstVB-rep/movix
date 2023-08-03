@@ -1,19 +1,19 @@
-import React from "react";
-import cn from "../PersonSection.module.scss";
-import Img from "../../../components/Img/index.jsx";
-import avatar from "../../../assets/avatar.webp";
 import dayjs from "dayjs";
-import { Link, useParams } from "react-router-dom";
-import Biography from "../Biography/index.jsx";
+import React from "react";
 import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import avatar from "../../../assets/avatar.webp";
 import ErrorElement from "../../../components/ErrorElement";
+import Img from "../../../components/Img/index.jsx";
 import useApi from "../../hooks/commonHooks/useApi.js";
+import Biography from "../Biography/index.jsx";
+import cn from "../PersonSection.module.scss";
 import Skeleton from "../Skeleton/index.jsx";
 
 const Profile = () => {
   const { id } = useParams();
 
-  const { data, isLoading, isError, error } = useApi().person(id);
+  const { data, isLoading, isError, error } = useApi().usePerson(id);
 
   const urlProfile = useSelector(
     (state) => state.urlBaseForImages.url?.profile
@@ -21,10 +21,10 @@ const Profile = () => {
 
   return (
     <ErrorElement
-      isError={isError}
-      error={error}
-      title="Profile"
       classname="main"
+      error={error}
+      isError={isError}
+      title="Profile"
     >
       <div className={`${cn.profile} wrapper`}>
         <div className={cn["opacity-backdrop"]}>
@@ -73,7 +73,11 @@ const Profile = () => {
                 <p className={cn["info-item"]}>
                   <span className={cn.name}>Imdb_id : </span>
                   <span className={cn.text}>
-                    <Link to={`https://www.imdb.com/name/${data.imdb_id}`}>
+                    <Link
+                      to={`https://www.imdb.com/name/${data.imdb_id}`}
+                      className={cn.link_pink}
+                      title="Go to imdb.com"
+                    >
                       ID {data.imdb_id}
                     </Link>
                   </span>
@@ -87,15 +91,15 @@ const Profile = () => {
               ) : null}
               {data?.homepage ? (
                 <p className={cn["info-item"]}>
-                  <span className={cn.name}>Homepage:{" "}</span>
+                  <span className={cn.name}>Homepage: </span>
                   <span className={cn.text}>
-                    <a
-                      href={data?.homepage}
-                      title="Go to the actor's home page"
+                    <Link
                       className={cn.link_pink}
+                      to={data?.homepage}
+                      title="Go to the actor's home page"
                     >
                       {data?.homepage}
-                    </a>
+                    </Link>
                   </span>
                 </p>
               ) : null}

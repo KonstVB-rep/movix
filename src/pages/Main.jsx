@@ -4,14 +4,11 @@ import HeroBanner from "../Articles/MainArticle/HeroBanner";
 import MediaSliders from "../Articles/MainArticle/MediaSliders";
 
 
-const Main = () => {
-
-  return (
+const Main = () => (
     <div>
       <HeroBanner />
       <MediaSliders/>
     </div>
   );
-};
 
 export default Main;

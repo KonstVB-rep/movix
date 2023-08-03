@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useGetData } from "../../hooks/commonHooks/useGetData.js";
+import VideoPlayer from "../VideoPleer";
 import PlayBtn from "./PlayBtn";
 import cn from "./WatchTrailerButton.module.scss";
-import VideoPlayer from "../VideoPleer";
-import { useGetData } from "../../hooks/commonHooks/useGetData.js";
-import { useParams } from "react-router-dom";
 
 const videosVariants = ["trailer", "clip", "teaser"];
 
@@ -43,11 +43,11 @@ const WatchTrailerButton = ({ classname }) => {
             <span className={cn.title}>Watch Trailer</span>
           </div>
           <VideoPlayer
-            show={show}
-            setShow={setShow}
-            videoId={videoId}
-            setVideoId={setVideoId}
             isError={isError}
+            setShow={setShow}
+            setVideoId={setVideoId}
+            show={show}
+            videoId={videoId}
           />
         </>
       ) : null}

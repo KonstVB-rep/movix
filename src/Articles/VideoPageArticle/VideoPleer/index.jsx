@@ -1,8 +1,8 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import cn from "./VideoPlayer.module.scss";
-import ErrorElement from "../../../components/ErrorElement";
 import ButtonClose from "../../../components/Buttons/ButtonClose/index.jsx";
+import ErrorElement from "../../../components/ErrorElement";
+import cn from "./VideoPlayer.module.scss";
 
 const VideoPlayer = ({
                        show,
@@ -26,11 +26,11 @@ const VideoPlayer = ({
           <ErrorElement classname="error-trailer">Video not found</ErrorElement>
         ) : (
           <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${videoId}`}
             controls
-            width="100%"
             height="100%"
             playing={true}
+            url={`https://www.youtube.com/watch?v=${videoId}`}
+            width="100%"
           />
         )}
       </div>

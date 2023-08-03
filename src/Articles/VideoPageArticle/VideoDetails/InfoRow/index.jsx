@@ -8,8 +8,7 @@ const InfoRow = ({
   list = false,
   classname = "",
   children,
-}) => {
-  return (
+}) => (
     <>
       {data > 0 || data?.length ? (
         <div className={`${cn.info} ${cn[classname]}`}>
@@ -30,6 +29,5 @@ const InfoRow = ({
       ) : null}
     </>
   );
-};
 
 export default InfoRow;

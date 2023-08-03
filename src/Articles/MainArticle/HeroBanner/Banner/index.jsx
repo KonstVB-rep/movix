@@ -1,11 +1,11 @@
 import React from "react";
 
-import cn from '../HeroBanner.module.scss'
-import useApi from "../../../hooks/commonHooks/useApi.js";
 import Img from "../../../../components/Img";
+import useApi from "../../../hooks/commonHooks/useApi.js";
+import cn from '../HeroBanner.module.scss'
 
 const Banner = () => {
-  const { isLoading, banner } = useApi().banner;
+  const { isLoading, banner } = useApi().useBanner();
 
   return (
     <>

@@ -1,16 +1,14 @@
+import dayjs from "dayjs";
 import React from "react";
 import cn from "../VideoDetails.module.scss";
-import dayjs from "dayjs";
 
-const Title = ({ title, date, link, subTitle }) => {
-
-  return (
+const Title = ({ title, date, link, subTitle }) => (
     <>
       <h1 className={cn.title}>
         <a
           href={link}
-          target="_black"
           rel="noreferrer noopener"
+          target="_black"
           title="Go to the movie's website"
         >{`${title} (${dayjs(date).format("YYYY")})`}
           <span className={cn.subtitle}>{subTitle}</span>
@@ -19,6 +17,5 @@ const Title = ({ title, date, link, subTitle }) => {
 
     </>
   );
-};
 
 export default Title;

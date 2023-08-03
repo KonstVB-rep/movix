@@ -1,16 +1,14 @@
-import React from 'react';
 import { motion, AnimatePresence } from "framer-motion"
+import React from 'react';
 
-const AnimateShowWrapper = ({condition,keyName, children}) => {
-
-  return (
+const AnimateShowWrapper = ({condition,keyName, children}) => (
     <AnimatePresence>
       {condition && (
         <motion.div
           key={keyName}
-          initial={{ opacity: 0 }}
           animate={{ opacity: 1}}
           exit={{ opacity: 0}}
+          initial={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
           {children}
@@ -18,6 +16,5 @@ const AnimateShowWrapper = ({condition,keyName, children}) => {
       )}
     </AnimatePresence>
   );
-};
 
 export default AnimateShowWrapper;

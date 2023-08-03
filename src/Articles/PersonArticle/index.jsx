@@ -4,9 +4,7 @@ import CreditsList from "./CreditsList";
 
 import Profile from "./Profile";
 
-const PersonSection = () => {
-
-  return (
+const PersonSection = () => (
     <div className='main'>
         <Profile/>
         <CreditsList
@@ -15,6 +13,5 @@ const PersonSection = () => {
         />
     </div>
   );
-};
 
 export default PersonSection;

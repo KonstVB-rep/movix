@@ -1,6 +1,6 @@
-import React, {useCallback, useEffect, useState} from "react";
-import useApi from "../commonHooks/useApi.js";
+import {useCallback, useEffect, useState} from "react";
 import cn from "../../DiscoverVideosArticle/DiscoverVideosSection.module.scss";
+import useApi from "../commonHooks/useApi.js";
 
 const useGetState = (movieType) => {
   const [selectedOption, setSelectedOption] = useState({});
@@ -16,7 +16,7 @@ const useGetState = (movieType) => {
     dataPages,
     total_results,
     isSuccess,
-  } = useApi().discover(`/discover/${movieType}`, selectedOption, `discover_${movieType}`, selectedOption);
+  } = useApi().useDiscover(`/discover/${movieType}`, selectedOption, `discover_${movieType}`, selectedOption);
 
   const [show, setShow] = useState(false);
 
@@ -44,7 +44,7 @@ const useGetState = (movieType) => {
     return () => {
       document.documentElement.removeEventListener("keydown", hiddenSelects);
     };
-  }, [show]);
+  }, [show,hiddenSelects]);
 
   return {
     videos,

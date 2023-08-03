@@ -1,10 +1,9 @@
-import React from "react";
 import { useParams } from "react-router-dom";
-import useApi from "../hooks/commonHooks/useApi.js";
+import ErrorElement from "../../components/ErrorElement";
 import InfinityScrollList from "../../components/InfinityScrollList/index.jsx";
+import useApi from "../hooks/commonHooks/useApi.js";
 
 import cn from "./SearchPageSection.module.scss";
-import ErrorElement from "../../components/ErrorElement";
 
 const SearchPageSection = () => {
   const { query } = useParams();
@@ -19,14 +18,14 @@ const SearchPageSection = () => {
     total_results,
     dataPages,
     isSuccess
-  } = useApi().search_query(`/search/multi`, { query }, "search_query", query);
+  } = useApi().useSearchQuery(`/search/multi`, { query }, "search_query", query);
 
   return (
     <ErrorElement
-      isError={isError}
-      error={error}
-      title='Search results: error in data collection'
       classname='main'
+      error={error}
+      isError={isError}
+      title='Search results: error in data collection'
     >
       <div className="main wrapper">
         <h1 className="title-article">
@@ -41,11 +40,11 @@ const SearchPageSection = () => {
           )}
         </h1>
         <InfinityScrollList
-          isLoading={isLoading}
-          hasNextPage={hasNextPage}
-          fetchNextPage={fetchNextPage}
           data={videos}
           dataPages={dataPages}
+          fetchNextPage={fetchNextPage}
+          hasNextPage={hasNextPage}
+          isLoading={isLoading}
           isSuccess={isSuccess}
         />
       </div>

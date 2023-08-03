@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import cn from "./Slider.module.scss";
 import { useParams } from "react-router-dom";
-import SwitchTabs from "../SwitchTabs/index.jsx";
 import ButtonsDirectionSlider from "../Buttons/ButtonsDirectionSlider";
+import SwitchTabs from "../SwitchTabs/index.jsx";
+import cn from "./Slider.module.scss";
 
 const Slider = ({
   endpoint = "",
@@ -39,8 +39,8 @@ const Slider = ({
           </div>
           <div className={cn.slider}>
             <div className={`${cn.wrapper} wrapper`}>
-              <ButtonsDirectionSlider visible={visible} ref={sliderContainer} />
-              <ul className={cn.slides} ref={sliderContainer}>
+              <ButtonsDirectionSlider ref={sliderContainer} visible={visible} />
+              <ul ref={sliderContainer} className={cn.slides}>
                 {children}
               </ul>
             </div>

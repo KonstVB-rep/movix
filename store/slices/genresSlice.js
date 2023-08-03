@@ -33,14 +33,12 @@ const genresSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchAllGenres.pending, (state, action) => {
+    builder.addCase(fetchAllGenres.pending, (state) => {
       state.loading = "loading";
       state.error = '';
     });
     builder.addCase(fetchAllGenres.fulfilled, (state, action) => {
-      action.payload.map(({ genres }) => {
-        return genres.map((item) => state.all[item.id] = item.name);
-      });
+      action.payload.map(({ genres }) => genres.map((item) => state.all[item.id] = item.name));
       state.tv= action.payload[0].genres.map((item => ({label: item.name, value:item.id, filter: 'with_genres'})))
       state.movie =action.payload[1].genres.map((item => ({label: item.name, value:item.id, filter: 'with_genres'})))
       state.loading = "fulfilled";

@@ -1,14 +1,14 @@
 import React from 'react';
-import {RouterProvider} from "react-router-dom";
-import { router } from "../router/index.jsx";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import {Provider} from "react-redux";
+import {RouterProvider} from "react-router-dom";
+import { router } from "../router/index.jsx";
 import { store } from "../store/index.js";
 
 
 export const queryClient = new QueryClient(
-  {defaultOptions: {queries : { staleTime: 300000, cacheTime: 300000,retry: 3, keepPreviousData:true}}}
+  {defaultOptions: {queries : { staleTime: 300000, retry: 3, keepPreviousData:true}}}
 );
 
 function App() {

@@ -2,9 +2,7 @@ import React from "react";
 
 import cn from "./SkeletonBox.module.scss";
 
-const SkeletonBox = ({ tabsNames = [], children }) => {
-
-  return (
+const SkeletonBox = ({ tabsNames = [], children }) => (
     <>
       <div className="wrapper">
         <div className={cn.heading}>
@@ -15,6 +13,5 @@ const SkeletonBox = ({ tabsNames = [], children }) => {
       </div>
     </>
   );
-};
 
 export default SkeletonBox;

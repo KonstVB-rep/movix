@@ -16,16 +16,16 @@ const SwitchTabs = ({ data, onTabChange }) => {
       <div className={cn.tab__wrapper}>
         {data.map((tab, index) => (
           <label
-            className={`${cn.tab__label} ${select === index ? cn.active : ""}`}
             key={tab}
+            className={`${cn.tab__label} ${select === index ? cn.active : ""}`}
           >
             <input
-              type="radio"
-              name={tab}
-              value={index}
-              className={cn.tab__radio}
-              onChange={handleChange}
               checked={select === index}
+              className={cn.tab__radio}
+              name={tab}
+              type="radio"
+              value={index}
+              onChange={handleChange}
             />
             <span className={cn['tab__label-span']}>{tab}</span>
           </label>

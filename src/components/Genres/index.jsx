@@ -8,7 +8,7 @@ const Genres = ({ genresMovie, classname }) => {
   const genresNameList = String(genresMovie?.map((id) => genres[id]));
 
   return (
-    <div title={genresNameList || ""} className={cn["genres-box"]}>
+    <div className={cn["genres-box"]} title={genresNameList || ""}>
       {genresMovie?.length ? (
         <div className={`${cn.genres} ${cn[classname]}`}>
           {genresMovie?.map((id) => (

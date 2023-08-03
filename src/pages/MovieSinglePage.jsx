@@ -1,13 +1,11 @@
 import React from "react";
-import VideoDetails from "../Articles/VideoPageArticle/VideoDetails";
 import Actors from "../Articles/VideoPageArticle/Actors";
-import TrailersVideo from "../Articles/VideoPageArticle/TrailersVideo";
-import SimilarVideos from "../Articles/VideoPageArticle/SimilarVideos";
 import RecommendedVideos from "../Articles/VideoPageArticle/RecommendedVideos";
+import SimilarVideos from "../Articles/VideoPageArticle/SimilarVideos";
+import TrailersVideo from "../Articles/VideoPageArticle/TrailersVideo";
+import VideoDetails from "../Articles/VideoPageArticle/VideoDetails";
 
-const MovieSinglePage = () => {
-
-  return (
+const MovieSinglePage = () => (
     <>
       <VideoDetails />
       <Actors />
@@ -16,6 +14,5 @@ const MovieSinglePage = () => {
       <RecommendedVideos />
     </>
   );
-};
 
 export default MovieSinglePage;
