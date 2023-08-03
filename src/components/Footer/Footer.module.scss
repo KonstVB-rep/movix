@@ -10,13 +10,21 @@
     flex-direction: column;
   }
   .nav {
-    list-style-type: none;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    justify-items: center;
+    margin: 0 auto 15px;
+    gap: 10px;
+    @include xs{
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     @include md {
+      max-width: 50%;
       margin-bottom: 30px;
       gap: 30px;
     }

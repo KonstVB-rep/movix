@@ -17,7 +17,10 @@
     background-color: var(--bg-header-footer);
   }
   &.hide {
-    transform: translateY(-60px);
+    transform: translateY(-165px);;
+    @include xs {
+      transform: translateY(-60px);
+    }
   }
   &.mobile__view {
     background: var(--bg-header-footer);

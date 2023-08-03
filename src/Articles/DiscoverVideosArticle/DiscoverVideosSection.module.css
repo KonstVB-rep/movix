@@ -1,9 +1,63 @@
+.wrapper-discover {
+  position: relative;
+}
 .wrapper-discover_show:before {
   position: absolute;
   content: "";
   inset: 0;
   background-color: transparent;
   z-index: 2;
+}
+.wrapper-discover .select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 95%;
+  border-radius: 30px;
+  padding: 10px;
+  top: 90px;
+  background: var(--bg-body);
+  border: 1px solid gray;
+  position: absolute;
+  z-index: 10;
+}
+@media only screen and (min-width: 639px) {
+  .wrapper-discover .select-group {
+    margin-top: 20px;
+    position: static;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+.wrapper-discover .select-group-hidden {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+}
+@media only screen and (min-width: 639px) {
+  .wrapper-discover .select-group-hidden {
+    visibility: visible;
+    height: auto;
+    display: flex;
+    opacity: 1;
+  }
+}
+.wrapper-discover .select-group .select {
+  width: 100%;
+  border-radius: 20px;
+  height: 40px;
+}
+@media only screen and (min-width: 639px) {
+  .wrapper-discover .select-group .select {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .wrapper-discover .select-group .select {
+    width: 100%;
+  }
 }
 
 .select-group .select :global .ant-select-selector {
@@ -55,115 +109,27 @@
 }
 
 .sort-popup {
+  width: fit-content;
   position: relative;
-  height: auto;
   display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
 }
 .sort-popup .sort-popup_btn {
   position: relative;
   width: 120px;
-  height: 40px;
   margin-top: 20px;
-  border-radius: 20px;
-  text-transform: uppercase;
   background: var(--bg-body);
   color: var(--secondary);
   border: 1px solid gray;
-  transition: all 0.2s ease-in-out;
-  overflow: hidden;
-  z-index: 2;
 }
 .sort-popup .sort-popup_btn > span {
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bolder;
-  gap: 10px;
-  padding: 0 10px;
   fill: var(--secondary);
-  transform: translate(-50%, -50%);
-  position: absolute;
-  z-index: 2;
 }
 .sort-popup .sort-popup_btn > span > svg {
-  height: 100%;
   width: 25%;
-}
-.sort-popup .sort-popup_btn:before {
-  position: absolute;
-  content: "";
-  inset: 0;
-  width: 0;
-  background: var(--gradient);
-  z-index: 1;
-  transition: all 0.2s ease-in-out;
-}
-.sort-popup .sort-popup_btn:active {
-  scale: 0.9;
-}
-.sort-popup .sort-popup_btn:hover::before, .sort-popup .sort-popup_btn:focus-visible::before {
-  width: 100%;
 }
 @media only screen and (min-width: 639px) {
   .sort-popup .sort-popup_btn {
     display: none;
-  }
-}
-.sort-popup .select-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  width: 100%;
-  border-radius: 30px;
-  padding: 10px;
-  top: 65px;
-  background: var(--bg-body);
-  border: 1px solid gray;
-  position: absolute;
-  z-index: 10;
-}
-@media only screen and (min-width: 639px) {
-  .sort-popup .select-group {
-    margin-top: 20px;
-    position: static;
-    display: flex;
-    gap: 15px;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-}
-.sort-popup .select-group-hidden {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-}
-@media only screen and (min-width: 639px) {
-  .sort-popup .select-group-hidden {
-    visibility: visible;
-    height: auto;
-    display: flex;
-    opacity: 1;
-  }
-}
-.sort-popup .select-group .select {
-  width: 100%;
-  border-radius: 20px;
-  height: 40px;
-}
-@media only screen and (min-width: 639px) {
-  .sort-popup .select-group .select {
-    width: 50%;
-  }
-}
-@media only screen and (min-width: 1023px) {
-  .sort-popup .select-group .select {
-    width: 100%;
   }
 }
 

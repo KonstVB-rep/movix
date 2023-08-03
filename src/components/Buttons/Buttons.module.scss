@@ -1,6 +1,6 @@
 @import "../../mixins.scss";
 
-.btn{
+.btn {
   position: fixed;
   width: 50px;
   height: 50px;
@@ -11,31 +11,31 @@
   box-shadow: 0 0 2px 2px var(--secondary);
   transition: all 0.1s ease-in-out;
   &:hover,
-  &:focus-visible{
+  &:focus-visible {
     box-shadow: 0 0 4px 4px orangered;
     scale: 1.1;
   }
-  &:active{
+  &:active {
     box-shadow: 0 0 4px 4px red;
     scale: 0.9;
   }
-  &_theme{
+  &_theme {
     bottom: 100px;
     right: 20px;
-    @include md{
-      right: 50px
+    @include md {
+      right: 50px;
     }
   }
-  &_up{
+  &_up {
     bottom: 160px;
     right: 20px;
-    fill:var(--secondary);
-    @include md{
-      right: 50px
+    fill: var(--secondary);
+    @include md {
+      right: 50px;
     }
   }
-  svg{
-    scale:1.5;
+  svg {
+    scale: 1.5;
   }
 }
 
@@ -67,7 +67,52 @@
   }
 }
 
-
-.arrow{
+.arrow {
   fill: white;
+}
+
+.btn-wrapper {
+  display: flex;
+  position: relative;
+  @container sort-btn-container (width < 440px) {
+    width: 100%;
+  }
+}
+.sort-btn {
+  position: relative;
+  min-width: 130px;
+  height: 50px;
+  padding: 0 10px 0 20px;
+  display: grid;
+  grid-auto-flow: column;
+  background-color: var(--blue);
+  color: snow;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all 0.1s ease-in-out;
+  overflow: hidden;
+  fill: var(--secondary);
+  @container sort-btn-container (width < 440px) {
+    justify-content: space-between;
+    width: 100%;
+  }
+  &_inactive {
+    filter: grayscale(0.8);;
+  }
+  &_clear {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & > span {
+      justify-content: center;
+    }
+  }
+  &__img {
+    position: relative;
+    z-index: 2;
+    width: 50px;
+    height: 40px;
+    padding: 10px;
+  }
 }

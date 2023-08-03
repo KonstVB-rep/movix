@@ -71,4 +71,55 @@
   fill: white;
 }
 
+.btn-wrapper {
+  display: flex;
+  position: relative;
+}
+@container sort-btn-container (width < 440px) {
+  .btn-wrapper {
+    width: 100%;
+  }
+}
+
+.sort-btn {
+  position: relative;
+  min-width: 130px;
+  height: 50px;
+  padding: 0 10px 0 20px;
+  display: grid;
+  grid-auto-flow: column;
+  background-color: var(--blue);
+  color: snow;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all 0.1s ease-in-out;
+  overflow: hidden;
+  fill: var(--secondary);
+}
+@container sort-btn-container (width < 440px) {
+  .sort-btn {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.sort-btn_inactive {
+  filter: grayscale(0.8);
+}
+.sort-btn_clear {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sort-btn_clear > span {
+  justify-content: center;
+}
+.sort-btn__img {
+  position: relative;
+  z-index: 2;
+  width: 50px;
+  height: 40px;
+  padding: 10px;
+}
+
 /*# sourceMappingURL=Buttons.module.css.map */

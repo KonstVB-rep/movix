@@ -1,0 +1,49 @@
+.btn-gradient {
+  border-radius: 30px;
+  height: 40px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+.btn-gradient > span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  gap: 10px;
+  padding: 0 10px;
+  position: relative;
+  z-index: 2;
+}
+.btn-gradient > svg {
+  height: 100%;
+  width: 25%;
+}
+.btn-gradient:before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 0;
+  background: var(--gradient);
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+.btn-gradient:after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.btn-gradient:active {
+  scale: 0.9;
+}
+.btn-gradient:hover::before, .btn-gradient:focus-visible::before {
+  width: 100%;
+}
+
+/*# sourceMappingURL=ButtonGradient.module.css.map */

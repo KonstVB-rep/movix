@@ -6,6 +6,8 @@
   opacity: 0.3;
   z-index: -1;
   & > span {
+    width: 100%;
+    height: 100%;
     img {
       filter: blur(15px);
     }
@@ -59,7 +61,7 @@
       .info-span {
         font-size: 1rem;
         text-transform: uppercase;
-        .name{
+        .name {
           color: var(--text-person-name-span-color);
           text-shadow: 1px 0 black;
         }
@@ -93,7 +95,7 @@
             outline: none;
             border-radius: 12px;
             font-size: 1.2rem;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.1s ease-in-out;
             &:focus,
             &:active,
             &:focus-visible {
@@ -106,7 +108,7 @@
             &:hover > svg,
             &:focus-visible .svg {
               transform: rotate(90deg);
-              transition: all 0.2s ease-in-out;
+              transition: all 0.1s ease-in-out;
             }
             &:active svg {
               scale: 1;
@@ -202,7 +204,7 @@
   }
 }
 
-.heading{
+.heading {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -215,7 +217,19 @@
   }
 }
 
+.container-sort {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  container: sort-btn-container / inline-size;
+}
+
 .link_pink:hover,
-.link_pink:focus-visible{
+.link_pink:focus-visible {
   color: var(--pink);
+}
+
+.grid_person-movies {
+  margin-top: 20px !important;
 }

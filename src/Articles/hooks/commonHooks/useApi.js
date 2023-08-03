@@ -22,7 +22,7 @@ const useApi = () => {
     'trailers_list'        : (movieType,id) => useGetData('trailers_list', `/${movieType}/${id}/videos`, id,{enabled: !!(movieType && id)}),
     'similar'              : (movieType,id) => useGetData('similar', `/${movieType}/${id}/similar`, id,{enabled: !!(movieType && id)}),
     'recommendations'      : (movieType,id) => useGetData('recommendations', `/${movieType}/${id}/recommendations`, id, {enabled: !!(movieType && id)}),
-    'video_credits_person' : (id, endpoint) =>  useGetData('movie_credits_person',`/person/${id}/${endpoint}_credits`,[endpoint,id],{enabled: !!(endpoint && id)} ),
+    'video_credits_person' : (id, endpoint, config) =>  useGetData('movie_credits_person',`/person/${id}/${endpoint}_credits`,[endpoint,id],{enabled: !!(endpoint && id), ...config} ),
     'discover'             : (url,queryParams,name_request, key) => useGetDataInfinity(url, queryParams,name_request, key),
     'search_query'         : (url,queryParams,name_request, key) => useGetDataInfinity(url, queryParams,name_request, key),
   }

@@ -2,7 +2,7 @@ import React from "react";
 import VideoCard from "../VideoCard";
 
 const VideosCardList = ({ dataList, endpointCard, classnameCard }) => {
-
+  console.log(dataList)
   return (
     <>
       {dataList?.map((item, index) => (

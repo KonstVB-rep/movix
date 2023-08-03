@@ -29,12 +29,12 @@ const VideoCard = memo(({ data, endpoint, classnameCard = "card_flex" }) => {
 
   const [poster, setPoster] = useState(LoadingImg);
 
-  const posterUrl = useMemo(() => poster_path ? urlPoster && `${urlPoster}${poster_path}` : PosterFallback, [urlPoster]);
+  const posterUrl = useMemo(() => poster_path ? urlPoster && `${urlPoster}${poster_path}` : PosterFallback, [urlPoster,data]);
 
 
   useEffect(() => {
     setPoster(posterUrl);
-  }, [posterUrl]);
+  }, [posterUrl,data]);
 
   return (
     <li key={id} className={`${cn.card} ${cn[classnameCard]}`}>
@@ -48,7 +48,7 @@ const VideoCard = memo(({ data, endpoint, classnameCard = "card_flex" }) => {
       </div>
       <div className={cn.text}>
         <span className={cn.title}>{title || name}</span>
-        <Genres genresMovie={genre_ids.slice(0, 2)} classname="genres_card" />
+        <Genres genresMovie={genre_ids?.slice(0, 2)|| []} classname="genres_card" />
         <span className={cn.date}>
           {dayjs(release_date || first_air_date).format("MMM D, YYYY")}
         </span>
