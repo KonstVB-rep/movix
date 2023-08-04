@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {createPortal} from "react-dom";
 import { useDispatch, } from "react-redux";
 import { Outlet, ScrollRestoration } from "react-router-dom";
+
 import {fetchAllGenres} from "../../../store/slices/genresSlice.js";
 import { fetchUrl } from "../../../store/slices/urlSlice.js";
 import ScrollTopBtn from "../Buttons/ScrollTopBtn";

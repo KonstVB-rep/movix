@@ -1,8 +1,10 @@
-import { Select } from "antd";
 import React, {memo} from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Select } from "antd";
+
 import useOnChangeSelect from "../../hooks/hooksDiscovery/useOnChangeSelect.js";
+
 import cn from "../DiscoverVideosSection.module.scss";
 import {
   filterSort,

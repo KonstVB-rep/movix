@@ -1,10 +1,13 @@
+import React from "react";
 import { useParams } from "react-router-dom";
+
 import ErrorElement from "../../../components/ErrorElement";
+import ActorsList from "./ActorsList";
+import Skeleton from "./Skeleton";
+
 import useApi from "../../hooks/commonHooks/useApi.js";
 
-import ActorsList from "./ActorsList";
 
-import Skeleton from "./Skeleton";
 
 const Actors = () => {
   const { movieType, id } = useParams();

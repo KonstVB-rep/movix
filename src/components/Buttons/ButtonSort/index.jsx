@@ -1,7 +1,9 @@
 import React from 'react';
+
 import SortDown from "../../../assets/sort_down.webp";
 import SortUp from "../../../assets/sort_up.webp";
-import ButtonGradient from "../ButtonGradient/index.jsx";
+import ButtonGradient from "../ButtonGradient";
+
 import cn from "../Buttons.module.scss";
 
 const ButtonSort =({toggleDirection, name, direction}) => (

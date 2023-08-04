@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+
 import withSlider from "../../../../hoc/withSlider.jsx";
 import ActorCard from "../ActorCard";
 

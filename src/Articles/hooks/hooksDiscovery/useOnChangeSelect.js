@@ -1,5 +1,3 @@
-import React from 'react';
-
 const useOnChangeSelect = (movieType,setSelectedOption) => {
   const handleChangeSortBy = (value) => {
     if (value) {

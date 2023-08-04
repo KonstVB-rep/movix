@@ -1,5 +1,6 @@
 import React from "react";
+import NotFoundPageArticle from "../Articles/NotFoundPageArticle";
 
-const NotFoundPage = () => <div></div>;
+const NotFoundPage = () => <NotFoundPageArticle/>;
 
 export default NotFoundPage;

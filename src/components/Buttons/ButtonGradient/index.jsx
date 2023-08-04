@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cn from "./ButtonGradient.module.scss";
 
 const ButtonGradient = ({classname, children, ...props}) => (

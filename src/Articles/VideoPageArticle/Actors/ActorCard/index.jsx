@@ -1,8 +1,10 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+
 import avatar from "../../../../assets/avatar.webp";
 import Img from "../../../../components/Img";
+
 import cn from "../Actors.module.scss";
 
 const ActorCard = ({data}) => {

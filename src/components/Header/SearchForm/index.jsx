@@ -1,7 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
 import React, { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+
 import SearchIcon from "../../../assets/search.svg";
+
 import cn from "../Header.module.scss";
 
 

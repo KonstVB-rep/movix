@@ -1,5 +1,7 @@
 import React from "react";
+
 import withSkeletonBox from "../../../../hoc/withSkeletonBox.jsx";
+
 import cn from '../TrailersVideo.module.scss'
 
 const Skeleton = () => {

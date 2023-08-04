@@ -1,5 +1,7 @@
 import React from 'react';
-import ButtonGradient from "../ButtonGradient/index.jsx";
+
+import ButtonGradient from "../ButtonGradient";
+
 import cn from "../Buttons.module.scss";
 
 const CLearSort = ({clearSort}) => (

@@ -1,4 +1,5 @@
 .btn-gradient {
+  position: relative;
   border-radius: 30px;
   height: 40px;
   text-transform: uppercase;

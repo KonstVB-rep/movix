@@ -1,3 +1,5 @@
+import React from "react";
+
 import cn from '../WatchTrailerButton.module.scss'
 
 const PlayBtn = () => (

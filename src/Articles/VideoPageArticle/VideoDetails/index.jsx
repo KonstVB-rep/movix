@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 import ErrorElement from "../../../components/ErrorElement";
 import Img from "../../../components/Img";
-
 import { useGetData } from "../../hooks/commonHooks/useGetData.js";
 import Description from "./Desciption/";
 import Poster from "./Poster";

@@ -1,9 +1,11 @@
 import React, {memo} from "react";
+
 import Genres from "../../../../components/Genres";
 import Rating from "../../../../components/Rating";
 import WatchTrailerButton from "../../WatchTrailerButton";
 import About from "../About";
 import Title from "../Title";
+
 import cn from "../VideoDetails.module.scss";
 
 const Description = memo(({ data }) => {

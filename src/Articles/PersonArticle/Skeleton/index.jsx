@@ -1,4 +1,5 @@
 import React from "react";
+
 import cn from "../PersonSection.module.scss";
 
 const Skeleton = () => (

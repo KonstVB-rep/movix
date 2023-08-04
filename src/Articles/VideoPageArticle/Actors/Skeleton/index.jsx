@@ -1,6 +1,7 @@
 import React from "react";
 
 import withSkeletonBox from "../../../../hoc/withSkeletonBox.jsx";
+
 import cn from "../Actors.module.scss";
 
 const Skeleton = () => {

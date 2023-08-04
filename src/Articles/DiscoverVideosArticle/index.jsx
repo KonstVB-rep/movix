@@ -1,11 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import ButtonGradient from "../../components/Buttons/ButtonGradient/index.jsx";
+import useGetState from "../hooks/hooksDiscovery/useGetState.js";
+
 import ErrorElement from "../../components/ErrorElement";
 import InfinityScrollList from "../../components/InfinityScrollList";
-import useGetState from "../hooks/hooksDiscovery/useGetState.js";
+import SelectsGroup from "./SelectGroup";
+import ButtonGradient from "../../components/Buttons/ButtonGradient";
+
+
 import cn from "./DiscoverVideosSection.module.scss";
-import SelectsGroup from "./SelectGroup/index.jsx";
 
 const DiscoverVideosSection = () => {
   const { movieType } = useParams();

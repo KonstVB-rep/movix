@@ -1,4 +1,5 @@
 import React from 'react';
+
 import cn from "../VideoDetails.module.scss";
 
 const Skeleton = () => (

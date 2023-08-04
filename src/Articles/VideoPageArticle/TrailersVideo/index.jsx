@@ -1,7 +1,9 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 
-import ErrorElement from "../../../components/ErrorElement";
 import useApi from "../../hooks/commonHooks/useApi.js";
+
+import ErrorElement from "../../../components/ErrorElement";
 import Skeleton from "../TrailersVideo/Skeleton";
 import TrailersList from "./TrailersList";
 

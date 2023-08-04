@@ -1,6 +1,9 @@
+import React from "react";
 import {useParams} from "react-router-dom";
+
 import useApi from "../../../../hooks/commonHooks/useApi.js";
 import InfoRow from "../../InfoRow/index.jsx";
+
 import {dataMovieCrew} from "../data/index.jsx";
 
 const WritersAndDirector = () => {

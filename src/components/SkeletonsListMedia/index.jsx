@@ -1,6 +1,8 @@
 import React from 'react';
+
 import {getNumberSkeletons} from "../../../utils/getNumberSkeletons.js";
 import withSkeletonBox from "../../hoc/withSkeletonBox.jsx";
+
 import cn from "../SkeletonBox/SkeletonBox.module.scss";
 
 const SkeletonsListMedia = ({classname = "skeletons__item_flex"}) => {

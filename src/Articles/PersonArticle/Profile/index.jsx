@@ -2,13 +2,15 @@ import dayjs from "dayjs";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import avatar from "../../../assets/avatar.webp";
+
 import ErrorElement from "../../../components/ErrorElement";
+import Biography from "../Biography/index.jsx";
 import Img from "../../../components/Img/index.jsx";
 import useApi from "../../hooks/commonHooks/useApi.js";
-import Biography from "../Biography/index.jsx";
-import cn from "../PersonSection.module.scss";
 import Skeleton from "../Skeleton/index.jsx";
+import avatar from "../../../assets/avatar.webp";
+
+import cn from "../PersonSection.module.scss";
 
 const Profile = () => {
   const { id } = useParams();

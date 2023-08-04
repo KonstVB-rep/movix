@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import { useParams } from "react-router-dom";
+
 import ButtonsDirectionSlider from "../Buttons/ButtonsDirectionSlider";
-import SwitchTabs from "../SwitchTabs/index.jsx";
+import SwitchTabs from "../SwitchTabs";
+
 import cn from "./Slider.module.scss";
 
 const Slider = ({

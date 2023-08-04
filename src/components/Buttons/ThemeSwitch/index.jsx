@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
-import cn from "../Buttons.module.scss";
 
+import cn from "../Buttons.module.scss";
 
 const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const defaultTheme = isDarkTheme ? "dark" : "light";

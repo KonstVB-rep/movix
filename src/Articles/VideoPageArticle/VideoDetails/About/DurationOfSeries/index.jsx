@@ -1,6 +1,8 @@
 import React, { memo } from "react";
 import { useParams } from "react-router-dom";
+
 import InfoRow from "../../InfoRow/index.jsx";
+
 import cn from "../About.module.scss";
 
 import { dataDurationOsSeries } from "../data/index.jsx";

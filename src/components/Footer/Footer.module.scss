@@ -2,7 +2,7 @@
 
 .footer {
   background-color: var(--bg-header-footer);
-  padding: 50px 0;
+  padding: 30px 0;
   position: relative;
   .wrapper {
     display: flex;
@@ -33,6 +33,7 @@
       cursor: pointer;
       font-size: 12px;
       a{
+        white-space: nowrap;
         color: snow;
         @include md {
           font-size: 16px;

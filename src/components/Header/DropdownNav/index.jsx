@@ -1,6 +1,7 @@
-import {AnimatePresence, motion} from "framer-motion";
 import React, { useEffect } from "react";
+import {AnimatePresence, motion} from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+
 import cn from "../Header.module.scss";
 
 const DropdownNav = ({ isMenuOpen, setIsMenuOpen }) => {
@@ -8,7 +9,7 @@ const DropdownNav = ({ isMenuOpen, setIsMenuOpen }) => {
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [pathname]);
+  }, [pathname,setIsMenuOpen]);
 
   return (
     <AnimatePresence>

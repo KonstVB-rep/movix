@@ -1,8 +1,10 @@
 import React, { memo } from "react";
 import { useSelector } from "react-redux";
+
 import NotImage from "../../../../../assets/not_image.svg";
 import Img from "../../../../../components/Img/index.jsx";
 import InfoRow from "../../InfoRow/index.jsx";
+
 import cn from "../About.module.scss";
 
 const ProductionCompanies = memo(({ movieDetails }) => {

@@ -26,3 +26,28 @@ export const debounce = (fn, delay) => {
     }, delay);
   };
 };
+
+
+export const sortByOptionText = (a, b, option, optionValue) => {
+  if (optionValue === "up") {
+    return a[option].toLowerCase().localeCompare(b[option].toLowerCase());
+  } else if (optionValue === "down") {
+    return b[option].toLowerCase().localeCompare(a[option].toLowerCase());
+  } else return 0;
+};
+
+export const sortByOptionDate = (a, b, option, optionValue) => {
+  if (optionValue === "up") {
+    return new Date(a[option]) - new Date(b[option]);
+  } else if (optionValue === "down") {
+    return new Date(b[option]) - new Date(a[option]);
+  } else return 0;
+};
+
+export const sortByOptionNumber = (a, b, option, optionValue) => {
+  if (optionValue === "up") {
+    return a[option] - b[option];
+  } else if (optionValue === "down") {
+    return b[option] - a[option];
+  } else return 0;
+};

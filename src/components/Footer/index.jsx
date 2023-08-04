@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import {socialLinks} from "./socailLinks";
+
 import cn from "./Footer.module.scss";
-import {socialLinks} from "./socailLinks/index.jsx";
+
 
 const navItems = ["Terms Of Use", "Privacy-Policy", "About", "Blog", "FAQ"];
 

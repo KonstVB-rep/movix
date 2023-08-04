@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetData } from "../../hooks/commonHooks/useGetData.js";
+
 import VideoPlayer from "../VideoPleer";
 import PlayBtn from "./PlayBtn";
+
 import cn from "./WatchTrailerButton.module.scss";
 
 const videosVariants = ["trailer", "clip", "teaser"];

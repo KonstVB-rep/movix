@@ -1,7 +1,9 @@
 import React from "react";
 import ReactPlayer from "react-player";
+
 import ButtonClose from "../../../components/Buttons/ButtonClose/index.jsx";
 import ErrorElement from "../../../components/ErrorElement";
+
 import cn from "./VideoPlayer.module.scss";
 
 const VideoPlayer = ({

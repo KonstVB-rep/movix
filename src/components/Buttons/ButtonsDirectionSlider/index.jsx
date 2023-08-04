@@ -1,4 +1,5 @@
 import React, { forwardRef, useEffect, useState } from "react";
+
 import cn from "../../Slider/Slider.module.scss";
 
 const ButtonsDirectionSlider = forwardRef(({ visible }, ref) => {

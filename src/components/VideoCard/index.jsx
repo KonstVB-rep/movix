@@ -1,12 +1,13 @@
-import dayjs from "dayjs";
-import {memo, useEffect, useMemo, useState} from "react";
+import React,{memo, useEffect, useMemo, useState} from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import LoadingImg from "../../assets/loading.gif";
-import PosterFallback from "../../assets/no-poster.jpg";
+import dayjs from "dayjs";
+
 import Genres from "../Genres";
 import Img from "../Img";
 import Rating from "../Rating";
+import LoadingImg from "../../assets/loading.gif";
+import PosterFallback from "../../assets/no-poster.webp";
 
 import cn from "./VideoCard.module.scss";
 

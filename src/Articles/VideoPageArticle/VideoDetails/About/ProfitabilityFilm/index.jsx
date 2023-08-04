@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { useParams } from "react-router-dom";
+
 import cn from "../About.module.scss";
 
 const ProfitabilityFilm = memo(({ movieDetails }) => {

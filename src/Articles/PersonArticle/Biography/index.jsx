@@ -1,5 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from "react";
+
 import ButtonClose from "../../../components/Buttons/ButtonClose";
+
 import cn from "../PersonSection.module.scss";
 
 const Biography = memo(({ data }) => {

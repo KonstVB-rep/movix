@@ -1,7 +1,9 @@
 import React, {memo} from 'react';
+
 import InfoRow from "../../InfoRow/index.jsx";
-import cn from "../About.module.scss";
 import {dataMovieRelease} from "../data/index.jsx";
+
+import cn from "../About.module.scss";
 
 const ReleaseInfo = memo(({movieDetails}) => (
     <div className={cn["info-group"]}>

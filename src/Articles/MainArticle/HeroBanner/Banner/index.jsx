@@ -2,6 +2,7 @@ import React from "react";
 
 import Img from "../../../../components/Img";
 import useApi from "../../../hooks/commonHooks/useApi.js";
+
 import cn from '../HeroBanner.module.scss'
 
 const Banner = () => {

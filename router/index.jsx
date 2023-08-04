@@ -1,13 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
+
 import ErrorElement from "../src/components/ErrorElement";
 import Layout from "../src/components/Layout";
-import DiscoverVideosPage from "../src/pages/DiscoverVideosPage.jsx";
 import Main from "../src/pages/Main.jsx";
-import MovieSinglePage from "../src/pages/MovieSinglePage.jsx";
-import NotFoundPage from "../src/pages/NotFoundPage.jsx";
-import PersonPage from "../src/pages/PersonPage.jsx";
-import SearchPage from "../src/pages/SearchPage.jsx";
+import FallbackSuspense from "../src/components/FallbackSuspense/index.jsx";
+
+const DiscoverVideosPage = lazy(() =>
+  import("../src/pages/DiscoverVideosPage.jsx")
+);
+
+const MovieSinglePage = lazy(() => import("../src/pages/MovieSinglePage.jsx"));
+
+const PersonPage = lazy(() => import("../src/pages/PersonPage.jsx"));
+
+const SearchPage = lazy(() => import("../src/pages/SearchPage.jsx"));
+
+const NotFoundPage = lazy(() => import("../src/pages/NotFoundPage.jsx"));
 
 export const router = createBrowserRouter(
   [
@@ -18,27 +27,51 @@ export const router = createBrowserRouter(
         {
           path: "/",
           element: <Main />,
+          errorElement: <ErrorElement />
         },
         {
           path: "search/:query",
-          element: <SearchPage />,
+          element: (
+            <Suspense fallback={<FallbackSuspense/>}>
+              <SearchPage />
+            </Suspense>
+          ),
+          errorElement: <ErrorElement />
         },
         {
           path: ":movieType/:id",
-          element: <MovieSinglePage />,
-          errorElement: <ErrorElement/>
+          element: (
+            <Suspense fallback={<FallbackSuspense/>}>
+              <MovieSinglePage />
+            </Suspense>
+          ),
+          errorElement: <ErrorElement />,
         },
         {
           path: "person/:id",
-          element: <PersonPage />,
+          element: (
+            <Suspense fallback={<FallbackSuspense/>}>
+              <PersonPage />
+            </Suspense>
+          ),
+          errorElement: <ErrorElement />
         },
         {
           path: "discover/:movieType",
-          element: <DiscoverVideosPage />,
+          element: (
+            <Suspense fallback={<FallbackSuspense/>}>
+              <DiscoverVideosPage />
+            </Suspense>
+          ),
+          errorElement: <ErrorElement />
         },
         {
           path: "*",
-          element: <NotFoundPage />,
+          element: (
+            <Suspense fallback={<FallbackSuspense/>}>
+              <NotFoundPage />
+            </Suspense>
+          ),
         },
       ],
     },
