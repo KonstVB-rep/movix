@@ -6,7 +6,7 @@ const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const defaultTheme = isDarkTheme ? "dark" : "light";
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
 
   const toggleTheme = () => {
     const nextThem = theme === "dark" ? "light" : "dark";
