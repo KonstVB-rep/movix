@@ -7,7 +7,6 @@ import InfinityScrollList from "../../components/InfinityScrollList";
 import SelectsGroup from "./SelectGroup";
 import ButtonGradient from "../../components/Buttons/ButtonGradient";
 
-
 import cn from "./DiscoverVideosSection.module.scss";
 
 const DiscoverVideosSection = () => {
@@ -58,7 +57,9 @@ const DiscoverVideosSection = () => {
         show={show}
       />
       {isSuccess && !total_results ? (
-        <h2 className="title-article">Nothing was found for your query</h2>
+        <h2 className={`title-article ${cn["title-article_center"]}`}>
+          Nothing was found for your query
+        </h2>
       ) : null}
       <ErrorElement classname="non-padding" error={error} isError={isError}>
         <InfinityScrollList

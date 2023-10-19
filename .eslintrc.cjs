@@ -21,7 +21,7 @@ module.exports = {
     "react/jsx-uses-vars": "error",
     "react/prop-types": "off",
     "react/display-name": "off",
-    "no-unused-vars": ["error", { vars: "local" }],
+    "no-unused-vars": "warn",
     "arrow-body-style": ["error", "as-needed"],
   },
 };

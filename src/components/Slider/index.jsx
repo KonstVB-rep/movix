@@ -19,6 +19,7 @@ const Slider = ({
   const sliderContainer = useRef(null);
 
   const [visible, setVisible] = useState(false);
+  const [hiddenArrow, setHiddenArrow] = useState("left");
 
   useEffect(() => {
     if (sliderContainer.current) {
@@ -35,12 +36,21 @@ const Slider = ({
           <div className={`${cn.heading} wrapper`}>
             <h3 className="title-article">{title}</h3>
             {tabsNames.length ? (
-              <SwitchTabs data={tabsNames} onTabChange={onTabChange} />
+              <SwitchTabs
+                data={tabsNames}
+                onTabChange={onTabChange}
+                setHiddenArrow={setHiddenArrow}
+              />
             ) : null}
           </div>
           <div className={cn.slider}>
             <div className={`${cn.wrapper} wrapper`}>
-              <ButtonsDirectionSlider ref={sliderContainer} visible={visible} />
+              <ButtonsDirectionSlider
+                ref={sliderContainer}
+                visible={visible}
+                setHiddenArrow={setHiddenArrow}
+                hiddenArrow={hiddenArrow}
+              />
               <ul ref={sliderContainer} className={cn.slides}>
                 {children}
               </ul>

@@ -1,14 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import cn from "./SwitchTabs.module.scss";
 
-const SwitchTabs = ({ data, onTabChange }) => {
+const SwitchTabs = ({ data, onTabChange, setHiddenArrow }) => {
   const [select, setSelect] = useState(0);
 
   function handleChange(e) {
     const value = Number(e.target.value);
     setSelect(value);
     onTabChange(value);
+    setHiddenArrow("left");
   }
 
   return (
@@ -27,10 +28,14 @@ const SwitchTabs = ({ data, onTabChange }) => {
               value={index}
               onChange={handleChange}
             />
-            <span className={cn['tab__label-span']}>{tab}</span>
+            <span className={cn["tab__label-span"]}>{tab}</span>
           </label>
         ))}
-        <span className={`${cn.slider} ${!select ? cn.slider_left : cn.slider_right}`}></span>
+        <span
+          className={`${cn.slider} ${
+            !select ? cn.slider_left : cn.slider_right
+          }`}
+        ></span>
       </div>
     </div>
   );

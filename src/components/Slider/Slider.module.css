@@ -19,6 +19,9 @@
 .slider-box .slider .wrapper {
   position: relative;
 }
+.slider-box .slider .wrapper .slides {
+  scroll-behavior: smooth;
+}
 .slider-box .slider .wrapper .slider__title {
   font-size: 24px;
   color: var(--secondary);

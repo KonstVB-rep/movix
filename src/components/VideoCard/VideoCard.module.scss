@@ -58,54 +58,65 @@
     align-items: flex-end;
     justify-content: space-between;
     border-radius: 12px;
-    &::before {
-      content: "";
-      position: absolute;
-      border-radius: 12px;
-      inset: 0;
-      background: url('../../assets/background_poster.webp') center center/cover no-repeat;
-      mix-blend-mode: exclusion;
-    }
-    a{
-      outline: none;
-      z-index: 2;
-      &::before {
-        content: "Go to the video page";
-        position: absolute;
-        inset: 0;
-        color: whitesmoke;
-        text-transform: uppercase;
-        line-height: 30px;
-        padding: 10%;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-        will-change: opacity;
-      }
-      &:hover::before,
-      &:focus-visible::before {
-        opacity: 1;
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 12px;
-        z-index: 1;
-      }
-      &:hover ~ .rating_card::before,
-      &:focus-visible ~ .rating_card {
-        background-color: rgba(0, 0, 0, 0.7);
-      }
-    }
-    a:hover ~ div::before,
-    &:focus-visible ~ div::before{
-      background-color:rgba(0, 0, 0, 0.7);
-    }
-    img {
+    .poster__img{
+      position: relative;
+      width: 100%;
+      height: 100%;
       border-radius: 12px;
       overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: 12px;
+        inset: 0;
+        background: url('../../assets/background_poster.webp') center center/cover no-repeat;
+        mix-blend-mode: exclusion;
+        filter: blur(10px);
+      }
+      a{
+        outline: none;
+        z-index: 2;
+        &::before {
+          content: "Go to the video page";
+          position: absolute;
+          inset: 0;
+          color: whitesmoke;
+          text-transform: uppercase;
+          line-height: 30px;
+          padding: 10%;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.2s ease-in-out;
+          will-change: opacity;
+        }
+        &:hover::before,
+        &:focus-visible::before {
+          opacity: 1;
+          background-color: rgba(0, 0, 0, 0.7);
+          border-radius: 12px;
+          z-index: 1;
+        }
+        &:hover ~ .rating_card::before,
+        &:focus-visible ~ .rating_card {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      }
+      a:hover ~ div::before,
+      &:focus-visible ~ div::before{
+        background-color:rgba(0, 0, 0, 0.7);
+      }
+      .img {
+        position: absolute;
+        scale:0;
+      }
+      .scaleImg{
+        position: absolute;
+        animation: scaleImg 0.3s forwards;
+      }
     }
-
   }
 
   .text {
@@ -132,3 +143,17 @@
 }
 
 
+@keyframes scaleImg {
+  0%{
+    height: 0;
+    opacity: 0;
+    scale: 0;
+    filter:blur(10px);
+  }
+  100%{
+    opacity: 1;
+    height: 100%;
+    border-radius: 12px;
+    filter:blur(0);
+  }
+}
