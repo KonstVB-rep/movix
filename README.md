@@ -1,6 +1,6 @@
 # Getting Started
 
-This project [Demo](https://konst1984.github.io/movix).
+This project [Demo](https://konstvb-rep.github.io/movix).
 
 This project was bootstrapped with [Vite](https://github.com/vitejs/vite).
 
