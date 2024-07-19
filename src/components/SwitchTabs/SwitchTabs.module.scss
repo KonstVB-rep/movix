@@ -1,4 +1,6 @@
-.tab{
+@import "../../mixins.scss";
+
+.tab {
   padding: 4px;
   width: fit-content;
   background-image: var(--gradient);
@@ -14,20 +16,18 @@
     border-radius: 20px;
     .tab__label {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-c-c;
       min-width: 50%;
       height: 34px;
       text-transform: uppercase;
       font-size: 0.9rem;
       border-radius: 30px;
-      color:var(--secondary);
+      color: var(--secondary);
       cursor: pointer;
       z-index: 10;
       transition: color 0.3s ease-in-out;
-      &.active{
-        color:snow;
+      &.active {
+        color: snow;
       }
       .tab__item {
         width: 50%;
@@ -37,34 +37,32 @@
     .tab__radio {
       position: absolute;
       opacity: 0;
-      inset:0;
+      inset: 0;
       border-radius: 30px;
       cursor: pointer;
-      &:focus-visible + .tab__label-span{
+      &:focus-visible + .tab__label-span {
         border: 4px solid orange;
       }
     }
-    .tab__label-span{
-      display: flex;
+    .tab__label-span {
+      @include flex-c-c;
       width: 100%;
       height: 100%;
-      align-items: center;
-      justify-content: center;
       border-radius: 30px;
     }
     .slider {
       position: absolute;
       background-color: var(--blue);
-      left:0;
+      left: 0;
       width: 50%;
       height: 100%;
       border-radius: 30px;
       cursor: pointer;
       transition: all 0.2s ease-in-out;
-      &_left{
+      &_left {
         transform: translateX(0);
       }
-      &_right{
+      &_right {
         transform: translateX(100%);
       }
     }

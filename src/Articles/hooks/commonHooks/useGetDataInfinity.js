@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { useInfiniteQuery } from "react-query";
 import { getData } from "../../../../utils/api.js";
 
@@ -23,8 +23,8 @@ const useGetDataInfinity = (url, queryParams, name_request, key) => {
   const videos = useMemo(
     () =>
       data?.pages.reduce((prev, page) => ({
-          results: [...prev.results, ...page.results],
-        })),
+        results: [...prev.results, ...page.results],
+      })),
     [data]
   );
 

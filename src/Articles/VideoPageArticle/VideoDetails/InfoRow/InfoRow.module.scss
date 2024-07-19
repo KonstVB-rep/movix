@@ -5,21 +5,20 @@
   flex-wrap: wrap;
   align-items: center;
   flex-grow: 1;
-  &.error{
+  &.error {
     color: #ee5b5b;
     font-size: 18px;
     justify-content: center;
   }
-  &.border-none{
+  &.border-none {
     border: none;
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 20px;
     }
   }
 
   .text {
     margin-right: 10px;
-   ;
     line-height: 24px;
     text-transform: capitalize;
 

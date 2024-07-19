@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ReactPlayer from "react-player";
 
 import ButtonClose from "../../../components/Buttons/ButtonClose/index.jsx";
@@ -6,13 +6,7 @@ import ErrorElement from "../../../components/ErrorElement";
 
 import cn from "./VideoPlayer.module.scss";
 
-const VideoPlayer = ({
-                       show,
-                       setShow,
-                       videoId,
-                       setVideoId,
-                       isError,
-                     }) => {
+const VideoPlayer = memo(({ show, setShow, videoId, setVideoId, isError }) => {
   const hidePopup = () => {
     setShow(false);
     document.body.classList.remove("overflow-hidden");
@@ -23,7 +17,7 @@ const VideoPlayer = ({
     <div className={`${cn.video} ${show ? cn.visible : ""}`}>
       <div className={cn["opacity-layer"]} onClick={hidePopup}></div>
       <div className={cn.player}>
-        <ButtonClose close={hidePopup}/>
+        <ButtonClose close={hidePopup} />
         {isError ? (
           <ErrorElement classname="error-trailer">Video not found</ErrorElement>
         ) : (
@@ -38,6 +32,6 @@ const VideoPlayer = ({
       </div>
     </div>
   );
-};
+});
 
 export default VideoPlayer;

@@ -1,7 +1,7 @@
-.wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@import "../../mixins.scss";
+
+.wrapper {
+  @include flex-c-c;
   .loader {
     display: block;
     width: 100px;
@@ -10,7 +10,7 @@
   }
   .loader::after,
   .loader::before {
-    content: '';
+    content: "";
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -36,5 +36,3 @@
     }
   }
 }
-
-

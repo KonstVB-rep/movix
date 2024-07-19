@@ -2,14 +2,13 @@ import React, { useState } from "react";
 
 import cn from "./SwitchTabs.module.scss";
 
-const SwitchTabs = ({ data, onTabChange, setHiddenArrow }) => {
+const SwitchTabs = ({ data, onTabChange }) => {
   const [select, setSelect] = useState(0);
 
   function handleChange(e) {
     const value = Number(e.target.value);
     setSelect(value);
     onTabChange(value);
-    setHiddenArrow("left");
   }
 
   return (

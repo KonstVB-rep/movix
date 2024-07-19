@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetData } from "../../hooks/commonHooks/useGetData.js";
 
@@ -22,7 +22,7 @@ const WatchTrailerButton = ({ classname }) => {
 
   const isPlayerShow = data?.results.length || videoId;
 
-  const startTrailer = () => {
+  const startTrailer = useCallback(() => {
     const trailer = data?.results.find((item) =>
       videosVariants.includes(item.type.toLowerCase())
     );
@@ -33,7 +33,7 @@ const WatchTrailerButton = ({ classname }) => {
       document.body.classList.add("overflow-hidden");
       setShow(true);
     }
-  };
+  }, [data?.results]);
 
   return (
     <>
