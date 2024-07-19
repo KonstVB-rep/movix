@@ -1,0 +1,1 @@
+import{n as a}from"./index-3c34359a.js";const o={"btn-gradient":"_btn-gradient_1wyvs_1"},e=({classname:t,children:n,...s})=>a.jsx("button",{className:`${o["btn-gradient"]} ${t}`,...s,children:n});export{e as B};
