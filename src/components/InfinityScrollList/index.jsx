@@ -3,7 +3,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import Loader from "../Loader";
 import VideoCard from "../VideoCard";
-import { FixedSizeGrid as Grid } from "react-window";
 
 const InfinityScrollList = memo(
   ({ isLoading, hasNextPage, fetchNextPage, data, dataPages, isFetching }) => (
