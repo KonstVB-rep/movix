@@ -20,6 +20,7 @@
     scale: 0.9;
   }
   &_theme {
+    @include flex-c-c;
     bottom: 100px;
     right: 20px;
     @include md {
@@ -27,6 +28,7 @@
     }
   }
   &_up {
+    @include flex-c-c;
     bottom: 160px;
     right: 20px;
     fill: var(--secondary);
@@ -96,15 +98,13 @@
     width: 100%;
   }
   &_inactive {
-    filter: grayscale(0.8);;
+    filter: grayscale(0.8);
   }
   &_clear {
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-c-c;
     & > span {
-      justify-content: center;
+      @include flex-c-c;
     }
   }
   &__img {

@@ -7,12 +7,16 @@ import ButtonSort from "../../../components/Buttons/ButtonSort";
 import CLearSort from "../../../components/Buttons/ClearSort";
 import SwitchTabs from "../../../components/SwitchTabs";
 import VideosCardList from "../../../components/VideosCardList";
+import VideoCard from "../../../components/VideoCard/index.jsx";
 import ErrorElement from "../../../components/ErrorElement";
 import SkeletonsListMedia from "../../../components/SkeletonsListMedia";
-import {sortByOptionDate, sortByOptionNumber, sortByOptionText} from "../../../../utils/helpers.js";
+import {
+  sortByOptionDate,
+  sortByOptionNumber,
+  sortByOptionText,
+} from "../../../../utils/helpers.js";
 
 import cn from "../PersonSection.module.scss";
-
 
 const CreditsList = ({ endpoints, media_type }) => {
   const { id } = useParams();
@@ -69,7 +73,7 @@ const CreditsList = ({ endpoints, media_type }) => {
     };
 
     handleSort();
-  }, [direction, endpoint,data?.cast]);
+  }, [direction, endpoint, data?.cast]);
 
   return (
     <ErrorElement error={error} isError={isError} title="Profile">
@@ -100,14 +104,14 @@ const CreditsList = ({ endpoints, media_type }) => {
           <SwitchTabs data={media_type} onTabChange={onTabChange} />
         </div>
         <div className={`grid ${cn["grid_person-movies"]}`}>
-          <VideosCardList
-            classname="skeletons__item_grid"
-            classnameCard="card_grid"
-            dataList={videos}
-            endpointCard={endpoint[0]}
-            isFetching={isFetching}
-            loading={isLoading}
-          />
+          {videos?.map((item, index) => (
+            <VideoCard
+              key={index}
+              classnameCard="card_grid"
+              data={item}
+              endpoint={endpoint}
+            />
+          ))}
         </div>
       </div>
     </ErrorElement>

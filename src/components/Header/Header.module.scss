@@ -17,7 +17,7 @@
     background-color: var(--bg-header-footer);
   }
   &.hide {
-    transform: translateY(-165px);;
+    transform: translateY(-165px);
     @include xs {
       transform: translateY(-60px);
     }
@@ -132,7 +132,7 @@
     list-style-type: none;
     background-color: var(--main);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    @include xs{
+    @include xs {
       top: 70px;
     }
   }
@@ -182,7 +182,7 @@
     padding: 20px 10px;
     height: auto;
     background-color: var(--bg-header-footer);
-    @include xs{
+    @include xs {
       height: 150px;
     }
     &__item {
@@ -195,9 +195,7 @@
       border-bottom: 1px solid grey;
       border-top: 1px solid grey;
       .nav__link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-c-c;
         color: snow;
         width: 100%;
         padding: 15px 20px;

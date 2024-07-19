@@ -10,24 +10,22 @@
   border-radius: 12px;
   overflow: hidden;
   z-index: 2;
-  &:before{
-    content: 'Wait...';
+  &:before {
+    content: "Wait...";
     position: absolute;
-    inset:0;
+    inset: 0;
+    @include flex-c-c;
     color: var(--secondary);
     font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  & > span{
+  & > span {
     height: 100%;
     width: 100%;
-    img{
+    img {
       width: 100%;
     }
   }
-  @include md{
+  @include md {
     width: 40%;
     max-height: 700px;
     aspect-ratio: 1/1.5;

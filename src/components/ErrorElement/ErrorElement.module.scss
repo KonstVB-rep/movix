@@ -1,25 +1,22 @@
 @import "../../mixins.scss";
-.error-wrapper{
+
+.error-wrapper {
   margin-top: 100px;
   margin-bottom: 60px;
-  &.non-padding{
+  &.non-padding {
     padding: 0;
   }
-  .error{
+  .error {
     height: 400px;
     margin: 20px 0;
     width: 100%;
+    @include flex-c-c;
     border-radius: 15px;
     background-color: var(--bg-skeleton);
-    color:aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &__text{
-      display: flex;
+    color: aliceblue;
+    &__text {
+      @include flex-c-c;
       width: 100%;
-      align-items: center;
-      justify-content: center;
       padding: 10px;
       color: #961212;
       text-shadow: 0 0 2px white;
@@ -28,6 +25,3 @@
     }
   }
 }
-
-
-

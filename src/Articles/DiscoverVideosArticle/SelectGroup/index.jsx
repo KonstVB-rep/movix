@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React, { memo } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Select } from "antd";
@@ -22,7 +22,6 @@ const SelectsGroup = memo(({ show, setSelectedOption }) => {
     useOnChangeSelect(movieType, setSelectedOption);
 
   return (
-
     <div
       className={`${cn["select-group"]} ${!show && cn["select-group-hidden"]}`}
     >

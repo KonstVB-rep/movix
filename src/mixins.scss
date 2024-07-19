@@ -47,3 +47,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

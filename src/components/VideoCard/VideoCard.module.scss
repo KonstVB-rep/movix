@@ -33,21 +33,14 @@
 
 .card {
   position: relative;
-  width: 100%;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-shrink: 0;
-  &_flex{
+  &_flex {
     flex-grow: 1;
-    max-width: 216px;
-    @include md {
-      max-width: 314px;
-    }
-    @include lg {
-      max-width: 272px;
-    }
+    max-width: 275px;
   }
   .poster {
     position: relative;
@@ -58,22 +51,30 @@
     align-items: flex-end;
     justify-content: space-between;
     border-radius: 12px;
-    .poster__img{
+    .poster__img {
       position: relative;
       width: 100%;
       height: 100%;
       border-radius: 12px;
       overflow: hidden;
+      filter: blur(10px);
       &::before {
         content: "";
         position: absolute;
         border-radius: 12px;
         inset: 0;
-        background: url('../../assets/background_poster.webp') center center/cover no-repeat;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.5),
+          rgba(109, 105, 105, 0.5)
+        );
         mix-blend-mode: exclusion;
-        filter: blur(10px);
       }
-      a{
+      &.poster_loaded {
+        background: none;
+        filter: none;
+      }
+      a {
         outline: none;
         z-index: 2;
         &::before {
@@ -85,9 +86,7 @@
           line-height: 30px;
           padding: 10%;
           text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include flex-c-c;
           opacity: 0;
           transition: opacity 0.2s ease-in-out;
           will-change: opacity;
@@ -105,16 +104,14 @@
         }
       }
       a:hover ~ div::before,
-      &:focus-visible ~ div::before{
-        background-color:rgba(0, 0, 0, 0.7);
+      &:focus-visible ~ div::before {
+        background-color: rgba(0, 0, 0, 0.7);
       }
       .img {
         position: absolute;
-        scale:0;
-      }
-      .scaleImg{
-        position: absolute;
-        animation: scaleImg 0.3s forwards;
+        border-radius: 12px;
+        inset: 0;
+        animation: scaleImg 0.3s forwards ease-in-out 0.2s;
       }
     }
   }
@@ -137,23 +134,17 @@
 
     .date {
       font-size: 14px;
-     ;
     }
   }
 }
 
-
 @keyframes scaleImg {
-  0%{
-    height: 0;
+  0% {
     opacity: 0;
-    scale: 0;
-    filter:blur(10px);
+    filter: blur(10px);
   }
-  100%{
+  100% {
     opacity: 1;
-    height: 100%;
-    border-radius: 12px;
-    filter:blur(0);
+    filter: blur(0);
   }
 }
