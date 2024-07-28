@@ -48,15 +48,25 @@
     transition: all 0.7s ease-in-out;
   }
   @include svg-default;
-  .play__btn:hover,
-  .play__btn:focus-visible{
+  .play__btn:focus-visible {
     @include svg-hover;
+  }
+
+  @media (hover: hover) {
+    play__btn:hover {
+      @include svg-hover;
+    }
+  }
+  @media (hover: none) {
+    play__btn:active {
+      @include svg-hover;
+    }
   }
 }
 
-.play-item{
+.play-item {
   position: absolute;
-  inset:0;
+  inset: 0;
   svg {
     width: 60px;
     @include md {
@@ -70,7 +80,18 @@
   .play__btn {
     position: absolute;
     inset: 0;
-    &:hover,
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba(7, 7, 253, 0.25);
+        @include svg-hover;
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        background-color: rgba(7, 7, 253, 0.25);
+        @include svg-hover;
+      }
+    }
     &:focus-visible {
       background-color: rgba(7, 7, 253, 0.25);
       @include svg-hover;

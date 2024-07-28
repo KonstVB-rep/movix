@@ -19,7 +19,7 @@
   &.hide {
     transform: translateY(-165px);
     @include xs {
-      transform: translateY(-60px);
+      transform: translateY(-70px);
     }
   }
   &.mobile__view {
@@ -49,17 +49,15 @@
       color: transparent;
       -webkit-background-clip: text;
       transition: all 1s ease-in-out;
-      &:hover,
       &:focus-visible {
         background-image: var(--gradient-reverse);
       }
-      &:hover::before,
       &:focus-visible::before {
         background-image: var(--gradient-reverse);
         width: 100%;
         opacity: 1;
       }
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         width: 0;
@@ -72,6 +70,26 @@
       }
       img {
         height: 50px;
+      }
+      @media (hover: hover) {
+        &:hover {
+          background-image: var(--gradient-reverse);
+        }
+        &:hover::before {
+          background-image: var(--gradient-reverse);
+          width: 100%;
+          opacity: 1;
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          background-image: var(--gradient-reverse);
+        }
+        &:active::before {
+          background-image: var(--gradient-reverse);
+          width: 100%;
+          opacity: 1;
+        }
       }
     }
     .nav__desktop {
@@ -89,17 +107,18 @@
           color: snow;
           text-transform: uppercase;
           transition: all 0.2s ease-in-out;
-          &:hover,
+
           &:focus-visible {
             color: var(--pink);
           }
-          &:hover::before,
+
           &:focus-visible::before {
             background-image: var(--gradient-reverse);
             width: 100%;
             opacity: 1;
           }
-          &:before {
+
+          &::before {
             content: "";
             position: absolute;
             width: 0;
@@ -109,6 +128,26 @@
             background-image: var(--gradient-reverse);
             opacity: 0;
             transition: all 0.2s ease-in-out;
+          }
+          @media (hover: hover) {
+            &:hover {
+              color: var(--pink);
+            }
+            &:hover::before {
+              background-image: var(--gradient-reverse);
+              width: 100%;
+              opacity: 1;
+            }
+          }
+          @media (hover: none) {
+            &:active {
+              color: var(--pink);
+            }
+            &:active::before {
+              background-image: var(--gradient-reverse);
+              width: 100%;
+              opacity: 1;
+            }
           }
         }
       }
@@ -202,10 +241,21 @@
         border-radius: 12px;
         transition: all 0.2s ease-in-out;
         text-transform: uppercase;
-        &:hover,
         &:focus-visible {
           color: var(--pink);
           background-color: azure;
+        }
+        @media (hover: hover) {
+          &:hover {
+            color: var(--pink);
+            background-color: azure;
+          }
+        }
+        @media (hover: none) {
+          &:active {
+            color: var(--pink);
+            background-color: azure;
+          }
         }
       }
     }
@@ -233,9 +283,18 @@
   &:active {
     scale: 0.9;
   }
-  &:hover,
   &:focus-visible {
     background-image: var(--gradient-reverse);
+  }
+  @media (hover: hover) {
+    &:hover {
+      background-image: var(--gradient-reverse);
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      background-image: var(--gradient-reverse);
+    }
   }
   &_submit {
     width: 100px;

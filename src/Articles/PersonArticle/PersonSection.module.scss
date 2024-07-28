@@ -79,43 +79,40 @@
           padding-right: 20px;
           display: -webkit-box;
           -webkit-line-clamp: 6;
-          margin: 20px auto;
+          margin: 20px auto 0;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
           color: var(--secondary);
-          .more__btn {
-            width: 50px;
-            height: 35px;
-            position: absolute;
-            bottom: 2px;
-            right: -35px;
-            transform: translateX(-50%);
-            z-index: 1;
-            outline: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            transition: all 0.1s ease-in-out;
-            &:focus,
-            &:active,
-            &:focus-visible {
-              outline: none;
+        }
+        .more__btn {
+          display: block;
+          bottom: 2px;
+          right: -35px;
+          z-index: 1;
+          outline: none;
+          border-radius: 12px;
+          font-weight: 300;
+          font-size: 16px;
+          padding: 5px;
+          border-radius: 5px;
+          background-color: gray;
+          transition: all 0.1s ease-in-out;
+          &:focus-visible {
+            color: gray;
+            background-color: white;
+          }
+
+          @media (hover: hover) {
+            &:hover {
+              color: gray;
+              background-color: white;
             }
-            &:hover,
-            &:focus-visible {
-              bottom: 0;
-            }
-            &:hover > svg,
-            &:focus-visible .svg {
-              transform: rotate(90deg);
-              transition: all 0.1s ease-in-out;
-            }
-            &:active svg {
-              scale: 1;
-            }
-            svg {
-              width: 100%;
-              height: 100%;
+          }
+          @media (hover: none) {
+            &:active {
+              color: gray;
+              background-color: white;
             }
           }
         }
@@ -249,9 +246,19 @@
   container: sort-btn-container / inline-size;
 }
 
-.link_pink:hover,
 .link_pink:focus-visible {
   color: var(--pink);
+}
+
+@media (hover: hover) {
+  .link_pink:hover {
+    color: var(--pink);
+  }
+}
+@media (hover: none) {
+  .link_pink:active {
+    color: var(--pink);
+  }
 }
 
 .grid_person-movies {

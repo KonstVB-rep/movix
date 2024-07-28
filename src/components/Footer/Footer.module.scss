@@ -39,9 +39,18 @@
         @include md {
           font-size: 16px;
         }
-        &:hover,
         &:focus-visible {
           color: var(--pink);
+        }
+        @media (hover: hover) {
+          &:hover {
+            color: var(--pink);
+          }
+        }
+        @media (hover: none) {
+          &:active {
+            color: var(--pink);
+          }
         }
       }
     }
@@ -73,11 +82,24 @@
       cursor: pointer;
       transition: all ease 0.3s;
       outline: none;
-      &:hover,
       &:focus-visible {
         scale: 1.1;
         box-shadow: 0 0 4px 4px orangered;
         color: var(--pink);
+      }
+      @media (hover: hover) {
+        &:hover {
+          scale: 1.1;
+          box-shadow: 0 0 4px 4px orangered;
+          color: var(--pink);
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          scale: 1.1;
+          box-shadow: 0 0 4px 4px orangered;
+          color: var(--pink);
+        }
       }
       svg {
         scale: 0.5;

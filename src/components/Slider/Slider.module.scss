@@ -71,11 +71,24 @@
         &:disabled {
           opacity: 0.5;
         }
-        &:hover,
         &:focus-visible {
           scale: 1.2;
           opacity: 1;
           fill: var(--secondary);
+        }
+        @media (hover: hover) {
+          &:hover {
+            scale: 1.2;
+            opacity: 1;
+            fill: var(--secondary);
+          }
+        }
+        @media (hover: none) {
+          &:active {
+            scale: 1.2;
+            opacity: 1;
+            fill: var(--secondary);
+          }
         }
       }
       .arrow_left {

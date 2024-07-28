@@ -4,6 +4,7 @@
   display: flex;
   gap: 15px;
   overflow-x: auto;
+  padding: 30px 20px;
 
   .video {
     position: relative;
@@ -12,19 +13,11 @@
     display: grid;
     grid-auto-rows: 175px max-content;
     width: 100%;
+    max-width: max(300px, 30%);
     height: 100%;
     max-height: 220px;
     color: var(--secondary);
     flex-shrink: 0;
-    @include sm {
-      width: 287px;
-    }
-    @include md {
-      width: 350px;
-    }
-    @include lg {
-      width: 273px;
-    }
     .video__thumbnail {
       position: relative;
       width: 100%;
