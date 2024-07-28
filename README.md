@@ -45,7 +45,7 @@ Used by the library:
 
 ![image](./src/assets/SearchPage.webp)
 
-### SingleMoviePage, options: slider.
+### SingleMoviePage, options: sort movies.
 
 ![image](./src/assets/SingleMoviePage_1.webp)
 ![image](./src/assets/SingleMoviePage_2.webp)
