@@ -142,7 +142,6 @@
           transition: all 0.2s ease-in-out;
           border-radius: 30px;
         }
-        &:hover,
         &:focus-visible {
           border-color: var(--secondary);
         }
@@ -158,6 +157,17 @@
           width: 150px;
           height: 56px;
           font-size: 18px;
+        }
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: var(--secondary);
+          }
+        }
+        @media (hover: none) {
+          &:active {
+            border-color: var(--secondary);
+          }
         }
       }
     }

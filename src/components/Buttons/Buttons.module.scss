@@ -10,7 +10,18 @@
   z-index: 20;
   box-shadow: 0 0 2px 2px var(--secondary);
   transition: all 0.1s ease-in-out;
-  &:hover,
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 4px 4px orangered;
+      scale: 1.1;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      box-shadow: 0 0 4px 4px orangered;
+      scale: 1.1;
+    }
+  }
   &:focus-visible {
     box-shadow: 0 0 4px 4px orangered;
     scale: 1.1;
@@ -58,7 +69,18 @@
     position: absolute;
     inset: 0;
   }
-  &:hover,
+  @media (hover: hover) {
+    &:hover {
+      color: orangered;
+      scale: 1.2;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      color: orangered;
+      scale: 1.2;
+    }
+  }
   &:focus-visible {
     color: orangered;
     scale: 1.2;

@@ -42,8 +42,17 @@
   &:active {
     scale: 0.9;
   }
-  &:hover::before,
   &:focus-visible::before {
     width: 100%;
+  }
+  @media (hover: hover) {
+    &:hover::before {
+      width: 100%;
+    }
+  }
+  @media (hover: none) {
+    &:active::before {
+      width: 100%;
+    }
   }
 }
